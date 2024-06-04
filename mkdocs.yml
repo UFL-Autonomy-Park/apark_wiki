@@ -1,1 +1,3 @@
-site_name: My Docs
+site_name: UF Autonomy Park - Wiki
+theme:
+  name: material
