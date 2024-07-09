@@ -4,3 +4,7 @@ theme:
   favicon: images/favicon.ico
 extra:
   generator: false
+markdown_extensions:
+  - attr_list
+plugins:
+  - mkdocs-pdf
