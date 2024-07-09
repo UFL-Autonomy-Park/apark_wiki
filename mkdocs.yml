@@ -8,3 +8,9 @@ markdown_extensions:
   - attr_list
 plugins:
   - mkdocs-pdf
+markdown_extensions:
+  - pymdownx.pathconverter:
+      base_path: 'apark-wikiw' # default: ''
+      relative_path: '' # default ''
+      absolute: false # default: false
+      tags: 'a script img link object embed'

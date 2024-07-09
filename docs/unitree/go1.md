@@ -39,4 +39,4 @@ $ exit
 
 ## Manual
 
-![Alt text](go1-manual.pdf){ type=application/pdf style="min-height:100vh;width:100%" }
+[Go1 Manual](../../unitree/go1-manual.pdf)
