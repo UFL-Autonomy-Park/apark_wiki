@@ -40,5 +40,3 @@ $ exit
 ## Manual
 
 [Go1 Manual](../../unitree/go1-manual.pdf)
-
-<iframe src="../../unitree/go1-manual.pdf" style="width:100%; height:100vh">
