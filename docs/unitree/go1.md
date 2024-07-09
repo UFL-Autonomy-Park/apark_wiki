@@ -4,6 +4,15 @@ title: Unitree Go1
 
 # Unitree Go1
 
+## IP Reservations
+
+| **Device Name** |   **Username**    | **IP Address** | **Password** |
+| :-------------: | :---------------: | :------------: | :----------: |
+|     doggo1      |   doggo-jetson    | 192.168.1.153  |     1234     |
+|     doggo2      |   doggo-jetson2   | 192.168.1.154  |     1234     |
+|     doggo3      |   doggo-jetson3   | 192.168.1.165  |     1234     |
+|    BigDoggo     | big-doggo1-jetson |  192.168.1.67  |    12345     |
+
 ## Dog Startup Instructions
 
 SSH into the dog's Jetson - the username and IP address is labeled on the side of the dog.
