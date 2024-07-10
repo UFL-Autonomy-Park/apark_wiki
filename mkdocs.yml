@@ -1,7 +1,8 @@
-site_name: UF Autonomy Park - Wiki
+site_name: Autonomy Park - Wiki
 theme:
   name: material
   favicon: images/favicon.ico
+  logo: images/uf-logo.png
 extra:
   generator: false
 extra_css:
