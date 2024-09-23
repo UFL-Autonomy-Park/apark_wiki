@@ -49,3 +49,7 @@ $ exit
 ## Manual
 
 [Go1 Manual](../../unitree/go1-manual.pdf)
+
+## Harness/Frame
+
+[Harness Manual](../../unitree/harness-manual.pdf)
