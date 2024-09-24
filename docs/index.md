@@ -1,5 +1,9 @@
 # Welcome to the Autonomy Park!
 
+## HAVE YOU DONE THE ROS 2 TUTORIALS YET?
+
+<a href="https://docs.ros.org/en/humble/Tutorials.html" target="_blank">Get on it, soldier</a>
+
 ![Autonomy Park robots.](images/robots.jpg)
 
 <a href="https://join.slack.com/t/autonomypark/shared_invite/zt-2monroejk-Kf5l7pKnbAFfJVt4eI9R_A" target="_blank">Join the Autonomy Park Slack Group</a>
@@ -35,4 +39,13 @@ I know you forgot this somewhere
         </participant>
     </profiles>
 </dds>
+```
+
+## Add to .bashrc
+
+```
+source /opt/ros/humble/setup.sh
+export ROS_DOMAIN_ID=0
+export ROS_DISCOVERY_SERVER="192.168.1.201:11811"
+export FASTRTPS_DEFAULT_PROFILES_FILE=~/super_client_config.xml
 ```
