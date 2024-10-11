@@ -50,7 +50,7 @@ WantedBy=multi-user.target
 
 ## MAVROS Parameters
 
-Add link to .params file here once tuning is complete
+MAVROS parameters (including tuned PID gains) can be found [here](../../homebrew/homebrew.params)
 
 ## Manuals
 
