@@ -14,6 +14,9 @@ sudo nmcli device wifi connect "UFLAutonomyPark_5GHz" password "43PrismaticJacka
 # install terminator
 sudo apt-get install terminator
 
+# install python
+sudo apt-get install python3-pip
+
 # install onnx
 pip install onnx
 
@@ -25,7 +28,9 @@ sudo hostnamectl set-hostname new-hostname
 
 # update /etc/hosts
 sudo nano /etc/hosts
-sudo reboot # unplug the ethernet cable at this point
+
+# unplug the ethernet cable at this point
+sudo reboot 
 
 # install jetsonUtilities - MAKE SURE CUDA IS INSTALLED
 git clone https://github.com/jetsonhacks/jetsonUtilities.git
@@ -95,4 +100,5 @@ ros2 launch zed_wrapper zed_camera.launch.py camera_model:=zed2i camera_name:=nc
 
 # open another terminal to visualize the data
 ros2 launch zed_display_rviz2 display_zed_cam.launch.py camera_model:=zed2i
+
 ```
