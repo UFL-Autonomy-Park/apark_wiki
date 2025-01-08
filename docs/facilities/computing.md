@@ -1,4 +1,4 @@
-# Autonomy Park Computing Information
+# Computing
 
 ## Observer
 

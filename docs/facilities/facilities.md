@@ -1,4 +1,4 @@
-# General Facilities Information
+# General Facilities Info
 
 ## Get Access to the Park
 
