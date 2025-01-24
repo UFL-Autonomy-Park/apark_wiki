@@ -16,3 +16,15 @@ Fill it out and submit using these values:
 - Rooms: **0980**
 - Details/Justification: **Bathroom access for Autonomy Park.**
   All other values the same.
+
+## Get Access to the NCR Lab
+
+See the facilities link above.
+Fill it out and submit using these values:
+
+- Request Type: **Room and/or Building Access**
+- Access Type: **Room Only**
+- Building(s): **MAE-B**
+- Rooms: **325**
+- Supervisor: **Your advisor** (or Warren Dixon if not MAE)
+- Details/Justification: **Lab access for robotics research**
