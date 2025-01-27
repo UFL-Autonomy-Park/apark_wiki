@@ -1,5 +1,9 @@
 # Basic Reference
 
+## ROS 2 Humble Install
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tvToTLZQkZI?si=97aXUDweP7OQRK9T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## super-client-config.yml
 
 I know you forgot this somewhere

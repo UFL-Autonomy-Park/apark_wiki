@@ -1,4 +1,4 @@
-# Computing
+# Computing Hardware
 
 ## Observer
 
@@ -43,16 +43,3 @@ Where we keep all of our data. Runs TrueNAS Scale
 - 2x Intel Xeon E5-2697 CPU
 - 128GB of RAM
 - 192 TB of storage
-
-Add the TrueNAS ZFS share to your Ubuntu computer. This will allow you to access all of our shared Autonomy Park files
-
-```
-mkdir /home/YOURUSERNAME/uflautonomypark
-sudo mount -t nfs "192.168.1.32:/mnt/Autonomy Park/uflautonomypark" /home/YOURUSERNAME/uflautonomypark/
-```
-
-To unmount, run
-
-```
-sudo umount /home/YOURUSERNAME/uflautonomypark
-```
