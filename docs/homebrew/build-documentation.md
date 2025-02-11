@@ -15,3 +15,4 @@
 - Flux: a chemical compound used to clean metal surfaces before soldering. It removes oxides and other impurities, which helps the solder adhere to the metal and form a strong join
 - Solder temperature is $400^oC/750^oF$
 - Rubber heat shrink when connectors are soldered properly
+![This is the old connector](../images/oldconnector.jpg)
