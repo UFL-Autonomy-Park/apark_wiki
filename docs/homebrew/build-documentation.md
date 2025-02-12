@@ -17,4 +17,4 @@
 - Rubber heat shrink when connectors are soldered properly
 ![This is the old connector](../images/oldconnector.jpg)
 ![These are the new connectors](../images/newconnector.jpg)
-<img src="../images/Solder wick.jpg" width=50% height=50%>
+<img src="../images/Solder wick.jpg" width="256" height="300">
