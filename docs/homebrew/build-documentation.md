@@ -16,4 +16,5 @@
 - Solder temperature is $400^oC/750^oF$
 - Rubber heat shrink when connectors are soldered properly
 ![This is the old connector](../images/oldconnector.jpg)
-![These are the new connectors](../images/newconnector.jpg =200x300)
+![These are the new connectors](../images/newconnector.jpg)
+<img src="../images/Solder wick.jpg" width=50% height=50%>
