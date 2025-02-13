@@ -11,6 +11,7 @@
 1. **Prepare the Motor and Wires**  
      Take the motor out of the box.  
      Use a wire cutter to remove the original connectors.
+   <img src="../images/oldconnector.jpg" alt="Original one" width="300">
 
 2. **Strip the Wire Insulation**  
      Use a wire stripper to remove about 3mm of insulation.
@@ -30,7 +31,7 @@
 
 5. **Solder the Wire to the Connector**  
      Press the iron at the point where the wire and connector meet.  
-     **Caution:** The iron should never touch the connector's end. 
+     **Caution:** The iron should never touch the connector's end. The one below is scrapped 
     ![scrapped connector](../images/defectip.jpeg)
      Press the solder against the iron—it should melt immediately.  
      Gently push the solder toward the iron to feed it into the joint.  
@@ -55,6 +56,9 @@
      Once all connectors are properly soldered and secured, the motor is ready for commissioning.
 
 10. **Clean up**
-     Turn off devices
-     Dispose of all the litter
-     We use lead-free solder but we treat it as leaded, so don't forget to wash hands
+   Turn off devices
+   Dispose of all the litter
+   We use lead-free solder but we treat it as leaded, so don't forget to wash hands
+
+
+
