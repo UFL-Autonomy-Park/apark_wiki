@@ -11,7 +11,7 @@
 1. **Prepare the Motor and Wires**  
      Take the motor out of the box.  
      Use a wire cutter to remove the original connectors.
-   <img src="../images/oldconnector.jpg" alt="Original one" width="300">
+   <img src="../images/oldconnector.jpg" alt="Original one" style="width:300px;">
 
 2. **Strip the Wire Insulation**  
      Use a wire stripper to remove about 3mm of insulation.
