@@ -10,7 +10,7 @@
 
 1. **Prepare the Motor and Wires**  
      Take the motor out of the box.  
-     Use a wire cutter to remove the original connectors.
+     Use a wire cutter to remove the original connectors.  
      ![oldconnec](../images/oldconnector.jpg)
 2. **Strip the Wire Insulation**  
      Use a wire stripper to remove about 3mm of insulation.
@@ -23,8 +23,8 @@
     ![Connector Cone](../images/connectorcone.jpeg)
      Secure the wire and connector by using a heavy object to press down on the wire and another object to hold the connector in place.
 
-4. **Prepare the Soldering Iron**
-     Turn on the fume extractor/fan and your solder iron
+4. **Prepare the Soldering Iron**  
+     Turn on the fume extractor/fan and your solder iron  
      Set the soldering iron to **400°C (750°F)**.  
      Clean the tip of the soldering iron and apply solder around it to tin the tip (*important*).
 
@@ -46,9 +46,9 @@
 
 7. **Apply Heat Shrink Tubing**  
      Slide a heat shrink tube of proper diameter and length onto the connector.  
-     Pull it down to cover the circular bulge on the connector. 
+     Pull it down to cover the circular bulge on the connector.  
      ![heatshrink](../images/heatshrink.jpg) 
-     Use a heat gun to shrink the tubing until it fully adheres to the joint.
+     Use a heat gun to shrink the tubing until it fully adheres to the joint.  
      ![heatgun](../images/heatgun.jpg)  
 
 8. **Repeat for Remaining Connectors**  
@@ -59,7 +59,7 @@
      Once all connectors are properly soldered and secured, the motor is ready for commissioning.
      ![newconec](../images/newconnector.jpg)
 
-10. **Clean up**
+10. **Clean up**  
    Turn off devices  
    Dispose of all the litter  
    We use lead-free solder but we treat it as leaded, so don't forget to wash hands
