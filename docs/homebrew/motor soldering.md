@@ -1,8 +1,3 @@
-# Drone Building Documentation
-
-## Reason?(add later)
-
-## Components Breakdown of our drones (add later)
 
 # Motor Soldering Guide
 
