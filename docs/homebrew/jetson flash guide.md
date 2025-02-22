@@ -11,10 +11,11 @@
 ## Steps:
 
 ### 1. Install SDK Manager  
-Download and install **SDK Manager (SDK)** from Nvidia.  
+Download and install [**SDK Manager (SDK)**](https://developer.nvidia.com/sdk-manager) from Nvidia.  
+Create a developer account if you don't have one  
 
 ### 2. Insert the NVMe SSD  
-1. Flip the Jetson.  
+1. Flip the Jetson, use the longer slot to insert the SSD.  
 2. Insert the SSD at a 45-degree angle.  
 3. Press down the free end and tighten the screw to secure it.  
 
@@ -35,7 +36,8 @@ On the **Step 1** page of SDK Manager, select:
 - **System Configuration:**  
 - **Host Machine:** Ubuntu 22.04-x86  
 - **Target Hardware:** Jetson Orin Nano 8GB Dev Kit (**Module Number: P3767-0005**)  
-- **SDK Version:** JetPack 6.0 (Rev. 2) *(Includes CUDA version 12.2)*  
+- **SDK Version:** **JetPack 6.0 (Rev. 2)** *(Includes CUDA version 12.2)*  
+> **⚠️ Important:**JetPack 6.0 is NOT automatically selected, click on the ... to select**.  
 - Additional SDK is optional.  
 
 ### 6. Configure Installation (Step 2)  
@@ -50,11 +52,11 @@ On the pop-up window, configure the following:
 - **Device:** Orin Nano Dev Kit  
 - **OEM Config:** Pre-Config  
 - **User Name:** autonomypark   
-- **Password:** younameit  
+- **Password:** Contact admin (Brandon as of 2025)  
 - **Storage Device:** NVMe  
 
 ### 8. Start Flashing  
-Click **Flash** to begin the process. The system will start downloading—**ignore any connection error messages**.  
+Click **Flash** to begin the process. The system will start downloading—**ignore the connection and disconnection messages**.   
 
 ### 9. Configure Final Settings  
 When flashing completes, a new page will appear. Set the following:  
