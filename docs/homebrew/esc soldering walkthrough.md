@@ -46,8 +46,9 @@
      Repeat steps 2-6 for all three connectors.  
      Inspect the solder joints to ensure quality.  
 
-8. **Commission the Motor**  
-     Once all connectors are properly soldered and secured, the motor is ready for commissioning.
+8. **Commission the ESC**  
+     Once all connectors are properly soldered and secured, the ESC is ready for commissioning.  
+     See below  
      ![newconec](../images/ESC_finish.jpg)
 
 9. **Clean up**  
