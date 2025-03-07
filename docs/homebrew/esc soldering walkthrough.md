@@ -11,8 +11,10 @@
 
 2. **Prepare the Connector**  
      Grab a female connector and place both the wire and connector on a soldering mat.  
-     Align the tip of the wire inside the connector so that the remaining insulation meets the end of the connector. Notice the tip of the cone shown below
-    ![Connector Cone](../images/connectorcone.jpeg)
+     Notice that female connector's end is different  
+     ![Female connector](../images/Female%20connector.jpg)
+     Align the tip of the wire inside the connector so that the remaining insulation meets the end of the connector.
+    ![Connector Cone](../images/fem%20cnctor%20with%20wire.jpg)
      Secure the wire and connector by using a heavy object to press down on the wire and another object to hold the connector in place.
 
 3. **Prepare the Soldering Iron**  
@@ -26,7 +28,7 @@
      Press the solder against the iron—it should melt immediately.  
      Gently push the solder toward the iron to feed it into the joint.  
      Continue feeding until there is enough molten solder to fully cover the wire and any gaps. 
-     ![soldering](../images/feeding%20solder.jpg) 
+     ![soldering](../images/Fem%20solder.jpg) 
      **Caution:** Avoid getting solder on the outer surface of the connector.
 
 5. **Check and Secure the Solder Joint**  
