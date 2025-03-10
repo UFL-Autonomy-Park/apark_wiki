@@ -8,12 +8,14 @@ This guide shows how to configure the network and IP on Bebop2 and how to add th
 
 ## Step 1: Clone GitHub Repository and Edit `shortpress_3.sh` File
 1. **Clone the repository from GitHub:**
-   ```bash
+   ```
    git clone https://github.com/tnaegeli/multiple_bebops.git
+   ```
 2.  **Navigate to the cloned directory**  
     Change your current directory to the cloned repository:
-      ```bash
-	  cd multiple_bebops 
+      ```
+	cd multiple_bebops
+      ```
 3.  **Edit the shortpress_3.sh file to set the SSID, PW, and IP**
     
     -   Open the shortpress_3.sh file in a text editor of your choice.
