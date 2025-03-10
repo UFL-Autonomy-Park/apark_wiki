@@ -29,13 +29,15 @@ This guide shows how to configure the network and IP on Bebop2 and how to add th
 
 1.  **Install adb**  
     If not already installed, install the Android Debug Bridge tools by running:
-     ```bash
-	 sudo apt-get install android-tools-adb 
+     ```
+	 sudo apt-get install android-tools-adb
+     ```
 2.  **Connect adb to the Bebop**  
  Use a USB cable to connect the Bebop to your computer, press the power button on the back of the Bebop and wait for the light to remain solid. You now need to click the button 4 times and you should hear some beeping indication. Then run the following command to establish a connection:
 
-      ```bash
-    adb connect 192.168.43.1:9050
+      ```
+    	adb connect 192.168.43.1:9050
+      ```
    Upon successful connection, the CLI should display a message saying "connected to 192.168.43.1:9050".
    
 
