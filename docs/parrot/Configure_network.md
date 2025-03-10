@@ -8,14 +8,14 @@ This guide shows how to configure the network and IP on Bebop2 and how to add th
 
 ## Step 1: Clone GitHub Repository and Edit `shortpress_3.sh` File
 1. **Clone the repository from GitHub:**
-   ```
-   git clone https://github.com/tnaegeli/multiple_bebops.git
-   ```
+```
+git clone https://github.com/tnaegeli/multiple_bebops.git
+```
 2.  **Navigate to the cloned directory**  
     Change your current directory to the cloned repository:
-      ```
-	cd multiple_bebops
-      ```
+```
+cd multiple_bebops
+```
 3.  **Edit the shortpress_3.sh file to set the SSID, PW, and IP**
     
     -   Open the shortpress_3.sh file in a text editor of your choice.
@@ -29,15 +29,15 @@ This guide shows how to configure the network and IP on Bebop2 and how to add th
 
 1.  **Install adb**  
     If not already installed, install the Android Debug Bridge tools by running:
-     ```
-	 sudo apt-get install android-tools-adb
-     ```
+```
+sudo apt-get install android-tools-adb
+```
 2.  **Connect adb to the Bebop**  
  Use a USB cable to connect the Bebop to your computer, press the power button on the back of the Bebop and wait for the light to remain solid. You now need to click the button 4 times and you should hear some beeping indication. Then run the following command to establish a connection:
 
-      ```
-    	adb connect 192.168.43.1:9050
-      ```
+```
+adb connect 192.168.43.1:9050
+```
    Upon successful connection, the CLI should display a message saying "connected to 192.168.43.1:9050".
    
 
@@ -45,26 +45,32 @@ This guide shows how to configure the network and IP on Bebop2 and how to add th
 
 1.  **Run the copy_files.sh script**  
     From the root of the cloned directory run the script:
-     ```bash
-    ./copy_files.sh`
+```
+./copy_files.sh`
+```
 2.  **Open a Bebop shell using adb**  
 Access the Bebop's shell with: 
-	 ```bash
-    adb shell
+```
+adb shell
+```
 3.  **Navigate to the /etc/init.d directory and edit the rcS file**
-     ```bash
-    nano /etc/init.d/rcS
+```
+nano /etc/init.d/rcS
+```
 4.  **Add the following line to the end of the file**  
     Append the following line to ensure the shortpress_3.sh script runs on boot:
-	```bash
-	    ./bin/onoffbutton/shortpress_3.sh
+```
+./bin/onoffbutton/shortpress_3.sh
+```
 5. **Now disconnect adb, and unplug and restart the bebop**
-	```bash
-	    adb disconnect
+```
+adb disconnect
+```
 ## Notes
 
 -   Ensure all IP addresses assigned to Bebops are unique and within the correct range as specified in the IP reservations document.
 -   If you encounter issues with adb, verify that the Bebop is powered on and properly connected via USB.
 - If you have any issues with read/write privelages run this command. It should already be called when you run the copy_files script.
-	```bash
-	    adb shell mount -o remount,rw /
+```
+adb shell mount -o remount,rw /
+```
