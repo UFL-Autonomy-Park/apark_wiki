@@ -1,7 +1,3 @@
-﻿
-markdown
-
-
 # Configuring the WiFi on Bebops
 
 This guide shows how to configure the network and IP on Bebop2 and how to add that script to boot so that the IP does not need to be manually set every use.
@@ -49,7 +45,6 @@ adb connect 192.168.43.1:9050
 ./copy_files.sh`
 ```
 2.  **Open a Bebop shell using adb**  
-Access the Bebop's shell with: 
 ```
 adb shell
 ```
