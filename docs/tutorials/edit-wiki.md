@@ -28,7 +28,11 @@ pip install mkdocs-material
 
 This will automatically install compatible versions of all dependencies: MkDocs, Markdown, Pygments and Python Markdown Extensions.
 
+## Formatting
+
 We use Markdown for all files in the Wiki. Markdown is easy-to-use FOSS markup language you can use to format virtually any document. See the [Markdown Guide](https://www.markdownguide.org/) for more info on syntax.
+
+## Make a New Page
 
 If you want to get started with the Wiki, ask the admin to be added to the [GitHub repo for the wiki](https://github.com/uflautonomypark/apark-wiki). Once you are added to the repo, pull using
 
