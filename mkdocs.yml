@@ -3,6 +3,8 @@ theme:
   name: material
   favicon: images/favicon.ico
   logo: images/uf-logo.png
+  features:
+    - content.code.copy
 extra:
   generator: false
 extra_css:
