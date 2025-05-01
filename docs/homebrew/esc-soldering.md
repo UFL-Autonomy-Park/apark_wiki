@@ -1,61 +1,101 @@
-
 # Electronic Speed Controller (ESC) Soldering Guide
 
-## The steps are basically the same as the motors, but we are soldering female connectors instead
+The steps are similar to motor soldering, but **we are using female connectors instead**.
 
-1. **Prepare the ESC and Wires**  
-     Take the ESC out of the box.  
-     Don't remove extra insulation from the wire unless you have to re-solder  
-     **Caution:** Try to succeeed at once due to cables being significantly shorter  
-     ![ESC on table](../images/ESC_unsolder.jpg)   
+---
 
-2. **Prepare the Connector**  
-     Grab a female connector and place both the wire and connector on a soldering mat.  
-     Notice that female connector's end is different  
-     ![Female connector](../images/Female%20connector.jpg)
-     Align the tip of the wire inside the connector so that the remaining insulation meets the end of the connector.
-    ![Connector Cone](../images/fem%20cnctor%20with%20wire.jpg)
-     Secure the wire and connector by using a heavy object to press down on the wire and another object to hold the connector in place.
+## 1. Prepare the ESC and Wires
 
-3. **Prepare the Soldering Iron**  
-     Turn on the fume extractor/fan and your solder iron  
-     Set the soldering iron to **400°C (750°F)**.  
-     Clean the tip of the soldering iron and apply solder around it to tin the tip (*important*).
-
-4. **Solder the Wire to the Connector**  
-     Press the iron at the point where the wire and connector meet.  
-     **Caution:** The iron should never touch the connector's end.  
-     Press the solder against the iron—it should melt immediately.  
-     Gently push the solder toward the iron to feed it into the joint.  
-     Continue feeding until there is enough molten solder to fully cover the wire and any gaps. 
-     ![soldering](../images/Fem%20solder.jpg) 
-     **Caution:** Avoid getting solder on the outer surface of the connector.
-
-5. **Check and Secure the Solder Joint**  
-     Lift the soldering iron and allow the solder to cool.  
-     If the result is unsatisfactory, repeat steps 5-6 to reshape or add more solder.  
-     Once properly soldered, let it cool and use pliers to grab the connector end and gently pull to test its strength.
-     ![goodsolder](../images/Good%20solder.jpg)
-
-6. **Apply Heat Shrink Tubing**  
-     Slide a heat shrink tube of proper diameter and length onto the connector.  
-     Pull it down to cover the circular bulge on the connector.  
-     ![heatshrink](../images/heatshrink.jpg) 
-     Use a heat gun to shrink the tubing until it fully adheres to the joint.  
-     ![heatgun](../images/heatgun.jpg)  
-
-7. **Repeat for Remaining Connectors**  
-     Repeat steps 2-6 for all three connectors.  
-     Inspect the solder joints to ensure quality.  
-
-8. **Commission the ESC**  
-     Once all connectors are properly soldered and secured, the ESC is ready for commissioning.  
-     See below  
-     ![newconec](../images/ESC_finish.jpg)
-
-9. **Clean up**  
-   Turn off devices  
-   Dispose of all the litter  
-   We use lead-free solder but we treat it as leaded, so don't forget to wash hands
+- Take the ESC out of the box.
+- **Do not remove insulation** unless re-soldering is necessary.
+!!! warning
+     Wires are short—try to get it right on the first attempt.
 
 
+![ESC on table](../images/ESC_unsolder.jpg){ width="300" }
+
+---
+
+## 2. Prepare the Connector
+
+- Grab a **female connector**.
+- Place both the wire and connector on a soldering mat.
+- Note that the **female connectors' end is different** than the male version.
+
+![Female connector](../images/Female%20connector.jpg){ width="300" }
+
+- Align the wire tip inside the connector so the insulation meets the end of the connector.
+
+![Connector Cone](../images/fem%20cnctor%20with%20wire.jpg){ width="300" }
+
+- Use a heavy object to secure the wire, and another to hold the connector in place.
+
+---
+
+## 3. Prepare the Soldering Iron
+
+- Turn on the **fume extractor** or fan.
+- Set your soldering iron to **400°C (750°F)**.
+- Clean the tip and **tin it** by applying solder before use.
+
+---
+
+## 4. Solder the Wire to the Connector
+
+!!! warning
+     Avoid touching the connector’s end with the iron.
+
+- Press the iron where the wire and connector meet.
+- Touch the solder to the iron—it should melt immediately.
+- Feed solder into the joint until it fully covers the wire and fills all gaps.
+
+![Soldering](../images/Fem%20solder.jpg){ width="300" }
+
+!!! warning
+     Avoid soldering the outer surface of the connector.
+
+---
+
+## 5. Check and Secure the Solder Joint
+
+- Remove the iron and allow the solder to cool.
+- If unsatisfactory, reheat and add solder as needed.
+- Use pliers to gently pull the connector and verify it’s firmly attached.
+
+![Good solder](../images/Good%20solder.jpg){ width="300" }
+
+---
+
+## 6. Apply Heat Shrink Tubing
+
+- Slide a correctly sized heat shrink tube over the joint.
+- Position it to cover the connector’s circular bulge.
+
+![Heat shrink](../images/heatshrink.jpg){ width="300" }
+
+- Use a heat gun to shrink the tubing until it’s snug.
+
+![Heat gun](../images/heatgun.jpg){ width="300" }
+
+---
+
+## 7. Repeat for Remaining Connectors
+
+- Repeat steps **2–6** for all **three ESC wires**.
+- Inspect all solder joints for quality and consistency.
+
+---
+
+## 8. Commission the ESC
+
+- Once all connectors are soldered and secured, the ESC is ready for commissioning.
+
+![Finished connectors](../images/ESC_finish.jpg){ width="300" }
+
+---
+
+## 9. Clean Up
+
+- Turn off all equipment.
+- Dispose of leftover materials.
+- Although we use **lead-free solder**, treat it as **leaded**.  🧼 **Wash your hands thoroughly.**

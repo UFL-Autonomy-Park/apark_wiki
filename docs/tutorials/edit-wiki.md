@@ -18,10 +18,10 @@ python get-pip.py
 pip install mkdocs
 ```
 
-Run `mkdocs --version` to make sure everything installed OK. If you are using Windows and the above command didn't work, try `python -m pip install mkdocs`. You may also need the `mkdocs-pdf` plugin. Install using pip:
+Run `mkdocs --version` to make sure everything installed OK. If you are using Windows and the above command didn't work, try `python -m pip install mkdocs`. You also need the `mkdocs-pdf` and `mkdocs-glightbox` plugins. Install using pip:
 
 ```
-pip install mkdocs-pdf
+pip install mkdocs-pdf && pip install mkdocs-glightbox
 ```
 
 We use the [Material](https://squidfunk.github.io/mkdocs-material/getting-started/) theme on top of MKDocs (makes site look nice). Run the following to install:
