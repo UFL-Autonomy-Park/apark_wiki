@@ -1,89 +1,125 @@
 # Configuring the WiFi on Bebops
 
-This guide shows how to configure the network and IP on Bebop2 and how to add that script to boot so that the IP does not need to be manually set every use.
+> Configure the network and IP on Bebop 2 drones and make changes persistent by adding them to the boot sequence.
 
-## Step 1: Clone GitHub Repository and Edit `shortpress_3.sh` File
+---
 
-1. **Clone the repository from GitHub:**
+## Step 1: Clone GitHub Repository and Edit `shortpress_3.sh`
 
-```
+---
+
+### 1. Clone the repository:
+
+```bash
 git clone https://github.com/tnaegeli/multiple_bebops.git
 ```
 
-2.  **Navigate to the cloned directory**  
-    Change your current directory to the cloned repository:
+---
 
-```
+### 2. Navigate to the cloned directory:
+
+```bash
 cd multiple_bebops
 ```
 
-3.  **Edit the shortpress_3.sh file to set the SSID, PW, and IP**
+---
 
-    - Open the shortpress_3.sh file in a text editor of your choice.
-    - Set the following variables:
-      - SSID: NCRLab
-      - PW: jollypiano265
-      - IP: 192.168.1.1XX
-    - Ensure the IP address is in the same range as the other Bebops. Refer to the **Autonomy Park NCR Lab IP Reservations** document on Google Drive for the correct IP ranges. Once finished you will also need to add the new IP to the list.
+### 3. Edit `shortpress_3.sh` to set SSID, password, and static IP:
 
-## Step 2: Connect to the Bebop using Android Debug Bridge (adb)
+- Open `shortpress_3.sh` in a text editor.
+- Modify the following variables:
 
-1.  **Install adb**  
-    If not already installed, install the Android Debug Bridge tools by running:
+  ```
+  SSID: NCRLab
+  PW: jollypiano265
+  IP: 192.168.1.1XX
+  ```
 
-```
+- The IP must be in the correct range—refer to the **Autonomy Park NCR Lab IP Reservations** document on Google Drive.
+- After configuring, **add the new IP** to the reservations list.
+
+---
+
+## Step 2: Connect to the Bebop Using Android Debug Bridge (ADB)
+
+---
+
+### 1. Install `adb` (if not installed):
+
+```bash
 sudo apt-get install android-tools-adb
 ```
 
-2.  **Connect adb to the Bebop**  
-    Use a USB cable to connect the Bebop to your computer, press the power button on the back of the Bebop and wait for the light to remain solid. You now need to click the button 4 times and you should hear some beeping indication. Then run the following command to establish a connection:
+---
 
-```
+### 2. Connect `adb` to the Bebop:
+
+- Connect the Bebop to your computer via USB.
+- Power on the Bebop and wait for the LED to remain solid.
+- Press the power button **four times** until you hear the beeping sound.
+- Then run:
+
+```bash
 adb connect 192.168.43.1:9050
 ```
 
-Upon successful connection, the CLI should display a message saying "connected to 192.168.43.1:9050".
+- A successful message should read:  
+  `connected to 192.168.43.1:9050`
 
-## Step 3: Run Script and add to boot
+---
 
-1.  **Run the copy_files.sh script**  
-    From the root of the cloned directory run the script:
+## Step 3: Run Script and Add to Boot
 
+---
+
+### 1. Run the file copy script:
+
+```bash
+./copy_files.sh
 ```
-./copy_files.sh`
-```
 
-2.  **Open a Bebop shell using adb**
+---
 
-```
+### 2. Open a shell on the Bebop:
+
+```bash
 adb shell
 ```
 
-3.  **Navigate to the /etc/init.d directory and edit the rcS file**
+---
 
-```
+### 3. Edit the boot file:
+
+```bash
 nano /etc/init.d/rcS
 ```
 
-4.  **Add the following line to the end of the file**  
-    Append the following line to ensure the shortpress_3.sh script runs on boot:
+---
 
-```
+### 4. Add this line to the end of the `rcS` file:
+
+```bash
 ./bin/onoffbutton/shortpress_3.sh
 ```
 
-5. **Now disconnect adb, and unplug and restart the bebop**
+---
 
-```
+### 5. Disconnect and reboot the Bebop:
+
+```bash
 adb disconnect
 ```
 
+Unplug the USB and restart the drone.
+
+---
+
 ## Notes
 
-- Ensure all IP addresses assigned to Bebops are unique and within the correct range as specified in the IP reservations document.
-- If you encounter issues with adb, verify that the Bebop is powered on and properly connected via USB.
-- If you have any issues with read/write privelages run this command. It should already be called when you run the copy_files script.
+- Ensure **all Bebop IPs are unique** and in the reserved range.
+- If `adb` isn't working, confirm the drone is powered on and connected via USB.
+- If you encounter file system permission issues, remount the filesystem as writable:
 
-```
+```bash
 adb shell mount -o remount,rw /
 ```
