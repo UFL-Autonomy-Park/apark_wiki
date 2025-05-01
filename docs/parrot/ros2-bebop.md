@@ -13,7 +13,7 @@ The GitHub repo for the `ros2_bebop_driver` can be found [here](https://github.c
 The oldest version of the Bebop firmware that is supported by SDK version 3.1.4 is firmware 4.3.1. Download this version of the firmware [here](https://github-wiki-see.page/m/uavpal/beboptwo4g/wiki/Manual-firmware-upgrade-and-downgrade-of-Parrot-Bebop-2).
 
 !!! note
-If the GitHub repos or Bebop firmware files are no longer available, they are backed up on our NAS. Reach out to the admin for more information.
+	If the GitHub repos or Bebop firmware files are no longer available, they are backed up on our NAS. Reach out to the admin for more information.
 
 If not already installed, instal the Android Deub Bridge tools by running
 
