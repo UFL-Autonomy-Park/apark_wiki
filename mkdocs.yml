@@ -3,17 +3,23 @@ theme:
   name: material
   favicon: images/favicon.ico
   logo: images/uf-logo.png
+  features:
+    - content.code.copy
 extra:
   generator: false
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
   - attr_list
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.pathconverter:
+      base_path: "apark-wiki" # default: ''
+      relative_path: "" # default ''
+      absolute: false # default: false
+      tags: "a script img link object embed"
 plugins:
   - mkdocs-pdf
-markdown_extensions:
-  - pymdownx.pathconverter:
-      base_path: 'apark-wiki' # default: ''
-      relative_path: '' # default ''
-      absolute: false # default: false
-      tags: 'a script img link object embed'
+  - glightbox

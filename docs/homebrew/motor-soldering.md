@@ -1,63 +1,111 @@
-
 # Motor Soldering Guide
 
-## Steps to Solder the Motor Connectors
+Guide for soldering **male connectors** to motor wires.
 
-1. **Prepare the Motor and Wires**  
-     Take the motor out of the box.  
-     Use a wire cutter to remove the original connectors.  
-     ![oldconnec](../images/oldconnector.jpg)
-2. **Strip the Wire Insulation**  
-     Use a wire stripper to remove about 3mm of insulation.
-    ![untwined wire](../images/untwined.jpeg)
-     Twine the exposed wire so no individual strands come loose.
-    ![twined wire](../images/twinedwire.jpeg)
-3. **Prepare the Connector**  
-     Grab a male connector and place both the wire and connector on a soldering mat.  
-     Align the tip of the wire inside the connector so that the remaining insulation meets the end of the connector. Notice the tip of the cone shown below
-    ![Connector Cone](../images/connectorcone.jpeg)
-     Secure the wire and connector by using a heavy object to press down on the wire and another object to hold the connector in place.
+---
 
-4. **Prepare the Soldering Iron**  
-     Turn on the fume extractor/fan and your solder iron  
-     Set the soldering iron to **400°C (750°F)**.  
-     Clean the tip of the soldering iron and apply solder around it to tin the tip (*important*).
+### 1. Prepare the Motor and Wires
 
-5. **Solder the Wire to the Connector**  
-     Press the iron at the point where the wire and connector meet.  
-     **Caution:** The iron should never touch the connector's end. The one below is scrapped 
-    ![scrapped connector](../images/defectip.jpeg)
-     Press the solder against the iron—it should melt immediately.  
-     Gently push the solder toward the iron to feed it into the joint.  
-     Continue feeding until there is enough molten solder to fully cover the wire and any gaps. 
-     ![soldering](../images/feeding%20solder.jpg) 
-     **Caution:** Avoid getting solder on the outer surface of the connector.
+- Take the motor out of the box.
+- Use wire cutters to remove the original connectors.
 
-6. **Check and Secure the Solder Joint**  
-     Lift the soldering iron and allow the solder to cool.  
-     If the result is unsatisfactory, repeat steps 5-6 to reshape or add more solder.  
-     Once properly soldered, let it cool and use pliers to grab the connector end and gently pull to test its strength.
-     ![goodsolder](../images/Good%20solder.jpg)
+![Old connector](../images/oldconnector.jpg){ width="300" }
 
-7. **Apply Heat Shrink Tubing**  
-     Slide a heat shrink tube of proper diameter and length onto the connector.  
-     Pull it down to cover the circular bulge on the connector.  
-     ![heatshrink](../images/heatshrink.jpg) 
-     Use a heat gun to shrink the tubing until it fully adheres to the joint.  
-     ![heatgun](../images/heatgun.jpg)  
+---
 
-8. **Repeat for Remaining Connectors**  
-     Repeat steps 2-7 for all three connectors.  
-     Inspect the solder joints to ensure quality.  
+### 2. Strip the Wire Insulation
 
-9. **Commission the Motor**  
-     Once all connectors are properly soldered and secured, the motor is ready for commissioning.
-     ![newconec](../images/newconnector.jpg)
+- Use a wire stripper to remove about **3mm** of insulation.
 
-10. **Clean up**  
-   Turn off devices  
-   Dispose of all the litter  
-   We use lead-free solder but we treat it as leaded, so don't forget to wash hands
+![Untwined wire](../images/untwined.jpeg){ width="300" }
 
+- Twist the exposed wire so no strands are loose.
 
+![Twined wire](../images/twinedwire.jpeg){ width="300" }
 
+---
+
+### 3. Prepare the Connector
+
+- Grab a **male connector**.
+- Place the wire and connector on a soldering mat.
+- Align the tip of the wire so the insulation meets the connector’s end.
+
+Notice the cone-shaped tip in the image below.
+
+![Connector Cone](../images/connectorcone.jpeg){ width="300" }
+
+- Use a heavy object to press down on the wire and another to secure the connector.
+
+---
+
+### 4. Prepare the Soldering Iron
+
+- Turn on the **fume extractor/fan** and your soldering iron.
+- Set the iron to **400°C (750°F)**.
+- Clean and **tin the tip** by applying solder before use.
+
+---
+
+### 5. Solder the Wire to the Connector
+
+- Press the iron where the wire and connector meet.  
+!!! warning
+     Do not touch the connector’s tip directly — the one below is scrapped.
+
+![Scrapped connector](../images/defectip.jpeg){ width="300" }
+
+- Touch the solder to the iron—it should melt instantly.
+- Feed solder into the joint until the wire is fully covered and gaps are filled.
+
+![Soldering](../images/feeding%20solder.jpg){ width="300" }
+
+!!! warning
+     Avoid soldering the outside surface of the connector.
+
+---
+
+### 6. Check and Secure the Solder Joint
+
+- Lift the iron and let the solder cool.
+- If needed, reheat to adjust or add more solder.
+- Once cooled, test the joint’s strength by gently pulling with pliers.
+
+![Good solder](../images/Good%20solder.jpg){ width="300" }
+
+---
+
+### 7. Apply Heat Shrink Tubing
+
+- Slide a properly sized **heat shrink tube** over the connector.
+- Position it to cover the bulge.
+
+![Heat shrink](../images/heatshrink.jpg){ width="300" }
+
+- Use a heat gun to shrink the tubing snugly.
+
+![Heat gun](../images/heatgun.jpg){ width="300" }
+
+---
+
+### 8. Repeat for Remaining Connectors
+
+- Repeat steps **2–7** for all **three motor wires**.
+- Inspect all solder joints for consistency and quality.
+
+---
+
+### 9. Commission the Motor
+
+- Once all connectors are properly soldered and insulated, the motor is ready for use.
+
+![New connector](../images/newconnector.jpg){ width="300" }
+
+---
+
+### 10. Clean Up
+
+- Turn off all tools and equipment.
+- Dispose of any leftover material or trash.
+- We use **lead-free solder**, but treat it like leaded:
+  🧼 **Wash your hands thoroughly.**

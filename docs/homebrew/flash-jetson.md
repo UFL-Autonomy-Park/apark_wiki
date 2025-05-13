@@ -34,7 +34,8 @@ Launch the SDK Manager on the host machine.
 2. Use the jumper wire to connect the GPIO pins labeled **FC REC** and **GND** (3rd and 4th flat pins from the left).
 3. Connect the **target** to the **power adapter**.
 
-> **⚠️ Important:** Connect everything **in the order listed above** and **keep the jumper wire connected**.
+!!! warning
+     Connect everything **in the order listed above** and **keep the jumper wire connected**.
 
 ### 5. Configure SDK Manager (Step 1)
 
@@ -45,15 +46,17 @@ On the **Step 1** page of SDK Manager, select:
 - **Host Machine:** Ubuntu 22.04-x86
 - **Target Hardware:** Jetson Orin Nano 8GB Dev Kit (**Module Number: P3767-0005**)
 - **SDK Version:** **JetPack 6.0 (Rev. 2)** _(Includes CUDA version 12.2)_
-  > **⚠️ Important:**JetPack 6.0 is NOT automatically selected, click on the ... to select\*\*.
 - Additional SDK is optional.
+!!! warning
+     JetPack 6.0 is NOT automatically selected, click on the **... to select**.
 
 ### 6. Configure Installation (Step 2)
 
 1. Navigate to **Step 2** and check everything on the page (_only Platform Service is optional_).
 2. Select **Agree** and proceed to **Step 3**.
 
-> **⚠️ Caution:** The **target folder** should **not** be linked to a cloud storage.
+!!! warning
+     The **target folder** should **not** be linked to a cloud storage.
 
 ### 7. Set Flashing Parameters
 
