@@ -3,16 +3,18 @@
 ### Step 1: Mount the PDB
 - Place the PDB on the frame using double-sided tape.
 - Use alcohol to clean the contact surfaces first.
-- Make sure it faces the correct direction as shown.
+- Make sure it faces the correct direction as shown, the "front" is marked by the tape in circle
 
-![Frame with PDB](insert-picture-here)
+![Frame with PDB](../images/PDB_on_frame.jpeg)
 
 > **Important:** Use a **flat head soldering iron**.
 
 ### Step 2: Wiring the ESCs
 - We need to use 8 pads on the PDB for 4 ESCs.
-- Follow the diagram below in **counter-clockwise (CCW)** order.
+- Follow the scheme below in **counter-clockwise (CCW)** order.   
+![follow the green arrow](../images/Solder_direc.jpeg)
 
+(The complete diagram is below)  
 ![Wiring Diagram](insert-picture-here)
 
 - Depending on the specific pad, you may need to **pre-bend the ESC wire** so it reaches the pad without excess movement.
