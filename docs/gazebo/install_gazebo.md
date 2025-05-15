@@ -1,3 +1,0 @@
----
-title: Gazebo Installation Instructions
----

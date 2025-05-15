@@ -103,7 +103,7 @@ pip install --user -U empy==3.3.4 pyros-genmsg setuptools
 Setting up PX4 development environment
 ```
 cd
-git clone [https://github.com/PX4/PX4-Autopilot.git](https://github.com/PX4/PX4-Autopilot.git) --recursive
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 ```
 
 To test if PX4 is downloaded properly, run the simulator below (will launch Gazebo drone/world)
@@ -120,7 +120,7 @@ commander takeoff
 
 And the drone should take off! 
 
-Additionally, from QGroundControl, it is possible to manually give set point commands to move the drone (to move to desired point/ rotate around fixed point). Commands from QGroundControl will be visable and executed in the Gazebo simulation. 
+Additionally, from QGroundControl, it is possible to manually give set point commands to move the drone (to move to desired point/ rotate around fixed point). Commands from QGroundControl will be visible and executed in the Gazebo simulation. 
 
 **Note**: For the installation process, stop here in the PX4 document: We don't download Micro XRCE-DDS Agent & Client because we work with MAVROS to communicate with the PX4 (Discussed next).
 
