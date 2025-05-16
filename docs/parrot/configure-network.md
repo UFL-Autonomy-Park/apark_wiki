@@ -123,3 +123,12 @@ Unplug the USB and restart the drone.
 ```bash
 adb shell mount -o remount,rw /
 ```
+
+There is a caveat and I had trouble connecting a Bebop for the first time. You may have to run
+
+```
+ifconfig eth0 192.168.1.XXX netmask 255.255.255.0 up
+```
+
+to assign the desired IP address in the Bebop shell. Then, ping the router at `192.168.1.1` and the Bebop will show up on the TP-Link portal. Once the Bebop connects after you run this command, log into the router and assign the IP reservation for the desired address under Advanced -> DHCP Server. **Don't forget to add the IP to the Google Sheet! (IP Reservations - NCR Lab)**
+

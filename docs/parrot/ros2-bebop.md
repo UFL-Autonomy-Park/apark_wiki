@@ -15,13 +15,13 @@ The oldest version of the Bebop firmware that is supported by SDK version 3.1.4 
 !!! note
 	If the GitHub repos or Bebop firmware files are no longer available, they are backed up on our NAS. Reach out to the admin for more information.
 
-If not already installed, instal the Android Deub Bridge tools by running
+If not already installed, instal the Android Debug Bridge tools by running
 
 ```
 sudo apt-get install android-tools-adb
 ```
 
-Connnect the Bebop to the computer using micro USB. Press the power button on the back of the Bebop once anf wait for the light to become solid. Then click the power button 4 t imes in rapid succession. You should hear a beep. Then, run the following in the terminal to establish connection:
+Connnect the Bebop to the computer using micro USB. Press the power button on the back of the Bebop once anf wait for the light to become solid. Then click the power button 4 times in rapid succession. You should hear a beep. Then, run the following in the terminal to establish connection:
 
 ```
 adb connect 192.168.43.1:9050
@@ -32,6 +32,9 @@ After a successful connection, the CLI should say `connected to 192.168.43.1:905
 ```
 adb shell
 ```
+
+!!! tip
+		If you are *upgrading* the Bebop firmware from an older version, you do not need to modify the `dgwl.txt` file.
 
 Run the following command
 
@@ -67,7 +70,7 @@ Hit `ESC` to exit the insert mode. Save the file by typing
 :wq
 ```
 
-Hit `ENTER`. On an Ubuntu computer, open Files. Clicl "Other Locations" and in the "Enter server address..." field, type `ftp://192.168.42.1` and connect anonymously (No `username` and `password`). Rename the downloaded firmware to `bebop2_update.plf`. Copy the firmware file to `/data/ftp/internal_000` folder of the Bebop. Go back to the `adb shell` and enter
+Hit `ENTER`. On an Ubuntu computer, open Files. Click "Other Locations" and in the "Enter server address..." field, type `ftp://192.168.43.1` and connect anonymously (No `username` and `password`). Rename the downloaded firmware to `bebop2_update.plf`. Copy the firmware file to `/data/ftp/internal_000` folder of the Bebop. Go back to the `adb shell` and enter
 
 ```
 /bin/updater/updater_scan.sh /data/ftp/internal_000
@@ -97,14 +100,7 @@ Finally, reboot the Bebop by entering `reboot` in the `adb shell`. The Bebop wil
 
 ## Network Connection
 
-Follow the directions in the [Configuring the WiFi on Bebops](../parrot/configure-network.md) guide. There is a caveat and I had trouble connecting a Bebop for the first time. You may have to run
-
-```
-sudo ifconfig eth0 192.168.1.XXX netmask 255.255.255.0 up
-```
-
-to assign the desired IP address. Once the Bebop connects after you run this command, log into the router and assign the IP reservation for the desired address. **Don't forget to add the IP to the Google Sheet! (IP Reservations - NCR Lab)**
-
+Follow the directions in the [Configuring the WiFi on Bebops](../parrot/configure-network.md) guide. 
 ## Install Driver
 
 First, create a new workspace:
@@ -144,7 +140,7 @@ cmake ..
 make
 ```
 
-just to get prompted to answer the question. Next, run
+Next, run
 
 ```
 git clone https://github.com/jeremyfix/ros2_bebop_driver.git src/ros2_bebop_driver
