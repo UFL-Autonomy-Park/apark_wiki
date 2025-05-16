@@ -1,4 +1,6 @@
-# Welcome to the Autonomy Park!
+---
+title: Welcome to the UF Autonomy Park!
+---
 
 ## HAVE YOU DONE THE ROS 2 TUTORIALS YET?
 

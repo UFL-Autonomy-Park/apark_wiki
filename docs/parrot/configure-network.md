@@ -27,11 +27,11 @@ cd multiple_bebops
 ### 3. Edit `shortpress_3.sh` to set SSID, password, and static IP:
 
 - Open `shortpress_3.sh` in a text editor.
-- Modify the following variables:
+- Modify the following variables (Fill the NCR wifi password in. It is on the router!):
 
   ```
-  SSID: NCRLab
-  PW: jollypiano265
+  SSID: 'NCRLab'
+  PW: '$NCR_WIFI_PW'
   IP: 192.168.1.1XX
   ```
 
