@@ -96,7 +96,7 @@ nano /etc/init.d/rcS
 
 ---
 
-### 4. Add this line to the end of the `rcS` file:
+### 4. Add this line to the end of the `rcS` file **just above the `exit 0` line**:
 
 ```bash
 ./bin/onoffbutton/shortpress_3.sh
