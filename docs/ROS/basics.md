@@ -9,8 +9,8 @@ The main computer in the NCR lab is managed by UFIT. As such, there are some mor
 
 ### Route DDS Traffic Through Robot Network
 
-!!! warning
-     ALL NEW USERS ON THE NCR BATTLESTATION WILL NEED TO PERFORM THIS STEP. OTHERWISE YOUR NODES WILL NOT WORK.
+!!! note
+    **ALL NEW USERS ON THE NCR BATTLESTATION WILL NEED TO PERFORM THIS STEP. OTHERWISE YOUR NODES WILL NOT WORK.**
 
 To get all ROS traffic to be routed through the robot network run
 ```
@@ -52,7 +52,7 @@ Open a new terminal and run your ROS nodes without any networking issues!
 ### Route DNS Traffic Through UF Network
 
 !!! warning
-     ONLY PERFORM THE FOLLOWING STEPS IF YOU ARE SETTING UP THE COMPUTER OR SOMETHING WITH THE NETWORK IS BROKEN.
+    **ONLY PERFORM THE FOLLOWING STEPS IF YOU ARE SETTING UP THE COMPUTER OR SOMETHING WITH THE NETWORK IS BROKEN.**
 
 To make everything work properly, we use the following `netplan` file. Run `sudo nano /etc/netplan/01-network-manager-all.yaml` and paste the following:
 ```

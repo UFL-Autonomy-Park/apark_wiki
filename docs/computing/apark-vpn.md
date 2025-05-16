@@ -18,6 +18,6 @@ where `$NETWORK` is the placeholder for the Autonomy Park network ID. It should 
 Once you successfully join the network, navigate to the ZeroTier dashboard on the web and find the member that joined most recently. Click the "Edit" button, name your computer (be descriptive). Thne, check the selection box and click "Authorize". 
 
 !!! warning
-		If your local network uses the subnet `192.168.1.XXX` you will run into IP conflicts. We are working on changing this. 
+    If your local network uses the subnet `192.168.1.XXX` you will run into IP conflicts. We are working on changing this. 
 
 Congrats! You are now connected to the Autonomy Park. When you wish to connect/disconnect from ZeroTier, run `sudo systemctl start zerotier-one` or `sudo systemctl stop zerotier-one`, respectively.

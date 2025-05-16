@@ -34,7 +34,7 @@ adb shell
 ```
 
 !!! tip
-		If you are *upgrading* the Bebop firmware from an older version, you do not need to modify the `dgwl.txt` file.
+    If you are **upgrading** the Bebop firmware from an older version, you do not need to modify the `dgwl.txt` file.
 
 Run the following command
 

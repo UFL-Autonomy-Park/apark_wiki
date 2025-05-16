@@ -114,7 +114,7 @@ make px4_sitl gz_x500
 ```
 
 !!! tip
-     If you are on a UF-managed device, gazebo will not like your partition name. To override the illegal `@` in your username, add `export GZ_PARTITION=$YOUR_USERNAME` to your `.bashrc` file.
+    If you are on a UF-managed device, gazebo will not like your partition name. To override the illegal `@` in your username, add `export GZ_PARTITION=$YOUR_USERNAME` to your `.bashrc` file.
 
 With QGroundControl running, there should be no health status problems. To take off the drone to see if it works, in the PX4 terminal type:
 ```
