@@ -67,7 +67,7 @@ We use relative paths for all files. If you want to add a PDF, keep it in the sa
 We keep all images in the `\images` directory. Here is an example:
 
 ```
-![Autonomy Park robots](images/robots.jpg)
+![Autonomy Park robots](images/index/robot-banner.webp)
 ```
 
 To get your changes on the web, write a **detailed** commit message, and push your changes. I wrote a GitHub actions script that will automatically compile the site using `mkdocs`.
