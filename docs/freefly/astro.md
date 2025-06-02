@@ -4,6 +4,21 @@ title: Freefly Astro
 
 # Freefly Astro
 
+!!! warning
+    BEFORE YOU TAKE OFF THE ASTRO, ENSURE THE FOLLOWING SETTINGS ARE CORRECT.
+	```
+	EKF2_EKF2_HGT_MODE = Range sensor
+	EKF2_RNG_AID = Range aid enabled
+	COM_OBL_ACT = Hold mode
+	COM_OBL_RC_ACT = Position mode
+	COM_QC_ACT = Hold mode
+	NAV_RCL_ACT = Land mode
+	COM_LOW_BAT_ACT = Warning
+	RTL_RETURN_ALT = 2.5 M
+	RTL_DESCEND_ALT = 2.5 M
+	```
+	Additionally, in the "Safety" settings, make sure that all RTL and takeoff altitudes are not greater than 2.5m.
+
 ## IP Reservations
 
 | Device Name | Username | IP Address    | Password |
