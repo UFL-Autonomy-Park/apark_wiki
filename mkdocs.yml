@@ -1,8 +1,8 @@
 site_name: Autonomy Park - Wiki
 theme:
   name: material
-  favicon: images/favicon.ico
-  logo: images/uf-logo.png
+  favicon: images/index/favicon.ico
+  logo: images/index/apark-logo.png
   features:
     - content.code.copy
 extra:

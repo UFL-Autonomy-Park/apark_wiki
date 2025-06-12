@@ -2,100 +2,64 @@
 
 The steps are similar to motor soldering, but **we are using female connectors instead**.
 
----
+## Prepare the ESC and Wires
 
-## 1. Prepare the ESC and Wires
+First, take the ESC out of the box. Be careful to **not remove the insulation** from the wires unless re-soldering is absolutely necessary.
 
-- Take the ESC out of the box.
-- **Do not remove insulation** unless re-soldering is necessary.
-!!! warning
-     Wires are short—try to get it right on the first attempt.
+!!! warning "Handle with Care"
+    The wires are short—try to get it right on the first attempt.
 
+![ESC on table](../images/homebrew/esc-unsolder.jpg.jpg){ align="center" width="50%" }
 
-![ESC on table](../images/ESC_unsolder.jpg){ width="300" }
+## Prepare the Connector
 
----
+Grab a **female connector** and place both it and the wire on a soldering mat, noting that the **female connector's end is different** from the male version. Align the wire tip inside the connector cup so the insulation meets the end of the connector, then use heavy objects to secure both the wire and the connector in place.
 
-## 2. Prepare the Connector
+![Female connector](../images/homebrew/female-connector.jpg){ align="center" width="50%" }
+![Connector Cone](../images/homebrew/fem-with-wire.jpg){ align="center" width="50%" }
 
-- Grab a **female connector**.
-- Place both the wire and connector on a soldering mat.
-- Note that the **female connectors' end is different** than the male version.
+## Prepare the Soldering Iron
 
-![Female connector](../images/Female%20connector.jpg){ width="300" }
+To prepare for soldering, turn on the **fume extractor** or a fan. Set your soldering iron to **400°C (750°F)**, then clean the tip and **tin it** by applying a small amount of fresh solder.
 
-- Align the wire tip inside the connector so the insulation meets the end of the connector.
+## Solder the Wire to the Connector
 
-![Connector Cone](../images/fem%20cnctor%20with%20wire.jpg){ width="300" }
+!!! danger "Burn Hazard"
+    Avoid touching the hot end of the connector with the iron.
 
-- Use a heavy object to secure the wire, and another to hold the connector in place.
+Press the hot iron to the joint where the wire and connector meet. Touch the solder directly to this heated joint—it should melt immediately and flow into the cup. Continue to feed solder into the joint until it fully covers the wire and fills any gaps.
 
----
+!!! warning "Ensure a Proper Joint"
+    Avoid soldering the outer surface of the connector; the solder should flow into the cup.
 
-## 3. Prepare the Soldering Iron
+![Soldering the female connector](../images/homebrew/fem-solder.jpg){ align="center" width="50%" }
 
-- Turn on the **fume extractor** or fan.
-- Set your soldering iron to **400°C (750°F)**.
-- Clean the tip and **tin it** by applying solder before use.
+## Check and Secure the Solder Joint
 
----
+Once the joint is filled, remove the iron and allow the solder to cool naturally. If the result is unsatisfactory, you can reheat the joint and add more solder. After it has cooled, use pliers to gently pull the connector to verify it is firmly attached.
 
-## 4. Solder the Wire to the Connector
+![A good, clean solder joint](../images/homebrew/good-solder.jpg){ align="center" width="50%" }
 
-!!! warning
-     Avoid touching the connector’s end with the iron.
+## Apply Heat Shrink Tubing
 
-- Press the iron where the wire and connector meet.
-- Touch the solder to the iron—it should melt immediately.
-- Feed solder into the joint until it fully covers the wire and fills all gaps.
+Slide a correctly sized piece of heat shrink tubing over the finished joint, positioning it to completely cover the connector’s circular bulge. Use a heat gun to shrink the tubing until it is snug and secure.
 
-![Soldering](../images/Fem%20solder.jpg){ width="300" }
+![Heat shrink positioned over the joint](../images/homebrew/heatshrink.jpg){ align="center" width="50%" }
+![Using a heat gun on the tubing](../images/homebrew/heatgun.jpg){ align="center" width="50%" }
 
-!!! warning
-     Avoid soldering the outer surface of the connector.
+## Repeat for Remaining Connectors
 
----
+Repeat these steps for the remaining **three ESC wires**. Once complete, inspect all your solder joints to ensure they are high quality and consistent.
 
-## 5. Check and Secure the Solder Joint
+## Commission the ESC
 
-- Remove the iron and allow the solder to cool.
-- If unsatisfactory, reheat and add solder as needed.
-- Use pliers to gently pull the connector and verify it’s firmly attached.
+Once all connectors are soldered and secured, the ESC is ready for commissioning.
 
-![Good solder](../images/Good%20solder.jpg){ width="300" }
+![Finished ESC connectors](../images/homebrew/esc-finish.jpg){ align="center" width="50%" }
 
----
+## Clean Up
 
-## 6. Apply Heat Shrink Tubing
+To clean up, turn off the soldering iron, heat gun, and fume extractor. Properly dispose of any leftover wire clippings and other waste materials.
 
-- Slide a correctly sized heat shrink tube over the joint.
-- Position it to cover the connector’s circular bulge.
-
-![Heat shrink](../images/heatshrink.jpg){ width="300" }
-
-- Use a heat gun to shrink the tubing until it’s snug.
-
-![Heat gun](../images/heatgun.jpg){ width="300" }
-
----
-
-## 7. Repeat for Remaining Connectors
-
-- Repeat steps **2–6** for all **three ESC wires**.
-- Inspect all solder joints for quality and consistency.
-
----
-
-## 8. Commission the ESC
-
-- Once all connectors are soldered and secured, the ESC is ready for commissioning.
-
-![Finished connectors](../images/ESC_finish.jpg){ width="300" }
-
----
-
-## 9. Clean Up
-
-- Turn off all equipment.
-- Dispose of leftover materials.
-- Although we use **lead-free solder**, treat it as **leaded**.  🧼 **Wash your hands thoroughly.**
+!!! danger "Safety First: Lead Contamination"
+    Although modern solder is often lead-free, it's best practice to treat it as if it contains lead. 🧼 **Wash your hands thoroughly with soap and water.**

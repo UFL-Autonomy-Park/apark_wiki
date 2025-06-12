@@ -2,14 +2,20 @@
 title: New Jetson Setup w/ CUDA, Zed SDK
 ---
 
+!!! tip
+    Make sure to fill in the appropriate wifi passwords for the park and NCR lab. 
+
 ```
 # THIS WILL ONLY WORK FOR JETPACK 6.0 WITH CUDA 12.2
 # WILL ADD ADDITIONAL INFO FOR MAVROS
 
 sudo apt update && sudo apt upgrade
 
-# Wi-Fi
-sudo nmcli device wifi connect "UFLAutonomyPark_5GHz" password "43PrismaticJackalsAte10Huskies!"
+# APark Wi-Fi
+sudo nmcli device wifi connect "UFLAutonomyPark_5GHz" password "$APARK_WIFI_PW"
+
+# NCR Lab Wi-Fi
+sudo nmcli device wifi connect "UFLAutonomyPark_5GHz" password "$NCR_WIFI_PW"
 
 # install terminator
 sudo apt-get install terminator

@@ -9,7 +9,7 @@ Guide for soldering **male connectors** to motor wires.
 - Take the motor out of the box.
 - Use wire cutters to remove the original connectors.
 
-![Old connector](../images/oldconnector.jpg){ width="300" }
+![Old connector](../images/homebrew/old-connector.jpg){ width="300" }
 
 ---
 
@@ -17,11 +17,11 @@ Guide for soldering **male connectors** to motor wires.
 
 - Use a wire stripper to remove about **3mm** of insulation.
 
-![Untwined wire](../images/untwined.jpeg){ width="300" }
+![Untwined wire](../images/homebrew/untwined.jpeg){ width="300" }
 
 - Twist the exposed wire so no strands are loose.
 
-![Twined wire](../images/twinedwire.jpeg){ width="300" }
+![Twined wire](../images/homebrew/twined-wire.jpeg){ width="300" }
 
 ---
 
@@ -33,7 +33,7 @@ Guide for soldering **male connectors** to motor wires.
 
 Notice the cone-shaped tip in the image below.
 
-![Connector Cone](../images/connectorcone.jpeg){ width="300" }
+![Connector Cone](../images/homebrew/connector-cone.jpeg){ width="300" }
 
 - Use a heavy object to press down on the wire and another to secure the connector.
 
@@ -53,12 +53,12 @@ Notice the cone-shaped tip in the image below.
 !!! warning
      Do not touch the connector’s tip directly — the one below is scrapped.
 
-![Scrapped connector](../images/defectip.jpeg){ width="300" }
+![Scrapped connector](../images/homebrew/defect.jpeg){ width="300" }
 
 - Touch the solder to the iron—it should melt instantly.
 - Feed solder into the joint until the wire is fully covered and gaps are filled.
 
-![Soldering](../images/feeding%20solder.jpg){ width="300" }
+![Soldering](../images/homebrew/feeding-solder.jpg){ width="300" }
 
 !!! warning
      Avoid soldering the outside surface of the connector.
@@ -71,7 +71,7 @@ Notice the cone-shaped tip in the image below.
 - If needed, reheat to adjust or add more solder.
 - Once cooled, test the joint’s strength by gently pulling with pliers.
 
-![Good solder](../images/Good%20solder.jpg){ width="300" }
+![Good solder](../images/homebrew/good-solder.jpg){ width="300" }
 
 ---
 
@@ -80,11 +80,11 @@ Notice the cone-shaped tip in the image below.
 - Slide a properly sized **heat shrink tube** over the connector.
 - Position it to cover the bulge.
 
-![Heat shrink](../images/heatshrink.jpg){ width="300" }
+![Heat shrink](../images/homebrew/heatshrink.jpg){ width="300" }
 
 - Use a heat gun to shrink the tubing snugly.
 
-![Heat gun](../images/heatgun.jpg){ width="300" }
+![Heat gun](../images/homebrew/heatgun.jpg){ width="300" }
 
 ---
 
@@ -99,7 +99,7 @@ Notice the cone-shaped tip in the image below.
 
 - Once all connectors are properly soldered and insulated, the motor is ready for use.
 
-![New connector](../images/newconnector.jpg){ width="300" }
+![New connector](../images/homebrew/new-connector.jpg){ width="300" }
 
 ---
 

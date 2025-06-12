@@ -27,11 +27,11 @@ cd multiple_bebops
 ### 3. Edit `shortpress_3.sh` to set SSID, password, and static IP:
 
 - Open `shortpress_3.sh` in a text editor.
-- Modify the following variables:
+- Modify the following variables (Fill the NCR wifi password in. It is on the router!):
 
   ```
-  SSID: NCRLab
-  PW: jollypiano265
+  SSID: 'NCRLab'
+  PW: '$NCR_WIFI_PW'
   IP: 192.168.1.1XX
   ```
 
@@ -96,11 +96,20 @@ nano /etc/init.d/rcS
 
 ---
 
-### 4. Add this line to the end of the `rcS` file:
+### 4. Add this line to the end of the `rcS` file **just above the `exit 0` line**:
 
 ```bash
 ./bin/onoffbutton/shortpress_3.sh
 ```
+
+---
+
+### 5. Run `ifconfig`
+Run the following code in the shell
+```
+ifconfig eth0 192.168.1.XXX netmask 255.255.255.0 up
+```
+where `XXX` is your desired IP.
 
 ---
 
@@ -114,6 +123,13 @@ Unplug the USB and restart the drone.
 
 ---
 
+### 6. Assign static IP to Bebop
+
+
+Now,the Bebop will show up on the TP-Link portal. Once the Bebop connects, log into the router and assign the IP reservation for the desired address under Advanced -> DHCP Server. **Don't forget to add the IP to the Google Sheet! (IP Reservations - NCR Lab)**
+
+---
+
 ## Notes
 
 - Ensure **all Bebop IPs are unique** and in the reserved range.
@@ -123,3 +139,4 @@ Unplug the USB and restart the drone.
 ```bash
 adb shell mount -o remount,rw /
 ```
+
