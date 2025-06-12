@@ -11,7 +11,9 @@ First, clean the contact surfaces on the frame with alcohol. Once dry, place the
 ![Frame with PDB](../images/homebrew/pdb-on-frame.jpeg){ align="center" width="60%" }
 
 !!! tip "Pro Tip"
-    Use a **flat head soldering iron** for better surface contact on the pads.
+    Use a **knife head soldering iron** for better surface contact on the pads.  
+![Solder tip](../images/homebrew/knife_solderiron.jpg){ align="center" width="60%" }  
+    Heat the iron to **850 F** for better heat transfer
 
 ### Wire the ESCs
 
@@ -27,16 +29,14 @@ You will use eight pads on the PDB to connect the four ESCs. It is crucial to so
 
 Follow these steps carefully to ensure a solid and reliable connection. First, clean the soldering iron tip using brass wool. Apply a **tiny bit** of flux only if the brass wool doesn't clean it fully.
 
-**To tin the pad**, touch it with the iron tip and feed in a small amount of solder. Hold the tip in place for about 10 seconds for the solder to melt, then tilt the iron to use its **slanted surface** to spread the solder and completely cover the pad.
+**To tin the pad**, touch it with the iron tip and feed in a small amount of solder. Then, tilt the iron to use its **slanted surface** to spread the solder and completely cover the pad.
 
 !!! warning "Check Soldering Order"
     If pads are not soldered in a counter-clockwise order, there may not be enough physical space to lay the iron flat and use its slanted side effectively on later pads.
 
 **To place the ESC wire**, use tweezers to hold the wire tip on the tinned pad. Press the iron tip against the wire until the solder on both the wire and the pad melts together. If they don't melt easily, apply a tiny bit of flux to aid the process.
 
-**To bond the wire**, hold it steady with tweezers and lift the iron away. The wire should stay put as the solder cools and solidifies.
-
-**To reinforce the joint**, press the slanted surface of the iron onto the bonded wire again and feed in a little more solder to fully cover it. Be careful to **avoid creating solder bridges** to adjacent pads or wires.
+**To reinforce the joint**, keep pressing the iron onto the bonded wire and feed in more solder to fully cover it. Be careful to **avoid creating solder bridges** to adjacent pads or wires.
 
 **To cool and check the joint**, lift the iron and continue holding the wire with tweezers until the solder is completely cool. A good joint will have a **smooth and shiny surface**.
 
