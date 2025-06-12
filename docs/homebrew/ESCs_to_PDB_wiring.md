@@ -23,27 +23,17 @@
 
 ### Step 3: Soldering Procedure
 To get a solid connection, follow these steps:
-
-Clean the soldering iron tip using brass wool. Apply a **tiny bit** of flux if the brass wool doesn’t clean it fully.
-
+Use a Knife Tip as shown below, this geometry works really well.  
+![45Deg Knife ](../images/knife_solderiron.jpg)  
+Clean the soldering iron tip using brass wool. Heat the iron to **850 F**  
 **Tin the pad**:  
    - Touch the pad with the iron tip and feed in a small amount of solder.  
-   - Hold the tip in place for ~10 seconds until the solder melts.  
-   - Tilt the iron and use the **slanted surface** to spread the solder and cover the pad.  
-
-   > ⚠️ **Caution:** If pads are not in CCW order, there may not be enough space to lay the iron and use its slanted side.
-
-**Place the ESC wire**:  
-   - Use tweezers to hold the wire tip on the pad.  
-   - Press the iron tip against it until the solder on the wire and pad both melt.  
-   - If they don’t melt, apply a tiny bit of flux.  
+   - Tilt the iron and use the slanted surface to spread the solder and cover the pad.  
 
 **Bond the wire**:  
-   - Hold the wire in place and lift the iron.  
-   - The wire should stay put as the solder cools.  
-
-**Reinforce the joint**:  
-   - Press the slanted surface of the iron onto the wire again.  
+   - Use tweezers to hold the wire tip on the pad.  
+   - Press the iron tip on it until the solder on the wire and pad both melt.  
+   - If they don’t melt, apply a tiny bit of flux.  
    - Feed in more solder to fully cover the wire.  
    - Be careful to **avoid solder bridges** to other pads or wires.  
 
