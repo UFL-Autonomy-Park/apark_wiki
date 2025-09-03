@@ -96,7 +96,7 @@ title: Freefly Astro
 6.  Now, navigate to the Astro's IP in a web browser and go to the **Apps** section.
 
     !!! info "Example URL"
-        For Astro 1, the URL would be [:material-open-in-new: `http://192.168.1.121/apps`](http://192.168.1.121/apps){ target="_blank" }
+        For Astro 1, the URL would be `http://192.168.1.121/apps`
 
 7.  The `astro_mavros` application should now be listed. Click the gear icon and select **Settings**.
 
