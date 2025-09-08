@@ -4,15 +4,7 @@ title: Edit the Wiki
 
 ## Requirements
 
-To edit the wiki, you will need `python` and `mkdocs`. Download Python [here](https://www.python.org/downloads/).
-
-Once you have Python installed, install pip (package manager for Python):
-
-```
-python get-pip.py
-```
-
-[MKDocs](https://www.mkdocs.org/user-guide/installation/) is a fast and simple **static site generator** that we use to run this Wiki. Install MKDocs using pip:
+To edit the wiki, you will need `python` and `mkdocs`. Download Python [here](https://www.python.org/downloads/). Note that `python` must be on your path for you to be able to open terminal and use pip for installing MKDocs. [MKDocs](https://www.mkdocs.org/user-guide/installation/) is a fast and simple **static site generator** that we use to run this Wiki. Install MKDocs using pip:
 
 ```
 pip install mkdocs
