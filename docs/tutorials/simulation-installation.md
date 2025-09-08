@@ -192,7 +192,7 @@ ros2 launch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ## Troubleshooting
 If you get an error like
 ```
-[mavros_node-1] [WARN] [1757344022.724426630] [astro_sim.guided_target]: PositionTargetGlobal failed because no origin Throught the mavlink console
+[mavros_node-1] [WARN] [1757344022.724426630] [astro_sim.guided_target]: PositionTargetGlobal failed because no origin
 ```
 you need to add some params. Run
 ```
