@@ -6,7 +6,9 @@ For the park, all equipment requires **Linux Ubuntu Version 22.04.5 (Jammy Jelly
 This means keeping the current version when installed and **never updating Ubuntu**.
 
 For a complete tutorial on getting a virtual machine to run Linux locally on Windows for general ROS2 project, see this link: [https://autonomypark.org/ROS/vmware-guide.pdf](https://autonomypark.org/ROS/vmware-guide.pdf). 
-**NOTE:** For the VM, you will have to allocate disk space and for general tutorials/work, 20 GB works well. However, for larger projects working with the PX4 and Gazebo, 20 GB is not sufficient. It's recommended minimum 40GB for allocated space and between 50-60GB allocated for good overall performance.
+
+!!! note
+	For the VM, you will have to allocate disk space and for general tutorials/work, 20 GB works well. However, for larger projects working with the PX4 and Gazebo, 20 GB is not sufficient. It's recommended minimum 40GB for allocated space and between 50-60GB allocated for good overall performance.
 
 ## ROS2 Humble Installation
 
@@ -88,6 +90,22 @@ chmod +x ~/Downloads/QGroundControl.AppImage
 ```
 With this, QGroundControl will be running.
 
+## Gazebo Installation
+PX4 SITL uses [Gazebo Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/). Install using the following commands.
+
+First, install some necessary tools
+```
+sudo apt-get update
+sudo apt-get install curl lsb-release gnupg
+```
+Then install Gazebo Harmonic:
+```
+sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt-get update
+sudo apt-get install gz-harmonic
+```
+
 ## PX4 Installation
 
 The PX4 downloadLink: [https://docs.px4.io/main/en/ros2/user_guide.html](https://docs.px4.io/main/en/ros2/user_guide.html)
@@ -110,6 +128,19 @@ To test if PX4 is downloaded properly, run the simulator below (will launch Gaze
 ```
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 cd PX4-Autopilot/
+make px4_sitl gz_x500
+```
+
+If the `make` command is giving you some issues, run
+```
+sudo apt update
+sudo apt install rapidjson-dev
+```
+
+Then, nuke the build dir and try again
+```
+rm -rf build/px4_sitl_default
+git submodule update --init --recursive
 make px4_sitl gz_x500
 ```
 
