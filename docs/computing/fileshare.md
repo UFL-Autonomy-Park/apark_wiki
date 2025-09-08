@@ -3,7 +3,7 @@
 This will allow you to access all of our shared Autonomy Park files in the TrueNAS file share which has 192 TB of storage.
 
 !!! note
-    The tutorial below for Linux is for accessing the drive via the NFS protocol, while the Windows and macOS ones use SMB. **Both access the same data.** If someone wants to standardize one protocol over the other, feel free.
+    The tutorial below for Linux is for accessing the drive via the NFS protocol, while the Windows and macOS ones use SMB. **Both access the same data.**
 
 ### Preliminaries
 
