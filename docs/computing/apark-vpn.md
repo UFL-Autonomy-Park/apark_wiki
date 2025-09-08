@@ -11,11 +11,11 @@ Navigate to the "ZeroTier" bookmark when signed in to Chrome as the Autonomy Par
     If your local network uses the subnet `192.168.1.XXX` you will run into IP conflicts. We are working on changing this. 
 
 ---
-### Windows
+### Windows and macOS
 
-To install ZeroTier on Windows, go to the official download page at **https://www.zerotier.com/download/** and download and install the client. After installation, the ZeroTier icon will appear in your system tray.
+To install ZeroTier on Windows or macOS, go to the official download page at **https://www.zerotier.com/download/** and download and install the client. After installation, the ZeroTier icon will appear in your system tray.
 
-To connect to a network, right-click the system tray icon and select **"Join New Network."** Paste in the Network ID and click **"Join."** To confirm the connection, right-click the icon again. A checkmark will appear next to the Network ID, confirming a successful connection. To disconnect, click on the connected network item and select **"Disconnect."**
+To connect to a network, right-click (Windows) or click (macOS) on the the system tray icon and select **"Join New Network."** Paste in the Network ID and click **"Join."** To confirm the connection, right-click (Windows) or click (macOS) the icon again. A checkmark will appear next to the Network ID, confirming a successful connection. To disconnect, click on the connected network item and select **"Disconnect."**
 
 
 ---
