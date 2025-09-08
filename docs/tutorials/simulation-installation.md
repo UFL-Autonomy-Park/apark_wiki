@@ -188,3 +188,27 @@ With MAVROS, the PX4 running in a seperate terminal (see above) will connect to 
 source /opt/ros/humble/setup.bash
 ros2 launch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
+
+## Troubleshooting
+If you get an error like
+```
+[mavros_node-1] [WARN] [1757344022.724426630] [astro_sim.guided_target]: PositionTargetGlobal failed because no origin Throught the mavlink console
+```
+you need to add some params. Run
+```
+nano ~/PX4-Autopilot/Tools/simulation/gz/worlds/default.sdf
+```
+and at the bottom in the `<spherical_coordinates>` tag, make it say
+```
+<spherical_coordinates>
+	<surface_model>EARTH_WGS84</surface_model>
+	<world_frame_orientation>ENU</world_frame_orientation>
+	<latitude_deg>29.6282703</latitude_deg>
+	<longitude_deg>-82.3606036</longitude_deg>
+	<elevation>30.861857569478296</elevation>
+</spherical_coordinates>
+```
+You may also need to set the origin each time you boot the PX4 sim. To do this, in the PX4 terminal, run
+```
+commander set_ekf_origin 29.6282703 -82.3606036 30.861857569478296
+```
