@@ -24,7 +24,7 @@ Fill it out and submit using these values:
 
 - Request Type: **Room and/or Building Access**
 - Access Type: **Room Only**
-- Building(s): **MAE-B**
-- Rooms: **325**
+- Building(s): **MAE-A**
+- Rooms: **313**
 - Supervisor: **Your advisor** (or Warren Dixon if not MAE)
 - Details/Justification: **Lab access for robotics research**
