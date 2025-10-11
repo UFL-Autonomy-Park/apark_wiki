@@ -190,4 +190,4 @@ If you encounter an issue not covered here, or if a procedure does not yield the
 For general drone building and hardware reviews, the author recommends Joshua Bardwell on YouTube as a highly respected and knowledgeable source.
 
 ## 10. A Note on Procurement
-To the best of our knowledge, nearly all hobbyist RC hardware is manufactured in China. Be aware that university and grant funding may have restrictions on purchasing electronics from these sources. Plan accordingly, as these purchases may need to be made with personal or non-grant funds.
+To the best of our knowledge, nearly all hobbyist RC hardware is manufactured in China. Be aware that university and grant funding may have restrictions on purchasing electronics from these sources. Plan accordingly.
