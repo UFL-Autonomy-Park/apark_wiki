@@ -113,7 +113,7 @@ This section covers the essential procedures for operating our legacy FrSky equi
 Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 v2.1.0 FCC). You can flash the receiver directly from the Taranis.
 
 **Required:**
-- A 3-wire servo cable or 3 appropriately colored Dupont cables.
+- 3 appropriately colored Dupont cables. A servo cable will not work because the cable orientations do not match.
 - The correct receiver firmware `.frk` file downloaded from [https://www.frsky-rc.com/](https://www.frsky-rc.com/) and placed on the transmitter's SD card in the `[FIRMWARE]` folder.
 
 > **Note: Verify Your Firmware File.** The firmware file for the X8R receiver is **different** from the one for the transmitter's internal XJT module. They are not interchangeable. Flashing the wrong firmware to the receiver can prevent it from binding or render it inoperable. Always double-check that you are selecting the `X8R` firmware file (and not the `XJT` file) before you select "Flash external module."
@@ -121,7 +121,7 @@ Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 
 **Procedure:**
 1. Power everything off. Ensure the receiver is disconnected from the flight controller.
 2. Connect the servo cable to the receiver's S.Port (not S.BUS or any PWM channel).
-3. Connect the other end of the servo cable to the pins in the external module bay on the back of the Taranis. Ensure the signal, power, and ground pins are correctly oriented.
+3. Connect the other end of the servo cable to the pins in the external module bay on the back of the Taranis. Ensure the signal, power, and ground pins are correctly oriented. Look this up for the Taranis! The X8R's pins are labeled.
 4. Turn on the Taranis transmitter.
 5. Long-press the MENU button to access Radio Setup. Press PAGE to navigate to the SD-HC CARD screen.
 6. Navigate to the `[FIRMWARE]` folder and select the correct X8R firmware file.
