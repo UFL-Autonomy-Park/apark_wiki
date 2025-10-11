@@ -93,7 +93,7 @@ For all these reasons, while we will maintain our current setup, any hardware fa
 The RC community has moved to a fully open-source, higher-performance ecosystem. This is the required standard for all new lab purchases.
 
 **GUI Software**: EdgeTX: The community-led successor to OpenTX. It is actively developed and supports modern hardware.
-**Protocol**: ExpressLRS (ELRS): This is the new open standard for RC links. It offers vastly superior range, lower latency, and more features than any FrSky protocol.
+**Protocol**: ExpressLRS (ELRS): This is the new open standard for RC links.
 
 ### Recommended Hardware:
 - **Transmitter**: RadioMaster TX16S or RadioMaster Boxer, with an internal ELRS module. These offer superior features to the Taranis for a fraction of the cost of new FrSky gear. A budget of under $300 is sufficient.
@@ -116,6 +116,8 @@ Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 
 - A 3-wire servo cable or 3 appropriately colored Dupont cables.
 - The correct receiver firmware `.frk` file downloaded from [https://www.frsky-rc.com/](https://www.frsky-rc.com/) and placed on the transmitter's SD card in the `[FIRMWARE]` folder.
 
+> **Note: Verify Your Firmware File.** The firmware file for the X8R receiver is **different** from the one for the transmitter's internal XJT module. They are not interchangeable. Flashing the wrong firmware to the receiver can prevent it from binding or render it inoperable. Always double-check that you are selecting the `X8R` firmware file (and not the `XJT` file) before you select "Flash external module."
+
 **Procedure:**
 1. Power everything off. Ensure the receiver is disconnected from the flight controller.
 2. Connect the servo cable to the receiver's S.Port (not S.BUS or any PWM channel).
@@ -127,7 +129,24 @@ Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 
 8. Select "Flash external module." The flashing process will begin. Do not disconnect power.
 9. Once the "Flashing successful" message appears, you can power everything down and disconnect the cable.
 
-### 5.2 Binding the X8R to the Taranis
+### 5.2 Flashing Firmware on the Internal XJT Module
+Just as the receiver requires specific firmware, the transmitter's internal XJT module must also be running the correct version to ensure a successful bind. The process is nearly identical to flashing a receiver, but you select a different option in the radio's menu.
+
+> **Note: Verify Your Firmware File.** The firmware file for the internal XJT module is **different** from the one for the X8R receiver. They are not interchangeable. Flashing receiver firmware to the transmitter module (or vice-versa) is possible and there are no safeguards to stop you. Always double-check that you are selecting the `XJT` firmware file for this procedure.
+
+**Required:**
+- The correct XJT module firmware `.frk` file downloaded from frsky-rc.com and placed on the transmitter's SD card in the `[FIRMWARE]` folder.
+
+**Procedure:**
+1.  Turn on the Taranis transmitter.
+2.  Long-press the **MENU** button to access Radio Setup. Press **PAGE** repeatedly to navigate to the **SD-HC CARD** screen.
+3.  Navigate into the `[FIRMWARE]` folder and locate the correct **XJT** firmware file you downloaded.
+4.  Highlight the file and long-press the **ENT** button to open the context menu.
+5.  Select the option **"Flash internal module."**
+6.  The flashing process will begin. Do not power off the transmitter.
+7.  Once the "Flashing successful" message appears, press **EXIT**. It is good practice to power cycle the transmitter.
+
+### 5.3 Binding the X8R to the Taranis
 1. Power everything off. 
 2. Physically disconnect the receiver from the flight controller.
 3. Turn on the Taranis transmitter. Use the PAGE button to navigate to the MODEL SETUP screen for your drone.
@@ -143,7 +162,7 @@ Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 
 13. The receiver should now show a solid green LED, indicating a successful and active link.
 14. You may now power off the transmitter and drone in any order. If Telemetry was enabled, the transmitter will warn you a receiver is still connected before powering off if you are powering it off first.
 
-### 5.3 Initial Setup in OpenTX & PX4
+### 5.4 Initial Setup in OpenTX & PX4
 - **Model Profiles**: In OpenTX, each aircraft has its own "model" profile. This profile stores all settings, including switch assignments, trims, and which receiver number it's bound to. Switching models in OpenTX makes the transmitter look for a different receiver; it does not unbind the previous one. Note: Model profiles cannot be directly transferred between different transmitter models (e.g., Taranis to RadioMaster) or even between different Taranis models running the same OpenTX version due to hardware differences.
 - **Switches**: To use a switch, it must be configured in three places in OpenTX: HARDWARE, MIXER, and OUTPUTS.
 - **Sounds**: Audio files for alerts are stored on the SD card in the `[SOUNDS]` folder. These can be assigned to switch positions or events in the SPECIAL FUNCTIONS menu. You may consider adding your own if the built-in one are imprecise for your needs. The author’s favorite is the [Open-TX-Portal-Voice-Pack](https://github.com/jarethmt/Open-TX-Portal-Voice-Pack).
