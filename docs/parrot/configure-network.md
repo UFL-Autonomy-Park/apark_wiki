@@ -94,11 +94,12 @@ adb shell
 vi /etc/init.d/rcS
 ```
 
+To write to file, using vim type __I__ to enter insert mode. 
+To save and exit vim press __escape__ to exit insert mode, then __:wq__ to write to file and exit.
+
 ---
 
-### 4. Add this line to the end of the `rcS` file **just above the `exit 0` line. To write to the file type **I to enter insert mode. 
-
-To save and exit vim press **escape to exit insert mode, then **:wq to write to file and exit.**:
+### 4. Add this line to the end of the `rcS` file just above the `exit 0` line.
 
 ```bash
 ./bin/onoffbutton/shortpress_3.sh
@@ -109,9 +110,9 @@ To save and exit vim press **escape to exit insert mode, then **:wq to write to 
 ### 5. Run `ifconfig`
 Run the following code in the shell
 ```
-ifconfig eth0 192.168.1.XXX netmask 255.255.255.0 up
+ifconfig eth0 192.168.1.1XX netmask 255.255.255.0 up
 ```
-where `XXX` is your desired IP.
+where `1XX` is your desired IP.
 
 ---
 
@@ -141,4 +142,5 @@ Now,the Bebop will show up on the TP-Link portal. Once the Bebop connects, log i
 ```bash
 adb shell mount -o remount,rw /
 ```
-- ADB tends to not actually disconnect from devices even after running *adb disconnect. You can force a disconnect using: 'adb kill-server'
+ADB tends to not actually disconnect from devices even after running `adb disconnect`. You can force a disconnect using: `adb kill-server`.
+
