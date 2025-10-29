@@ -88,15 +88,17 @@ adb shell
 
 ---
 
-### 3. Edit the boot file:
+### 3. Edit the boot file using vim:
 
 ```bash
-nano /etc/init.d/rcS
+vi /etc/init.d/rcS
 ```
 
 ---
 
-### 4. Add this line to the end of the `rcS` file **just above the `exit 0` line**:
+### 4. Add this line to the end of the `rcS` file **just above the `exit 0` line. To write to the file type **I to enter insert mode. 
+
+To save and exit vim press **escape to exit insert mode, then **:wq to write to file and exit.**:
 
 ```bash
 ./bin/onoffbutton/shortpress_3.sh
@@ -139,4 +141,4 @@ Now,the Bebop will show up on the TP-Link portal. Once the Bebop connects, log i
 ```bash
 adb shell mount -o remount,rw /
 ```
-
+- ADB tends to not actually disconnect from devices even after running *adb disconnect. You can force a disconnect using: 'adb kill-server'
