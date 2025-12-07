@@ -6,13 +6,13 @@ There's a number of accessory wires needed for the drone, some can be used out o
 
 From top to bottom, the wires are:  
 - **GPS Connector** *(OB)*  
-- [**CAN bus power**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)  
-- [**PX4 to CAN**](https://www.youtube.com/watch?v=dQw4w9WgXcQ) *(short wire)*  
+- [**CAN bus power**]()  
+- [**PX4 to CAN**]() *(short wire)*  
 - **Optic flow** *(OB)*  
-- [**Lidar**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)  
-- [**Landing gears**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)  
-- [**FTDI to USB**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)  
-- [**Jetson Power**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [**Lidar**]()  
+- [**Landing gears**]()  
+- [**FTDI to USB**]()  
+- [**Jetson Power**]()
 
 
 Other OB wires are:
