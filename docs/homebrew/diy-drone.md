@@ -48,10 +48,6 @@ WantedBy=multi-user.target
 
 `start_mavros.sh` located at `\home\yourusername`
 
-## MAVROS Parameters
-
-MAVROS parameters (including tuned PID gains) can be found [here](../../homebrew/homebrew.params)
-
 ## Manuals
 
 [Battery Manual](../../homebrew/tattu-manual.pdf)
