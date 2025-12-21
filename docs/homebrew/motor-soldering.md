@@ -1,4 +1,7 @@
-# Motor Soldering Guide
+---
+title: Motor Soldering Guide
+---
+
 
 Guide for soldering **male connectors** to motor wires.
 
