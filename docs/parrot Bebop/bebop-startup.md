@@ -1,5 +1,5 @@
 ---
-title: NCR Lab Bebop Minimal Startup
+title: Minimal Startup
 ---
 
 The `ncr_bebop` repo on the Gitea server contains all of the necessary packages for a minimal startup, joy control, and setpoint control for the Parrot Bebop 2 drones in the NCR lab. To build all packages and install the ROS2 driver for the Bebop, follow the instructions in the [ROS 2 Bebop Autonomy (Driver Support)](../parrot/ros2-bebop.md) guide.
