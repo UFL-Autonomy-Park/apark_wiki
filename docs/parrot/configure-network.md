@@ -116,7 +116,14 @@ where `1XX` is your desired IP.
 
 ---
 
-### 5. Disconnect and reboot the Bebop:
+### 6. Exit the adb shell
+You're in a shell within a shell. Type
+```
+exit
+```
+to get back to bash.
+
+### 7. Disconnect and reboot the Bebop:
 
 ```bash
 adb disconnect
@@ -126,7 +133,7 @@ Unplug the USB and restart the drone.
 
 ---
 
-### 6. Assign static IP to Bebop
+### 8. Assign static IP to Bebop
 
 
 Now,the Bebop will show up on the TP-Link portal. Once the Bebop connects, log into the router and assign the IP reservation for the desired address under Advanced -> DHCP Server. **Don't forget to add the IP to the Google Sheet! (IP Reservations - NCR Lab)**
