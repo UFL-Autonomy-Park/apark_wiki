@@ -1,4 +1,4 @@
-# Accessory wires overview
+# Accessory Wires Overview
 
 There's a number of accessory wires needed for the drone, some can be used out of the box(OB) and the other need modifications. The picture below shows all the modified wires and a few OB wires, use the hyperlink for detailed mod instruction.
 
