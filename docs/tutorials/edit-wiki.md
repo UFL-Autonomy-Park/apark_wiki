@@ -36,7 +36,13 @@ If you want to get started with the Wiki, ask the admin to be added to the [GitH
 git clone https://github.com/uflautonomypark/apark-wiki.git
 ```
 
-Navigate to the `\apark-wiki` directory and run `mkdocs serve`. Open up http://127.0.0.1:8000/ in your browser, and you'll see the Wiki home page being displayed.
+Navigate to the `\apark-wiki` directory and run
+
+```
+mkdocs serve
+```
+
+Open up http://127.0.0.1:8000/ in your browser, and you'll see the Wiki home page being displayed.
 
 To add a page to the Wiki, either create a folder (this will show up as a nav item in the sidebar) and add a `.md` file to the folder, or add a `.md` file to an existing directory.
 
