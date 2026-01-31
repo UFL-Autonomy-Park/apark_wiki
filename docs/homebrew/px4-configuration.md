@@ -40,15 +40,16 @@ If autoconnect fails, identify the port and set permissions:
 
 ## 4.0 Clean Configuration Procedure
 Perform these steps via USB with **no propellers** and **no battery** connected. Note that not all aspects are stored as parameters (e.g., Airframe type and ESC Calibration), which is why some things can come before loading the set of Parameters. 
-1.  **Firmware Flash:** In the **Firmare** tab, follow the instructions to flash the latest firmware:[px4_1_16_0_cubepilot_orange.px4](cubepilot_cubeorange_default_1_16_0.px4). 
+1.  **Firmware Flash:** In the **Firmare** tab, follow the instructions to flash custom firmware, selecting this: [px4_1_16_0_cubepilot_orange.px4](cubepilot_cubeorange_default_1_16_0.px4). 
 2. **Reset:** In the **Parameters** tab, select **Reset all to firmware defaults**.
 3.  **Reboot:** Use the **Reboot Vehicle** button in QGC.
 4.  **Airframe:** Select **Generic Quadcopter (Quad X)**. Ignore the red sensor errors in the log for now.
 5.  **Reboot:** Again.
 6.  **ESC Calibration:** Follow the QGC wizard. Ensure propellers are removed before plugging in the battery when prompted.
-7.  **Template:** Load the latest PX4 template for the Homebrews: [homebrew_1_16_0.params](homebrew_1_16_0.params).
+7.  **Template:** Load the PX4 template for the Homebrews: [homebrew_1_16_0.params](homebrew_1_16_0.params).
 8.  **Power:** Calibrate battery voltage using a physical voltmeter for reference.
 9.  **Reboot:** Final reboot to commit parameter changes.
+10. **Sensor Calibration:** The template has unrelated calbiration values you must overwrite by doing the next part.
 
 ## 5.0 Sensor Calibration
 Disconnect USB and switch to wireless radio to prevent cable snags and connector damage during movement. Seal the drone up for a firm grip.
