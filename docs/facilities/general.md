@@ -9,7 +9,7 @@ Fill it out and submit using these values:
 - Access Type: **Building Only**
 - Building(s): **Autonomy Park**
 - Rooms: **1644 & 1645**
-- Supervisor: **Your advisor** (or Warren Dixon if not MAE)
+- Supervisor: **Your advisor** (or Rushikesh Kamalapurkar if not MAE or you're an undergrad)
 - Details/Justification: **Autonomy Park**
   You can also resubmit the form with the following values to get access to the student design center for bathroom access:
 - Building(s): **Solar Park**
