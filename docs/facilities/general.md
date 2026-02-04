@@ -1,6 +1,6 @@
 # General Facilities Info
 
-## Get Access to the Park
+## Get Access to the Off-Campus Autonomy Park
 
 [Here is the facilities request form for getting codes to the buildings.](https://my.mae.ufl.edu/ccb/facilities/requests/changes.asp?id=new)
 Fill it out and submit using these values:
@@ -17,7 +17,7 @@ Fill it out and submit using these values:
 - Details/Justification: **Bathroom access for Autonomy Park.**
   All other values the same.
 
-## Get Access to the NCR Lab
+## Get Access to the On-Campus NCR Lab
 
 See the facilities link above.
 Fill it out and submit using these values:
@@ -26,5 +26,5 @@ Fill it out and submit using these values:
 - Access Type: **Room Only**
 - Building(s): **MAE-A**
 - Rooms: **313**
-- Supervisor: **Your advisor** (or Warren Dixon if not MAE)
+- Supervisor: **Your advisor** (or Rushikesh Kamalapurkar if not MAE or you're an undergrad)
 - Details/Justification: **Lab access for robotics research**
