@@ -9,7 +9,7 @@ Use these direct links for configuration and recovery. Do not use older versions
 | :--- | :--- | :--- |
 | **Firmware Binary** | Stable PX4 v1.16.0 for Cube Orange | [cubepilot_cubeorange_default_1_16_0.px4](cubepilot_cubeorange_default_1_16_0.px4) |
 | **Parameter Template** | Baseline params for Homebrew airframes | [homebrew_1_16_0.params](homebrew_1_16_0.params) |
-| **Comparison Script** | Python script to identify parameter deltas | [compare_px4_params](compare_px4_params) |
+| **Comparison Script** | Python script to identify parameter deltas | [compare_px4_params.py](compare_px4_params.py) |
 
 ---
 
