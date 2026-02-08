@@ -4,4 +4,29 @@ This page will serve as a service/repair manual for common Homebrew mechanical f
 
 ---
 
-*Hello, my name is Nick.*
+**Hello, my name is Nick.**
+Nick *Nick* **Nick** ***Nick*** Ni*ck*
+- Nick
+- Nick
+- Nick
+- Nick
+- Nick
+
+* Nick
+* Nick
+* Nick
+
++ Nick
++ Nick
++ Nick
+
+- Nick
+    - Nick
+        -Nick
+
+# Nick
+## Nick
+### Nick
+#### Nick
+##### Nick
+###### Nick
