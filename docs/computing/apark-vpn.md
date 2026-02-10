@@ -17,6 +17,13 @@ To install ZeroTier on Windows or macOS, go to the official download page at **h
 
 To connect to a network, right-click (Windows) or click (macOS) on the the system tray icon and select **"Join New Network."** Paste in the Network ID and click **"Join."** To confirm the connection, right-click (Windows) or click (macOS) the icon again. A checkmark will appear next to the Network ID, confirming a successful connection. To disconnect, click on the connected network item and select **"Disconnect."**
 
+**IMPORTANT:** You must enable "Allow Default Route Override" and "Allow DNS Configuration". This will allow ZeroTier to redirect your network traffic through the ZeroTier network first rather than your default. 
+
+<div style="text-align: center;">
+  <img src="images/index/apark-logo-banner-nobg.webp" alt="Autonomy Park logo banner." width="85%">
+  <br>
+  <img src="images/index/robot-banner.webp" alt="Autonomy Park robots." width="85%">
+</div>
 
 ---
 ### Linux
