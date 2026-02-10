@@ -20,9 +20,7 @@ To connect to a network, right-click (Windows) or click (macOS) on the the syste
 **IMPORTANT:** You must enable "Allow Default Route Override" and "Allow DNS Configuration". This will allow ZeroTier to redirect your network traffic through the ZeroTier network first rather than your default. 
 
 <div style="text-align: center;">
-  <img src="images/index/apark-logo-banner-nobg.webp" alt="Autonomy Park logo banner." width="85%">
-  <br>
-  <img src="images/index/robot-banner.webp" alt="Autonomy Park robots." width="85%">
+  <img src="../images/computing/vim_config.png" alt="vim config image" width="85%">
 </div>
 
 ---
