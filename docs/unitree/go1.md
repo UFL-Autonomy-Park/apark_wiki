@@ -8,14 +8,6 @@ title: Unitree Go1
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Iqmoot6-QBY?si=c1hXt8UjScOSQu9Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## IP Reservations
-
-| **Device Name** |   **Username**    | **IP Address** | **Password** |
-| :-------------: | :---------------: | :------------: | :----------: |
-|     doggo1      |   doggo-jetson    | 192.168.1.153  |     1234     |
-|     doggo2      |   doggo-jetson2   | 192.168.1.154  |     1234     |
-|     doggo3      |   doggo-jetson3   | 192.168.1.165  |     1234     |
-|    BigDoggo     | big-doggo1-jetson |  192.168.1.67  |    12345     |
 
 ## Dog Startup Instructions
 
