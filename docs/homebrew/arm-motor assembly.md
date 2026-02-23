@@ -28,7 +28,7 @@ Slide in the plastic brackets that will mount the arm to the body plates later.
 ---
 
 ### Step 3  
-Place the motor on the motor mount and use **four (4) 2.5 mm shoulder screws** to fasten them.  
+Place the motor on the motor mount (assemble according to airframe manual) and use **four 2.5 mm shoulder screws (same box with the motor)** to fasten them.  
 Install all four screws before tightening them.  
 
 ![4](../images/homebrew/Arm_Assem/step-4.jpg)
