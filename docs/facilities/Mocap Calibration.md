@@ -5,7 +5,7 @@ If a camera goes down or is replaced, the system must be recalibrated.
 ## Steps
 
 1. **Remove all robots with markers from the camera field of view**  
-   - Place the robots in a locker or cover them so the cameras cannot see any markers.
+   - Place the robots in a locker or cover them to avoid interference.
 
 2. **Set the OptiTrack reference**
    - Obtain the **wand** and the **OptiTrack calibration square**.
