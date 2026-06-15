@@ -1,4 +1,6 @@
-# Motion Capture Camera Calibration
+---
+title: Mocap Calibration
+---
 
 If a camera goes down or is replaced, the system must be recalibrated.
 
