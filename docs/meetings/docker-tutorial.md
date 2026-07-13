@@ -1,10 +1,12 @@
 ---
-title: 02/24/2026: Docker 
+title: Docker Tutorial (02/24/2026)
 ---
 
 Docker is a tool for making containerized software. Puts all your dependencies in one box:
 
-"It works on my computer." "Just ship the computer!"
+"It works on my computer." 
+
+"Just ship the computer!"
 
 Great for replicating software stacks on large fleets of devices. Virtual machine simulates entire computer (kernel, hardware, everything). You have to "boot" a virtual machine. Docker does none of that.
 
