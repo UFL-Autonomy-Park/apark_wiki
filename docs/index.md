@@ -27,4 +27,4 @@ hide:
 ### Ground Team
 - Jetson control board swap
 - Docker integration for dogs
-- Print backpacks 
+- Dog URDF which includes camera, LIDAR
