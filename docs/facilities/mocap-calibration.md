@@ -9,14 +9,16 @@ If a camera goes down or is replaced, the system must be recalibrated.
 1. **Remove all robots with markers from the camera field of view**  
 	- Place the robots in a locker or cover them to avoid interference.
 
-2. **Set the OptiTrack reference**
-	![Coordinate System](../images/facilities/coords.png){ align="center" width="50%" }
+![Coordinate System](../images/facilities/coords.png){ align="center" width="50%" }
 
-	![Calibration Wand](../images/facilities/wand.jpg){ align="center" width="50%" }
+![Calibration Wand](../images/facilities/wand.jpg){ align="center" width="50%" }
+
+2. **Set the OptiTrack reference**
 	- Obtain the **wand** and the **OptiTrack calibration square**.
-	![OptiTrack Square Placement](../images/facilities/optitrack.jpg){ align="center" width="50%" }
 	- Place the OptiTrack at the lab coordinate origin.
 	- Align the square so its axes match the lab coordinate axes.
+
+![OptiTrack Square Placement](../images/facilities/optitrack.jpg){ align="center" width="50%" }
    
 3. **Start wanding**
 	- Launch **Motive**.
