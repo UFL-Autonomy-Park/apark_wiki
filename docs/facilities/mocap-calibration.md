@@ -10,19 +10,17 @@ If a camera goes down or is replaced, the system must be recalibrated.
    - Place the robots in a locker or cover them to avoid interference.
 
 2. **Set the OptiTrack reference**
-   - Obtain the **wand** and the **OptiTrack calibration square**.
-   - Place the OptiTrack at the lab coordinate origin.
-   - Align the square so its axes match the lab coordinate axes.
-   ![coordinate](../facilities/Mocap%20Calibration/mocap_coodinate_system.png)
-
-   ![wand](../facilities/Mocap%20Calibration/Wand.jpg)
-
-   ![OptiTrack placement](../facilities/Mocap%20Calibration/OptiTrack.jpg)
-
+	![Coordinate System](../images/facilities/mocap_coordinate_system.png){ align="center" width="50%" }
+	![Calibration Wand](../images/facilities/wand.jpg){ align="center" width="50%" }
+	- Obtain the **wand** and the **OptiTrack calibration square**.
+	![OptiTrack Square Placement](../images/facilities/optitrack.jpg)
+	- Place the OptiTrack at the lab coordinate origin.
+	- Align the square so its axes match the lab coordinate axes.
+   
 3. **Start wanding**
    - Launch **Motive**.
    - Click **Start Wanding**.
-   - Move the wand throughout the lab so that all cameras collect samples.
+   - Move the wand throughout the lab so that all cameras collect samples. You will see the ring around each camera turn green as it gathers sufficiently many samples
 
 4. **Calculate calibration**
    - Continue wanding until each camera collects **several thousand samples**.

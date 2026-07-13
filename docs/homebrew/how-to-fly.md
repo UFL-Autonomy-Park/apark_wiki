@@ -31,7 +31,7 @@ If you are not an experienced pilot, you must practice in a simulator first.
 ## 3.0 Transmitter Configuration (Taranis QX7)
 The following mapping is standard for the Homebrew fleet. Refer to the diagram below for switch locations.
 
-![Taranis QX7 Switch Guide](qx7_guide.png)
+![Taranis QX7 Switch Guide](../images/homebrew/qx7_guide.jpg){ align="center" width="50%" }
 
 ### 3.1 Control Mapping
 | Channel | Input | Function |

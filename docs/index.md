@@ -20,10 +20,9 @@ hide:
 ##  Ongoing work/to-do lists
 
 ### Air Team
-- Flight testing to certify remaning Homebrews
-- CBF safety for indoor and outdoot robots
+- Flight testing to certify remaining Homebrews
+- CBF safety for indoor and outdoor robots
 - RTK GPS for PX4
-- Docker container for Zed and MAVROS
 
 ### Ground Team
 - Jetson control board swap

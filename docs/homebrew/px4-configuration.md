@@ -39,29 +39,44 @@ If autoconnect fails, identify the port and set permissions:
 * **Note on Adapters:** USB-C adapters/docks generally do not cause issues unless it is the first time use and the driver is still installing.
 
 ## 4.0 Clean Configuration Procedure
-Perform these steps via USB with **no propellers** and **no battery** connected. Note that not all aspects are stored as parameters (e.g., Airframe type and ESC Calibration), which is why some things can come before loading the set of Parameters. 
+Perform these steps via USB with **no propellers** and **no battery** connected. Note that not all aspects are stored as parameters (e.g., Airframe type and ESC Calibration), which is why some things can come before loading the set of Parameters.
+
 1.  **Firmware Flash:** In the **Firmare** tab, follow the instructions to flash custom firmware, selecting this: [px4_1_16_0_cubepilot_orange.px4](cubepilot_cubeorange_default_1_16_0.px4). 
+
 2. **Reset:** In the **Parameters** tab, select **Reset all to firmware defaults**.
+
 3.  **Reboot:** Use the **Reboot Vehicle** button in QGC.
+
 4.  **Airframe:** Select **Generic Quadcopter (Quad X)**. Ignore the red sensor errors in the log for now.
+
 5.  **Reboot:** Again.
+
 6.  **ESC Calibration:** Follow the QGC wizard. Ensure propellers are removed before plugging in the battery when prompted.
+
 7.  **Template:** Load the PX4 template for the Homebrews: [homebrew_1_16_0.params](homebrew_1_16_0.params).
+
 8.  **Power:** Calibrate battery voltage using a physical voltmeter for reference.
+
 9.  **Reboot:** Final reboot to commit parameter changes.
-10. **Sensor Calibration:** The template has unrelated calbiration values you must overwrite by doing the next part.
+
+10. **Sensor Calibration:** The template has unrelated calibration values you must overwrite by doing the next part.
+
 
 ## 5.0 Sensor Calibration
 Disconnect USB and switch to wireless radio to prevent cable snags and connector damage during movement. Seal the drone up for a firm grip.
 1.  **Orientation:** In the **Sensors** tab, set `SENS_BOARD_ROT` to **Yaw 90 deg** (Raw Value: 2). The Homebrew FCs are mounted 90° clockwise from the desired front-facing side.
+
 2.  **Required Calibrations:** Level Horizon, Accelerometer, Gyroscope, and Compass.
+
 3.  **Critical Warning:** You **must** recalibrate every drone individually. Loading a `.params` file imports the specific calibration offsets of the source drone. Because every drone has unique magnetic interference (soft/hard iron) and IMU biases, using another drone's calibration will cause measurements to drift or trigger EKF failures.
 
 ## 6.0 Critical Technical Notes
 ### 6.1 Firmware Management
 The PX4 repository does not maintain easily accessible binaries for older releases. When you flash via QGC, it pulls the **latest stable** version automatically. 
-* **Internal Storage:** We maintain the stable binary [cubepilot_cubeorange_default_1_16_0.px4](cubepilot_cubeorange_default_1_16_0.px4) to avoid forced upgrades. 
-* **Source Building:** Do not attempt to build old versions from source unless you are prepared to manually roll back all recursive submodules, which is historically difficult.
+
+**Internal Storage:** We maintain the stable binary [cubepilot_cubeorange_default_1_16_0.px4](cubepilot_cubeorange_default_1_16_0.px4) to avoid forced upgrades. 
+
+**Source Building:** Do not attempt to build old versions from source unless you are prepared to manually roll back all recursive submodules, which is historically difficult.
 
 ### 6.2 Parameters vs. Calibrations
 Not everything is stored in a `.params` file. Calibration data (like ESC calibration) is specific to the hardware-level timing and must be performed on every drone individually after a firmware upgrade, even if using a template.

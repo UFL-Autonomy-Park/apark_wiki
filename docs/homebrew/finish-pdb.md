@@ -1,3 +1,7 @@
+---
+title: Finish Soldering the PDB
+---
+
 Now that we have soldered all four ESCs to the board, there are still a few additional components that need to be soldered.
 
 ## Components to Solder
