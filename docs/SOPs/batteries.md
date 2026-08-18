@@ -1,4 +1,4 @@
-# Standard Operating Procedure (SOP): Lithium Polymer (LiPo) Battery Safety
+# Lithium Polymer (LiPo) Battery Safety
 
 ## 1.0 PURPOSE
 This SOP provides comprehensive safety guidelines for handling, charging, storing, and disposing of Lithium Polymer (LiPo) and Lithium-ion (Li-ion) batteries. Due to high energy density and volatile chemistry, strict adherence is required to prevent thermal runaway, fire, and injury.

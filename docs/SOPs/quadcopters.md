@@ -1,4 +1,4 @@
-# Standard Operating Procedure (SOP): Quadcopters
+# Flying Quadcopters
 
 ## 0.0 QUICK REFERENCE
 The slide deck for this SOP can be found [here](../SOPs/quadcopter-sop.pdf)

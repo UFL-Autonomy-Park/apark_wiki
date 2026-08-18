@@ -1,25 +1,11 @@
----
-title: Basic Reference
----
+# Indoor Lab Networking Setup
 
-## HAVE YOU DONE THE ROS 2 TUTORIALS YET?
-
-<a href="https://docs.ros.org/en/humble/Tutorials.html" target="_blank">Get on it, soldier</a>
-
-If you are trying to do the ROS tutorials in a VM, see Keith's setup guide [here](../ROS and Gazebo/vmware-guide.pdf)
-
-
-## ROS 2 Humble Install
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tvToTLZQkZI?si=97aXUDweP7OQRK9T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## NCR Battlestation Config
-The main computer in the NCR lab is managed by UFIT. As such, there are some more hoops we need to jump through. We have two ethernet interfaces. The interface `enp0s31f6` is for the UF network and is required for authentication and `sudo`. The interface `enp4s0` is for our local network where all of the robots live. 
+Our lab's LAN is not connected to the Internet, so each computer needs a special netplan file such that all DNS traffic goes to UF but all robot traffic stays on our private LAN. Our LAN has a WiFi component. While it can be joined, this is only for robots (unless you have two WiFi cards somehow).
 
 ### Route DDS Traffic Through Robot Network
 
 !!! note
-    **ALL NEW USERS ON THE NCR BATTLESTATION WILL NEED TO PERFORM THIS STEP. OTHERWISE YOUR NODES WILL NOT WORK.**
+    **ALL USERS ON THE NCR COMPUTERS WILL NEED TO PERFORM THIS STEP. OTHERWISE YOUR NODES WILL NOT WORK.**
 
 To get all ROS traffic to be routed through the robot network run
 ```
@@ -63,34 +49,27 @@ Open a new terminal and run your ROS nodes without any networking issues!
 !!! warning
     **ONLY PERFORM THE FOLLOWING STEPS IF YOU ARE SETTING UP THE COMPUTER OR SOMETHING WITH THE NETWORK IS BROKEN.**
 
-To make everything work properly, we use the following `netplan` file. Run `sudo nano /etc/netplan/01-network-manager-all.yaml` and paste the following:
+To make everything work properly, we use the following `netplan` file. Run `sudo nano /etc/netplan/01-network-manager-all.yaml` and paste the following. This example is for the computer under IP 192.168.1.201 (MAE-BPLJHL2).
+
+You will need to know the device name for your Ethernet (used for robots/LAN) and wireless/WiFi adapater (all computers have a built-in card for it) from `ifconfig`.
 ```
 network:
   version: 2
   renderer: NetworkManager 
   ethernets:
-    enp0s31f6: # Your UF Network Interface
-      dhcp4: true
-      dhcp4-overrides:
-        route-metric: 100 # Explicitly set good metric for UF
-        use-dns: true # Ensure it uses UF DNS
-    enp4s0: # Your Robot Network Interface
-      dhcp4: true
-      dhcp4-overrides:
-        use-routes: false # <--- ADD THIS LINE or ensure it's false
-        # You might also want to prevent it from setting DNS if the robot network's DHCP provides one
-        use-dns: false # <--- ADD THIS LINE if you only want UF DNS
-        # If you absolutely needed a route from it but NOT default, you could give it a high metric:
-        # route-metric: 500
-
+    enp0s31f6: # Ethernet interface. Replace with your computer's unique name
+      dhcp4: true # Let the Ubiquiti router dictate the IP (should be staticly assigned in the Ubiquiti portal)
+      dhcp4-overrides: # Ubiquiti will try and also serve a DNS and default gateway with this local IP. Disable.
+        use-routes: false
+        use-dns: false
 ```
-
 After saving, run `sudo netplan apply`. 
 
+Log in to eduroam (or use ufgetonline's script). If logging in, select "No certificate is required" then select the domain as "ufl.edu" but be sure to still use "@ufl.edu" when typing your UF username and password.
 
 ## super_client_config.xml
 
-I know you forgot this somewhere
+I know you forgot this somewhere. Grab it a fresh one from the ROS 2 tutorial page on this. If one space is off, it may not work!
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>

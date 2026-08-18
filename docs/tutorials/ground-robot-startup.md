@@ -1,4 +1,4 @@
-# Hardware Setup Videos
+# Ground Robot Setup Videos
 
 ## B1 Quadruped Startup
 
