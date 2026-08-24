@@ -14,26 +14,48 @@ sudo nano uf_fastdds_profile.xml
 and paste the following code:
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
-<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+<dds>
+    <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
 
-    <transport_descriptors>
-        <transport_descriptor>
-            <transport_id>MyRobotUDPTransport</transport_id>
-            <type>UDPv4</type>
-            <interfaceWhiteList>
-                <address>192.168.1.100</address>
-            </interfaceWhiteList>
+        <transport_descriptors>
+            <transport_descriptor>
+                <transport_id>MyRobotUDPTransport</transport_id>
+                <type>UDPv4</type>
+                <interfaceWhiteList>
+                    <address>192.168.1.200</address>
+                </interfaceWhiteList>
             </transport_descriptor>
-    </transport_descriptors>
+        </transport_descriptors>
 
-    <participant profile_name="ParticipantUsingRobotUDP" is_default_profile="true">
-        <rtps>
-            <useBuiltinTransports>false</useBuiltinTransports> <userTransports>
-                <transport_id>MyRobotUDPTransport</transport_id> </userTransports>
-        </rtps>
-    </participant>
+        <participant profile_name="ParticipantUsingRobotUDP" is_default_profile="true">
+            <rtps>
+                <useBuiltinTransports>false</useBuiltinTransports>
+                <userTransports>
+                    <transport_id>MyRobotUDPTransport</transport_id>
+                </userTransports>
 
-</profiles>
+                <builtin>
+                    <discovery_config>
+                        <discoveryProtocol>SUPER_CLIENT</discoveryProtocol>
+                        <discoveryServersList>
+                            <RemoteServer prefix="44.53.00.5f.45.50.52.4f.53.49.4d.41">
+                                <metatrafficUnicastLocatorList>
+                                    <locator>
+                                        <udpv4>
+                                            <address>192.168.1.203</address>
+                                            <port>11811</port>
+                                        </udpv4>
+                                    </locator>
+                                </metatrafficUnicastLocatorList>
+                            </RemoteServer>
+                        </discoveryServersList>
+                    </discovery_config>
+                </builtin>
+            </rtps>
+        </participant>
+
+    </profiles>
+</dds>
 ```
 Lastly, set the following environment variables in `.bashrc`
 ```
@@ -67,39 +89,6 @@ After saving, run `sudo netplan apply`.
 
 Log in to eduroam (or use ufgetonline's script). If logging in, select "No certificate is required" then select the domain as "ufl.edu" but be sure to still use "@ufl.edu" when typing your UF username and password.
 
-## super_client_config.xml
-
-I know you forgot this somewhere. Grab it a fresh one from the ROS 2 tutorial page on this. If one space is off, it may not work!
-
-```
-<?xml version="1.0" encoding="UTF-8" ?>
-<dds>
-    <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
-        <participant profile_name="super_client_profile" is_default_profile="true">
-            <rtps>
-                <builtin>
-                    <discovery_config>
-                        <discoveryProtocol>SUPER_CLIENT</discoveryProtocol>
-                        <discoveryServersList>
-                            <RemoteServer prefix="44.53.00.5f.45.50.52.4f.53.49.4d.41">
-                                <metatrafficUnicastLocatorList>
-                                    <locator>
-                                        <udpv4>
-                                            <address>192.168.1.201</address>
-                                            <port>11811</port>
-                                        </udpv4>
-                                    </locator>
-                                </metatrafficUnicastLocatorList>
-                            </RemoteServer>
-                        </discoveryServersList>
-                    </discovery_config>
-                </builtin>
-            </rtps>
-        </participant>
-    </profiles>
-</dds>
-```
-
 ## Add to .bashrc
 
 ```
@@ -107,5 +96,5 @@ source /opt/ros/humble/setup.sh
 export ROS_DOMAIN_ID=0
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export ROS_DISCOVERY_SERVER=192.168.1.201:11811
-export FASTRTPS_DEFAULT_PROFILES_FILE=~/super_client_config.xml
+export FASTRTPS_DEFAULT_PROFILES_FILE=~/uf_fastdds_profile.xml
 ```
