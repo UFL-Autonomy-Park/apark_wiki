@@ -1,0 +1,2809 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../px4-configuration/">
+      
+      
+        <link rel="next" href="../service-manual/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/index/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Radio and RC Setup Guide - Autonomy Park - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#radio-and-rc-setup-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Autonomy Park - Wiki" class="md-header__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomy Park - Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Radio and RC Setup Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Autonomy Park - Wiki" class="md-nav__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    Autonomy Park - Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to the UF Autonomy Park!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ground Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clearpath
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ground-Robots/clearpath/husky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath Husky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ground-Robots/clearpath/jackal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath Jackal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitree
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ground-Robots/unitree/b1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree B1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ground-Robots/unitree/go1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree Go1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOPs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SOPs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SOPs/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lithium Polymer (LiPo) Battery Safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SOPs/quadcopters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/asset-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/computer-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/lab-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Dimensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quadcopters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bebop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bebop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bebop/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries and Hardware Problems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bebop/bebop-startup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimal Startup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bebop/configure-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the WiFi on Bebops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bebop/ros2-bebop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2 Bebop Autonomy (Driver Support)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Freefly
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../freefly/alta-x/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Alta-X
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../freefly/astro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Astro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../freefly/repairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sending Drones for Repair
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homebrew
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessory-wires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory Wires Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arm-motor%20assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arm–Motor Subassembly Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esc-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronic Speed Controller (ESC) Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esc-to-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC to PDB Soldering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finish-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish Soldering the PDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flash-jetson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetson Orin Nano Firmware Flashing Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homebrew-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew Docker Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homebrew-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-fly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motor-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../px4-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PX4 Configuration, Parameters, and Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio and RC Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio and RC Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-current-lab-standard-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Current Lab Standard Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-glossary-of-essential-rc-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Glossary of Essential RC Terminology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-legacy-system-the-path-to-obsolescence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Legacy System &amp; The Path to Obsolescence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Legacy System &amp; The Path to Obsolescence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fracture-of-the-frsky-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fracture of the FrSky Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-must-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why We Must Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-modern-standard-recommended-upgrade-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Modern Standard &amp; Recommended Upgrade Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Modern Standard &amp; Recommended Upgrade Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Hardware:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-procedures-for-the-current-system-frsky-taranis-x9d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Procedures for the Current System (FrSky Taranis X9D+)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Procedures for the Current System (FrSky Taranis X9D+)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-flashing-firmware-on-the-x8r-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Flashing Firmware on the X8R Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-flashing-firmware-on-the-internal-xjt-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Flashing Firmware on the Internal XJT Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-binding-the-x8r-to-the-taranis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Binding the X8R to the Taranis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-initial-setup-in-opentx-px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Initial Setup in OpenTX &amp; PX4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-frequently-asked-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Frequently Asked Questions (FAQ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resources-and-procurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resources and Procurement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resources and Procurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Vendors:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-disclaimer-final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Disclaimer &amp; Final Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Learning Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-note-on-procurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. A Note on Procurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service and Repair Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soldering Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/access-requests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Facilities Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/apark-vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZeroTier VPN Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/cursed-knowledge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cursed Knowledge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/edit-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/fileshare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy Park File Share
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/ground-robot-startup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robot Setup Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/indoor-lab-computers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indoor Lab Networking Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/install-gazebo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gazebo Installation Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/mocap-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mocap Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/new-jetson-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Jetson Setup w/ CUDA, Zed SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/ros2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/simulation-installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation/Simulation Setup for ROS2, MAVROS, PX4, and QGroundControl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Setup Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/web-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Our Web Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-current-lab-standard-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Current Lab Standard Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-glossary-of-essential-rc-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Glossary of Essential RC Terminology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-legacy-system-the-path-to-obsolescence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Legacy System &amp; The Path to Obsolescence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Legacy System &amp; The Path to Obsolescence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fracture-of-the-frsky-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fracture of the FrSky Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-we-must-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why We Must Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-modern-standard-recommended-upgrade-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Modern Standard &amp; Recommended Upgrade Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Modern Standard &amp; Recommended Upgrade Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Hardware:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-procedures-for-the-current-system-frsky-taranis-x9d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Procedures for the Current System (FrSky Taranis X9D+)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Procedures for the Current System (FrSky Taranis X9D+)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-flashing-firmware-on-the-x8r-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Flashing Firmware on the X8R Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-flashing-firmware-on-the-internal-xjt-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Flashing Firmware on the Internal XJT Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-binding-the-x8r-to-the-taranis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Binding the X8R to the Taranis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-initial-setup-in-opentx-px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Initial Setup in OpenTX &amp; PX4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-frequently-asked-questions-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Frequently Asked Questions (FAQ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resources-and-procurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resources and Procurement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resources and Procurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Vendors:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-disclaimer-final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Disclaimer &amp; Final Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Learning Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-note-on-procurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. A Note on Procurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="radio-and-rc-setup-guide">Radio and RC Setup Guide</h1>
+<p><strong>Version 1.0 (October 11, 2025)</strong></p>
+<p>This document serves as the official guide to the radio control systems used for the lab's Homebrew drone fleet. Its purpose is twofold: first, to document our current legacy hardware setup for operation and troubleshooting; second, to provide a clear and definitive upgrade path for all future builds.</p>
+<p>The RC hobby has undergone significant, and often confusing, technological shifts. Adhering to the procedures and recommendations in this guide will prevent the compatibility issues and time-consuming troubleshooting that have historically plagued this field.</p>
+<hr>
+<h2 id="1-current-lab-standard-configuration">1. Current Lab Standard Configuration</h2>
+<p>This table details the components of our primary drone control system as of the date above.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Manufacturer &amp; Model / Software Name</th>
+<th>Version &amp; Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transmitter (Hardware)</strong></td>
+<td>FrSky Taranis X9D Plus (non-2019 model)</td>
+<td>This is our legacy radio. Note that batteries and chargers are no longer produced, marking it as end-of-life.</td>
+</tr>
+<tr>
+<td><strong>Transmitter (OS)</strong></td>
+<td>OpenTX</td>
+<td>v2.3.15. This is the final version of OpenTX; the project is no longer in development.</td>
+</tr>
+<tr>
+<td><strong>Internal TX Module</strong></td>
+<td>FrSky XJT</td>
+<td>ACCST D16 v2.1.0 (FCC). This firmware is on the internal radio module, separate from OpenTX.</td>
+</tr>
+<tr>
+<td><strong>Receiver</strong></td>
+<td>FrSky X8R</td>
+<td>ACCST D16 v2.1.0 (FCC). Must match the transmitter module's protocol, version, and region (FCC).</td>
+</tr>
+<tr>
+<td><strong>Flight Controller (FC)</strong></td>
+<td>CubePilot Blue</td>
+<td>Communicates with the receiver via the S.BUS protocol.</td>
+</tr>
+<tr>
+<td><strong>FC Firmware</strong></td>
+<td>PX4 Autopilot</td>
+<td>v1.16 (or latest stable release). Our standard autopilot software stack.¹</td>
+</tr>
+<tr>
+<td><strong>Ground Control Station</strong></td>
+<td>QGroundControl</td>
+<td>Used for flight planning, parameter configuration, and real-time monitoring, or configuring the FC via a microUSB cable.</td>
+</tr>
+</tbody>
+</table>
+<p>¹<small>Note: The CubePilot Blue hardware is often associated with ArduPilot, as it’s written on the side of it. We use PX4 only, so don’t let this decal mislead you. ArduPilot isn’t a part of the CubePilot Blue’s model name.</small></p>
+<hr>
+<h2 id="2-glossary-of-essential-rc-terminology">2. Glossary of Essential RC Terminology</h2>
+<p><strong>Transmitter (TX)</strong>: The handheld radio controller used by the pilot. It converts stick and switch movements into a digital radio signal. Also called a "radio."</p>
+<p><strong>Receiver (RX)</strong>: A small component on the drone that receives the signal from the transmitter and sends the commands to the Flight Controller.</p>
+<p><strong>Binding</strong>: The process of creating a unique, exclusive digital link between one transmitter and one receiver. A bound receiver will only respond to its paired transmitter.</p>
+<p><strong>Flight Controller (FC)</strong>: The "brain" of the drone. It takes input from the receiver and sensors (gyros, accelerometers, GPS) to stabilize the aircraft and execute commands.</p>
+<p><strong>Firmware</strong>: Low-level software that runs on hardware. In our context, this refers to the software on the radio modules (like the XJT's ACCST firmware) and the receiver, which is separate from the transmitter's main operating system (OpenTX).</p>
+<p><strong>FrSky</strong>: A manufacturer of RC hardware that was once the de facto standard but now represents a legacy ecosystem due to their transition to a modern product line that is expensive and runs entirely proprietary software.</p>
+<p><strong>Taranis</strong>: A popular series of transmitters made by FrSky, including our lab's X9D Plus model.</p>
+<p><strong>XJT</strong>: The name of the internal transmitter module inside the Taranis X9D Plus.</p>
+<p><strong>OpenTX</strong>: The powerful, open-source operating system that runs on Taranis transmitters. Its development is now defunct, with the last version being 2.3.15.</p>
+<p><strong>Protocol</strong>: The "language" used for wireless communication between the transmitter module and the receiver. Examples include ACCST, ACCESS, and ELRS.</p>
+<p><strong>Serial Communication Protocol</strong>: The language used for the wired communication between the receiver and the flight controller.</p>
+<p><strong>PPM (Pulse Position Modulation)</strong>: An older, aggregate signal format that encodes multiple PWM channels into a single, analog-style pulse train. While it allows for a single-wire connection between the receiver and flight controller, it suffers from high latency and low resolution compared to modern digital protocols. It is now considered obsolete for performance-oriented drones.</p>
+<p><strong>S.BUS (Serial Bus)</strong>: A digital communication protocol originally developed by Futaba and widely adopted by FrSky. It transmits up to 16 channels of control data from the receiver to the flight controller over a single wire. It is a reliable, one-way protocol for control input only; a separate protocol like S.Port is required for telemetry. It is not deprecated yet, as of October 2025, but is being superseded in modern systems.</p>
+<p><strong>FPort (FrSky Port Protocol)</strong>: A newer, more efficient protocol from FrSky designed to be the successor to the S.BUS and S.Port combination. FPort is a bidirectional protocol that cleverly combines RC control data and telemetry into a single data stream on one wire, simplifying wiring significantly.</p>
+<p><strong>IBUS (FlySky Bus)</strong>: The serial communication protocol used by the manufacturer FlySky. Functionally, it is FlySky's direct equivalent to S.BUS, providing digital channel data from the receiver to the flight controller over a single wire. A separate connection is typically required for telemetry data.</p>
+<p><strong>CRSF (Crossfire Protocol)</strong>: A high-speed, bidirectional protocol developed by Team BlackSheep (TBS) and now used as the standard for ExpressLRS (ELRS). It is renowned for its extremely low latency and high update rates. It natively carries both RC control data and extensive telemetry data in a single packet, making it the current performance standard.</p>
+<p><strong>SRXL2 (Spektrum Remote Receiver Link v2)</strong>: The modern, bidirectional serial protocol from Spektrum. It sends control data, telemetry, VTX control, and ESC data over a single wire. It is a significant improvement over Spektrum's older satellite receiver protocols (DSMX), offering faster speeds and more robust data transmission.</p>
+<p><strong>S.Port (Smart Port)</strong>: A bidirectional digital communication protocol developed by FrSky. Its primary purpose is to connect telemetry sensors (like GPS, voltage, or current sensors) in a daisy-chain configuration, allowing data from all connected sensors to be sent back to the receiver over a single wire. It is also the physical port used to flash firmware onto FrSky receivers, as described in this guide. It should not be confused with S.BUS, which is used to send control channel data <em>from</em> the receiver <em>to</em> the flight controller.</p>
+<p><strong>CRSF (Crossfire)</strong>: A modern, high-speed, bidirectional protocol developed by TBS. It is used by ELRS and other modern systems to send channel data to the FC and receive telemetry data back. This is the successor to S.BUS for all new builds.</p>
+<p><strong>Telemetry</strong>: Data sent back from the drone's receiver to the transmitter, such as battery voltage or signal strength (RSSI). This data can be displayed on the transmitter's screen or used to trigger audible alerts.</p>
+<p><strong>Mode 2</strong>: The standard stick configuration in the US. The left stick controls throttle (up/down) and yaw (left/right). The right stick controls pitch (up/down) and roll (left/right).</p>
+<hr>
+<h2 id="3-the-legacy-system-the-path-to-obsolescence">3. The Legacy System &amp; The Path to Obsolescence</h2>
+<p>Our current FrSky-based system was once the gold standard. However, a series of business and technical decisions by FrSky has rendered the entire ecosystem obsolete. It is critical to understand this history to appreciate why we must transition away from it.</p>
+<h3 id="the-fracture-of-the-frsky-ecosystem">The Fracture of the FrSky Ecosystem</h3>
+<p>Around 2019, FrSky made changes that created widespread chaos:</p>
+<ul>
+<li><strong>ACCST v1 vs. v2</strong>: FrSky released an ACCST v2 firmware update. This update was not backward-compatible with v1. This means a v2 transmitter cannot bind to a v1 receiver, and vice versa. This created a huge burden on users to ensure every component was on the correct, matching version.</li>
+<li><strong>The ACCESS Protocol</strong>: FrSky then introduced a new, completely locked-down protocol called ACCESS. This move was intended to block competitors and force users into a new, proprietary ecosystem, alienating much of the community.</li>
+<li><strong>Regional Firmware (FCC vs. LBT)</strong>: To comply with regulations, all protocols also come in two regional flavors: FCC (for the US and most of the world) and LBT (for the EU). These are also incompatible with each other.</li>
+</ul>
+<p>This leaves users with a confusing matrix of protocol, version, and region that must all match perfectly to achieve a successful bind.</p>
+<h3 id="why-we-must-upgrade">Why We Must Upgrade</h3>
+<p>Our Taranis X9D Plus and X8R system is now a dead end for several practical reasons:</p>
+<ul>
+<li><strong>End-of-Life Software</strong>: OpenTX development is frozen. It will receive no new features or bug fixes.</li>
+<li><strong>Hardware Scarcity</strong>: FrSky no longer produces batteries or chargers for the Taranis X9D Plus. Once our current hardware fails, it will be difficult and expensive to replace.</li>
+<li><strong>Poor Documentation</strong>: FrSky's official website (<a href="https://www.frsky-rc.com/">https://www.frsky-rc.com/</a>) is the only source for firmware but is <strong>impossible to find with a search engine</strong> and the documentation is terse, sometimes illegible, and imprecise. (Do not use retail sites like (<a href="https://www.frskyna.com/">https://www.frskyna.com/</a>) for official files).</li>
+<li><strong>Cost</strong>: New FrSky transmitters are significantly more expensive than modern, superior alternatives.</li>
+</ul>
+<p>For all these reasons, while we will maintain our current setup, any hardware failure or new drone project will mandate a switch to the modern standard.</p>
+<hr>
+<h2 id="4-the-modern-standard-recommended-upgrade-path">4. The Modern Standard &amp; Recommended Upgrade Path</h2>
+<p>The RC community has moved to a fully open-source, higher-performance ecosystem. This is the required standard for all new lab purchases.</p>
+<p><strong>GUI Software</strong>: EdgeTX: The community-led successor to OpenTX. It is actively developed and supports modern hardware.
+<strong>Protocol</strong>: ExpressLRS (ELRS): This is the new open standard for RC links.</p>
+<h3 id="recommended-hardware">Recommended Hardware:</h3>
+<ul>
+<li><strong>Transmitter</strong>: RadioMaster TX16S or RadioMaster Boxer, with an internal ELRS module. These offer superior features to the Taranis for a fraction of the cost of new FrSky gear. A budget of under $300 is sufficient.</li>
+<li><strong>Receiver</strong>:<ul>
+<li><strong>For PWM Output</strong>: The RadioMaster ER8 2.4GHz ELRS PWM Receiver is a direct, modern replacement for the FrSky X8R, offering 8 physical servo ports.</li>
+<li><strong>For Serial Connection</strong>: For builds that only require a digital connection to the FC (most of our builds), a smaller receiver like the RadioMaster RP4TD ExpressLRS is excellent but requires soldering.</li>
+<li>Always choose the FCC version when purchasing.</li>
+</ul>
+</li>
+</ul>
+<p>These components use the CRSF serial protocol to communicate with the flight controller, which is supported by our CubePilot Blue and PX4.</p>
+<hr>
+<h2 id="5-procedures-for-the-current-system-frsky-taranis-x9d">5. Procedures for the Current System (FrSky Taranis X9D+)</h2>
+<p>This section covers the essential procedures for operating our legacy FrSky equipment. </p>
+<blockquote>
+<p><strong>WARNING</strong>: ALWAYS REMOVE PROPELLERS FROM THE DRONE BEFORE PERFORMING ANY SETUP, BINDING, OR FIRMWARE UPDATES.</p>
+</blockquote>
+<h3 id="51-flashing-firmware-on-the-x8r-receiver">5.1 Flashing Firmware on the X8R Receiver</h3>
+<p>Firmware for the internal XJT module and the X8R receiver must match (ACCST D16 v2.1.0 FCC). You can flash the receiver directly from the Taranis.</p>
+<p><strong>Required:</strong>
+- 3 appropriately colored Dupont cables. A servo cable will not work because the cable orientations do not match.
+- The correct receiver firmware <code>.frk</code> file downloaded from <a href="https://www.frsky-rc.com/">https://www.frsky-rc.com/</a> and placed on the transmitter's SD card in the <code>[FIRMWARE]</code> folder.</p>
+<blockquote>
+<p><strong>Note: Verify Your Firmware File.</strong> The firmware file for the X8R receiver is <strong>different</strong> from the one for the transmitter's internal XJT module. They are not interchangeable. Flashing the wrong firmware to the receiver can prevent it from binding or render it inoperable. Always double-check that you are selecting the <code>X8R</code> firmware file (and not the <code>XJT</code> file) before you select "Flash external module."</p>
+</blockquote>
+<p><strong>Procedure:</strong>
+1. Power everything off. Ensure the receiver is disconnected from the flight controller.
+2. Connect the servo cable to the receiver's S.Port (not S.BUS or any PWM channel).
+3. Connect the other end of the servo cable to the pins in the external module bay on the back of the Taranis. Ensure the signal, power, and ground pins are correctly oriented. Look this up for the Taranis! The X8R's pins are labeled.
+4. Turn on the Taranis transmitter.
+5. Long-press the MENU button to access Radio Setup. Press PAGE to navigate to the SD-HC CARD screen.
+6. Navigate to the <code>[FIRMWARE]</code> folder and select the correct X8R firmware file.
+7. Long-press the ENT button. A context menu will appear.
+8. Select "Flash external module." The flashing process will begin. Do not disconnect power.
+9. Once the "Flashing successful" message appears, you can power everything down and disconnect the cable.</p>
+<h3 id="52-flashing-firmware-on-the-internal-xjt-module">5.2 Flashing Firmware on the Internal XJT Module</h3>
+<p>Just as the receiver requires specific firmware, the transmitter's internal XJT module must also be running the correct version to ensure a successful bind. The process is nearly identical to flashing a receiver, but you select a different option in the radio's menu.</p>
+<blockquote>
+<p><strong>Note: Verify Your Firmware File.</strong> The firmware file for the internal XJT module is <strong>different</strong> from the one for the X8R receiver. They are not interchangeable. Flashing receiver firmware to the transmitter module (or vice-versa) is possible and there are no safeguards to stop you. Always double-check that you are selecting the <code>XJT</code> firmware file for this procedure.</p>
+</blockquote>
+<p><strong>Required:</strong>
+- The correct XJT module firmware <code>.frk</code> file downloaded from frsky-rc.com and placed on the transmitter's SD card in the <code>[FIRMWARE]</code> folder.</p>
+<p><strong>Procedure:</strong>
+1.  Turn on the Taranis transmitter.
+2.  Long-press the <strong>MENU</strong> button to access Radio Setup. Press <strong>PAGE</strong> repeatedly to navigate to the <strong>SD-HC CARD</strong> screen.
+3.  Navigate into the <code>[FIRMWARE]</code> folder and locate the correct <strong>XJT</strong> firmware file you downloaded.
+4.  Highlight the file and long-press the <strong>ENT</strong> button to open the context menu.
+5.  Select the option <strong>"Flash internal module."</strong>
+6.  The flashing process will begin. Do not power off the transmitter.
+7.  Once the "Flashing successful" message appears, press <strong>EXIT</strong>. It is good practice to power cycle the transmitter.</p>
+<h3 id="53-binding-the-x8r-to-the-taranis">5.3 Binding the X8R to the Taranis</h3>
+<ol>
+<li>Power everything off. </li>
+<li>Physically disconnect the receiver from the flight controller.</li>
+<li>Turn on the Taranis transmitter. Use the PAGE button to navigate to the MODEL SETUP screen for your drone.</li>
+<li>Scroll down to the "Internal RF" section.</li>
+<li>Set Mode to <code>D16</code>.</li>
+<li>Set Receiver No. to a unique number for this model (e.g., 01).</li>
+<li>Select the <code>[Bind]</code> option and press ENT. Select “CH 1-8 Telemetry [ON]” or a similar option. Telemetry is not mandatory, though. The transmitter will start chirping, indicating it is in bind mode.</li>
+<li>Connect the LiPo battery to the drone. Wait a few seconds for it to boot up.</li>
+<li>On the X8R receiver, press and hold the F/S (Failsafe) button. You will need a pen or screwdriver to reach it.</li>
+<li>While still holding the F/S button, connect the 3-pin cable to the S.BUS slots (not the massive array of PWM slots) on the receiver. Connect the other end RC slot on the CubePilot Blue flight controller. The receiver's two LEDs will light up: solid red and solid green. After a moment or two, the green LED should start flashing, indicating a successful bind. The red will still be solid. You can now release the F/S button.</li>
+<li>On the transmitter, press EXIT to stop the binding process.</li>
+<li>Power cycle the drone by disconnecting and reconnecting the LiPo battery (or by disconnecting and reconnecting the cable between it and the flight controller).</li>
+<li>The receiver should now show a solid green LED, indicating a successful and active link.</li>
+<li>You may now power off the transmitter and drone in any order. If Telemetry was enabled, the transmitter will warn you a receiver is still connected before powering off if you are powering it off first.</li>
+</ol>
+<h3 id="54-initial-setup-in-opentx-px4">5.4 Initial Setup in OpenTX &amp; PX4</h3>
+<ul>
+<li><strong>Model Profiles</strong>: In OpenTX, each aircraft has its own "model" profile. This profile stores all settings, including switch assignments, trims, and which receiver number it's bound to. Switching models in OpenTX makes the transmitter look for a different receiver; it does not unbind the previous one. Note: Model profiles cannot be directly transferred between different transmitter models (e.g., Taranis to RadioMaster) or even between different Taranis models running the same OpenTX version due to hardware differences.</li>
+<li><strong>Switches</strong>: To use a switch, it must be configured in three places in OpenTX: HARDWARE, MIXER, and OUTPUTS.</li>
+<li><strong>Sounds</strong>: Audio files for alerts are stored on the SD card in the <code>[SOUNDS]</code> folder. These can be assigned to switch positions or events in the SPECIAL FUNCTIONS menu. You may consider adding your own if the built-in one are imprecise for your needs. The author’s favorite is the <a href="https://github.com/jarethmt/Open-TX-Portal-Voice-Pack">Open-TX-Portal-Voice-Pack</a>.</li>
+<li><strong>PX4 Flight Modes</strong>: In QGroundControl, under Vehicle Setup &gt; Flight Modes, you will assign switches to flight modes. The required modes for our operations are:<ul>
+<li><strong>Stabilized</strong>: Manual roll/pitch/yaw rate control, with auto-leveling. Throttle is manual.</li>
+<li><strong>Attitude</strong>: Manual roll/pitch/yaw angle control. More intuitive than Stabilized. Throttle is manual.</li>
+<li><strong>Position</strong>: The drone holds its position (latitude, longitude, altitude) using GPS when sticks are centered.</li>
+<li><strong>Hold</strong>: The drone will stop and hold its current position.</li>
+<li><strong>Land</strong>: The drone will automatically land at its current position.</li>
+</ul>
+</li>
+<li><strong>Safety Features</strong>:<ul>
+<li><strong>Arm/Disarm</strong>: Assign a switch in PX4 to arm and disarm the motors. This is a critical safety function.</li>
+<li><strong>Failsafe</strong>: The receiver failsafe must be set to ensure the drone does not fly away if the signal is lost. For PX4, the failsafe should be set to "No Pulses" on the receiver. <a href="#">PDF for setting X8R failsafe</a></li>
+<li><strong>Return Mode</strong>: DO NOT USE the default "Return to Land" or "Return to Launch" mode on the drone. Our operational areas often have obstacles that make this unsafe. The designated failsafe action is either Land or Hold.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-frequently-asked-questions-faq">6. Frequently Asked Questions (FAQ)</h2>
+<p><strong>Q: My receiver has a solid green light, but QGroundControl shows no stick/switch inputs?</strong>
+<strong>A:</strong> This is almost always a wiring issue. The X8R must be connected to the flight controller via the single S.BUS port, not the main block of PWM channel pins. Ensure the 3-wire cable runs from the X8R's S.BUS port to the correct RC Input port on the CubePilot.</p>
+<p><strong>Q: I switched models on my Taranis and the drone disconnected. Is it unbound?</strong>
+<strong>A:</strong> No. The receiver remains bound to the transmitter's internal module. OpenTX model profiles are associated with a "Receiver No." When you switch models, the transmitter starts trying to talk to a different receiver number. Simply switch back to the correct model profile to reconnect.</p>
+<p><strong>Q: Do I need a 16-channel receiver to get 16 channels to the flight controller?</strong>
+<strong>A:</strong> No. The number in a receiver's name (e.g., ER8) typically refers to the number of physical PWM (servo) outputs. A digital serial protocol like S.BUS or CRSF sends all 16 channels over a single wire to the flight controller, regardless of how many PWM ports the receiver has.</p>
+<p><strong>Q: What do I do if I sever a receiver antenna?</strong>
+<strong>A:</strong> Never solder a severed antenna. This will alter its length and impedance, leading to unpredictable signal loss and potential flyaways that are impossible to debug. Replace the antenna with an identical part. If a replacement is not available, replace the entire receiver. It is not worth the risk.</p>
+<hr>
+<h2 id="7-resources-and-procurement">7. Resources and Procurement</h2>
+<h3 id="recommended-vendors">Recommended Vendors:</h3>
+<ul>
+<li><a href="https://GetFPV.com">GetFPV.com</a>: Excellent selection and the best return/damage policy.</li>
+<li><a href="https://RaceDayQuads.com">RaceDayQuads.com</a> (RDQ): Fast shipping, great for smaller components.</li>
+<li><a href="https://Amazon.com">Amazon.com</a>: Good for generic supplies but verify sellers for specialized hardware.</li>
+</ul>
+<h2 id="8-disclaimer-final-recommendations">8. Disclaimer &amp; Final Recommendations</h2>
+<p>This guide is a living document intended to serve as a <strong>starting point</strong> for operating and upgrading the lab's RC equipment. While every effort has been made to ensure accuracy, the RC hobby is complex, and legacy hardware, in particular, is prone to unique and unforeseen failures.</p>
+<p>Treat this document as a reference, not an infallible set of instructions. During the creation of this guide, for example, the Taranis X9D+'s internal SD card failed without warning and a new one had to be procured. <strong>Expect the unexpected</strong>, and always be prepared to troubleshoot.</p>
+<p>If you encounter an issue not covered here, or if a procedure does not yield the expected result, it is crucial to cross-reference information with other resources. Consulting modern <strong>YouTube tutorials</strong>, searching <strong>Google Images</strong> for correct wiring diagrams, or asking an <strong>AI assistant</strong> for clarification can often provide the solution that this document may lack.</p>
+<h2 id="9-learning-resources">9. Learning Resources</h2>
+<p>For general drone building and hardware reviews, the author recommends Joshua Bardwell on YouTube as a highly respected and knowledgeable source.</p>
+<h2 id="10-a-note-on-procurement">10. A Note on Procurement</h2>
+<p>To the best of our knowledge, nearly all hobbyist RC hardware is manufactured in China. Be aware that university and grant funding may have restrictions on purchasing electronics from these sources. Plan accordingly.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

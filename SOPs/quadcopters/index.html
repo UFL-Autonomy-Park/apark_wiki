@@ -1,0 +1,3149 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../batteries/">
+      
+      
+        <link rel="next" href="../../overview/asset-management/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/index/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Flying Quadcopters - Autonomy Park - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flying-quadcopters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Autonomy Park - Wiki" class="md-header__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomy Park - Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flying Quadcopters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Autonomy Park - Wiki" class="md-nav__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    Autonomy Park - Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to the UF Autonomy Park!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ground Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clearpath
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ground-Robots/clearpath/husky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath Husky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ground-Robots/clearpath/jackal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath Jackal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitree
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ground-Robots/unitree/b1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree B1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ground-Robots/unitree/go1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree Go1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOPs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SOPs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lithium Polymer (LiPo) Battery Safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#00-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.0 QUICK REFERENCE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.0 QUICK REFERENCE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-pre-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Pre-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-in-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 In-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-post-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Post-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-emergencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 Emergencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0 PURPOSE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-scopeapplicability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.0 SCOPE/APPLICABILITY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-terms-definitions-and-abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 TERMS, DEFINITIONS, AND ABBREVIATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-quadcopters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 QUADCOPTERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.0 QUADCOPTERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-methods-of-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Methods of Operation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-mission-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0 MISSION PLANNING
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60-pre-flight-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.0 PRE-FLIGHT OPERATIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.0 PRE-FLIGHT OPERATIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-lab-attirepersonal-protective-equipment-ppe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Lab Attire/Personal Protective Equipment (PPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-batteries-and-charging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Batteries and Charging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Weather
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-quadcopter-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Quadcopter Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-wireless-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Wireless Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70-piloted-flight-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.0 PILOTED FLIGHT PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.0 PILOTED FLIGHT PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-non-negotiables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Non-Negotiables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-takeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Takeoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-manual-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Manual Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-position-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Position Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-altitude-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Altitude Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Landing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#80-autonomous-flight-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.0 AUTONOMOUS FLIGHT PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.0 AUTONOMOUS FLIGHT PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-offboard-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Offboard Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-return-to-home-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Return to Home Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-ros-2-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 ROS 2 Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#90-post-flight-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.0 POST-FLIGHT OPERATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#100-multi-agent-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.0 MULTI-AGENT OPERATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-emergency-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.0 EMERGENCY PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.0 EMERGENCY PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-loss-of-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Loss of Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-loss-of-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Loss of Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-accidents-and-injuries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.0 ACCIDENTS AND INJURIES
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/asset-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/computer-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/lab-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Dimensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quadcopters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bebop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bebop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/bebop/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries and Hardware Problems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/bebop/bebop-startup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minimal Startup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/bebop/configure-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring the WiFi on Bebops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/bebop/ros2-bebop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS 2 Bebop Autonomy (Driver Support)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Freefly
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/freefly/alta-x/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Alta-X
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/freefly/astro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Astro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/freefly/repairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sending Drones for Repair
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homebrew
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/accessory-wires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory Wires Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/arm-motor%20assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arm–Motor Subassembly Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/esc-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electronic Speed Controller (ESC) Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/esc-to-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC to PDB Soldering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/finish-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish Soldering the PDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/flash-jetson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetson Orin Nano Firmware Flashing Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/homebrew-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew Docker Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/homebrew-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/how-to-fly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/motor-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/px4-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PX4 Configuration, Parameters, and Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/radio-and-rc-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio and RC Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/service-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service and Repair Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quadcopters/homebrew/soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soldering Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/access-requests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Facilities Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/apark-vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZeroTier VPN Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/cursed-knowledge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cursed Knowledge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/edit-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/fileshare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy Park File Share
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ground-robot-startup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robot Setup Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/indoor-lab-computers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indoor Lab Networking Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/install-gazebo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gazebo Installation Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/mocap-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mocap Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/new-jetson-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Jetson Setup w/ CUDA, Zed SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/ros2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/simulation-installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation/Simulation Setup for ROS2, MAVROS, PX4, and QGroundControl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Setup Videos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/web-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Our Web Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#00-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.0 QUICK REFERENCE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.0 QUICK REFERENCE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-pre-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Pre-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-in-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 In-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-post-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Post-Flight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-emergencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 Emergencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0 PURPOSE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-scopeapplicability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.0 SCOPE/APPLICABILITY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-terms-definitions-and-abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 TERMS, DEFINITIONS, AND ABBREVIATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-quadcopters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 QUADCOPTERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.0 QUADCOPTERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-methods-of-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Methods of Operation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-mission-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0 MISSION PLANNING
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60-pre-flight-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.0 PRE-FLIGHT OPERATIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.0 PRE-FLIGHT OPERATIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-lab-attirepersonal-protective-equipment-ppe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Lab Attire/Personal Protective Equipment (PPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-batteries-and-charging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Batteries and Charging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Weather
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-quadcopter-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Quadcopter Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-wireless-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Wireless Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70-piloted-flight-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.0 PILOTED FLIGHT PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.0 PILOTED FLIGHT PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-non-negotiables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Non-Negotiables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-takeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Takeoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-manual-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Manual Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-position-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Position Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-altitude-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Altitude Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Landing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#80-autonomous-flight-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.0 AUTONOMOUS FLIGHT PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.0 AUTONOMOUS FLIGHT PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-offboard-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Offboard Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-return-to-home-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Return to Home Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-ros-2-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 ROS 2 Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#90-post-flight-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.0 POST-FLIGHT OPERATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#100-multi-agent-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.0 MULTI-AGENT OPERATIONS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-emergency-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.0 EMERGENCY PROCEDURES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.0 EMERGENCY PROCEDURES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-loss-of-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Loss of Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-loss-of-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Loss of Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-accidents-and-injuries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.0 ACCIDENTS AND INJURIES
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="flying-quadcopters">Flying Quadcopters</h1>
+<h2 id="00-quick-reference">0.0 QUICK REFERENCE</h2>
+<p>The slide deck for this SOP can be found <a href="../quadcopter-sop.pdf">here</a></p>
+<h3 id="01-pre-flight">0.1 Pre-Flight</h3>
+<ol>
+<li>Fill out the <a href="https://forms.cloud.microsoft/r/em7Rd03Vnq">pre-flight form</a> before ANY operations take place</li>
+<li>Ensure all operators are wearing pants, closed-toed shoes, eye protection, and have tied back long hair</li>
+<li>The POC/RPIC should ensure that at least two fully charged batteries are readily available</li>
+<li>Check the NWS forecast or other official source to ensure that there is no precipitation or sustained wind speeds over 15 mph (~7 m/s)</li>
+<li>DO NOT POWER A QUADCOPTER OUTSIDE OF A NETTED FACILITY UNLESS THE PROPELLERS HAVE BEEN REMOVED</li>
+</ol>
+<h3 id="02-in-flight">0.2 In-Flight</h3>
+<ol>
+<li>RPIC must have hands on the remote controller at all times during flight</li>
+<li>RPIC and VO must have quadcopter within their VLOS at all times during flight</li>
+<li>Never conduct aerobatics</li>
+<li>NEVER FLY A QUADCOPTER WITH A PERSON INSIDE OF A NETTED FACILITY</li>
+</ol>
+<h3 id="03-post-flight">0.3 Post-Flight</h3>
+<ol>
+<li>Disarm the quadcopter immediately after landing</li>
+<li>RPIC or VO enter the netted facility to quickly disable power from the quadcopter, while the other has hands on the remote controller to prevent accidental arming</li>
+</ol>
+<h3 id="04-emergencies">0.4 Emergencies</h3>
+<ol>
+<li>If damage occurs to equipment, contact your PI.</li>
+<li>If an injury occurs, call 911 if is life threatening or serious. If it is not serious, apply first aid. Contact your PI ASAP. If medical attention is required, get in touch with AmeriSys at 1-800-455-2079. </li>
+</ol>
+<h2 id="10-purpose">1.0 PURPOSE</h2>
+<p>This document provides information pertaining to the safe piloted and autonomous operation of quadcopters at the University of Florida (UF) Autonomy Park, the Systems, Cognition, and Control (SCC) Laboratory, and the Nonlinear Controls and Robotics (NCR) Laboratory.</p>
+<h2 id="20-scopeapplicability">2.0 SCOPE/APPLICABILITY</h2>
+<p>The procedures and protocols apply to any member of the University of Florida Herbert Wertheim College of Engineering who plan to operate quadcopters, or will be in the field with quadcopters.</p>
+<h2 id="30-terms-definitions-and-abbreviations">3.0 TERMS, DEFINITIONS, AND ABBREVIATIONS</h2>
+<p><strong>AGL</strong>:
+Above Ground Level. </p>
+<p><strong>Controller</strong>:
+An algorithm which uses feedback and/or data to autonomously stabilize a system or accomplish an objective. Distinct from a "remote controller," which is a tool used to send remote signals to a robot/quadcopter.</p>
+<p><strong>LiPo</strong>:
+Lithium-ion polymer battery. Instead of a liquid electrolyte, LiPos typically use a gelled or solid polymer-based electrolyte as the conductive medium.</p>
+<p><strong>MAVLink</strong>:
+<a href="https://en.wikipedia.org/wiki/MAVLink">MAVLink</a> is a protocol for communicating with small unmanned vehicles.</p>
+<p><strong>MAVROS</strong>:
+<a href="https://github.com/mavlink/mavros">MAVROS</a> is an interface which routes MAVLink messages to and from ROS 2, allowing for autonomous control of quadcopters over the air. </p>
+<p><strong>METAR</strong>:
+METeorological Aerodrome Report. International standard for hourly aviation weather reports.</p>
+<p><strong>POC</strong>:
+Person Operating Controls. Refers to the individual using a remote controller to pilot the quadcopter</p>
+<p><strong>PX4</strong>:
+<a href="https://px4.io/">PX4</a> is an open source flight control software for drones and other unmanned vehicles. </p>
+<p><strong>QGC</strong>:
+<a href="https://qgroundcontrol.com/">QGroundControl</a> (QGC) is a computer program which provides full flight control and vehicle setup for PX4 or ArduPilot powered vehicles.</p>
+<p><strong>RC</strong>:
+Remote control. Indicates a physical remote which sends commands (takeoff, land, roll, pitch, yaw) to a quadcopter using radio communication. </p>
+<p><strong>ROS</strong>:
+<a href="https://docs.ros.org/en/humble/index.html">Robot Operating System</a> (ROS) is a middleware which facilitates communication between computers, robots, and other hardware using a standardized protocol and message format.</p>
+<p><strong>RPIC</strong>:
+Remote Pilot In Command. Refers to the individual responsible for the autonomous code running on the quadcopter, and associated failsafes </p>
+<p><strong>TAF</strong>:
+Terminal Aerodrome Forecast. </p>
+<p><strong>UAS</strong>:
+Unmanned Aerial System. Examples include quadcopters and fixed-wing aircraft without pilots on board.</p>
+<p><strong>VLOS</strong>:
+Visual Line of Sight. </p>
+<p><strong>VO</strong>:
+Visual Observer. Refers to the individual who acts as a "second set of eyes" during flight operations.</p>
+<h2 id="40-quadcopters">4.0 QUADCOPTERS</h2>
+<h3 id="41-platforms">4.1 Platforms</h3>
+<p>The Herbert Wertheim College of Engineering owns and operates a fleet of more than 20 quadcopters at the UF <a href="https://mae.ufl.edu/research/facilities/autonomy-park/">Autonomy Park</a> (Drone Support Bldg 1, Drone Support Bldg 2, and netted facility). These quadcopters include:
+- 3x <a href="https://docs.freeflysystems.com/astro">Freefly Astro</a>
+- 1x <a href="https://docs.freeflysystems.com/products/products/alta-x">Freefly Alta X</a>
+- 20x <a href="https://autonomypark.org/homebrew/diy-drone/">"Homebrew" Quadcopters</a></p>
+<p>The Freefly Astro is a quadcopter designed by Freefly Systems for enterprise and industrial applications (e.g. cinematography, surveying/mapping, industrial inspections). External connectivity is handled via radio to the <a href="https://docs.cubepilot.org/user-guides/herelink/herelink-overview">Herelink remote controller</a> or via WiFi to the onboard computer. The Astro has a maximum payload of 1500g. </p>
+<p>The Freefly Alta X is a heavy-lift quadcopter design by Freefly Systems for professional multi-rotor aircraft designed for demanding cinematic, professional, and industrial applications. The Alta X is a demanding platform that can cause serious injury to people and property. As such, the Alta X should not be operated without extensive training. External connectivity is handled via radio to the <a href="https://futabausa.com/product/14sg/">Futaba T14SG</a> remote controller, via radio to the ground station (computer) using the provided USB-C dongle, and via WiFi using a mounted Jetson Orin Nano. The Freefly Alta X has a maximum payload of 15000g. </p>
+<p>The "Homebrew" quadcopters refer to a fleet of quadcopters whose components were specifically selected to facilitate research of autonomous control algorithms of multi-agent aerial systems. A detailed parts list can be found on the <a href="https://autonomypark.org/">Autonomy Park Wiki</a>.</p>
+<p>The SCC/NCR research groups utilize 10x <a href="https://en.wikipedia.org/wiki/Parrot_Bebop">Parrot Bebop 2</a> quadcopters for use in the indoor lab facility in MAE-A 313. The Bebops can be controlled via WiFi using a ground station running ROS2. </p>
+<h3 id="42-methods-of-operation">4.2 Methods of Operation</h3>
+<p>Quadcopter operations fall into two major domains: piloted and autonomous flights. For the purposes of this document, "piloted flight" will encompass all operations using a quadcopter which are conducted by a human pilot using a remote control whose commands are executed using the quadcopter's <strong>onboard</strong> control algorithms. "Autonomous flight" encompasses all remote operations which require the drone to enter an "offboard" state, in which external velocity or acceleration commands are delivered to the quadcopter. This includes teleoperation of a quadcopter whose commands are facilitated though ROS2 and a user-design autonomous control algorithm.</p>
+<h2 id="50-mission-planning">5.0 MISSION PLANNING</h2>
+<p>Quadcopters should only be flown for supervised flight practice, or with an explicit research purpose in mind. Recreational use of UF-owned quadcopters is not permitted. As such, each use should be carefully planned. Each mission or experiment plan should be able to be quickly summarized in the following fields:
+</p><div class="highlight"><pre><span></span><code>1. Date of flight:
+2. Flight duration (hours, total operation time):
+3. Quadcopter(s) in use:
+4. Purpose of flight:
+5. Person operating controls (POC)/ Remote pilot in command (RPIC):
+6. Visual observer (VO): 
+</code></pre></div>
+The answers to the queries above should be filled out on the attached <a href="https://forms.cloud.microsoft/r/em7Rd03Vnq">form</a> BEFORE EACH FLIGHT.
+<h2 id="60-pre-flight-operations">6.0 PRE-FLIGHT OPERATIONS</h2>
+<p>The following procedures should be conducted before any piloted or autonomous operation of a quadcopter.</p>
+<h3 id="61-lab-attirepersonal-protective-equipment-ppe">6.1 Lab Attire/Personal Protective Equipment (PPE)</h3>
+<p>You are in violation of UF lab safety protocols if you enter the Autonomy Park or indoor lab without closed-toed shoes, long pants, and a shirt with adequate coverage. You also must wear eye protection when in the indoor lab or Autonomy Park, and especially while conducting a quadcopter flight. </p>
+<h3 id="62-batteries-and-charging">6.2 Batteries and Charging</h3>
+<p>LiPo and Li-Ion batteries can experience thermal runaway during charging, which can lead to fire. See the <a href="https://autonomypark.org/SOPs/batteries/">LiPo Standard Operating Procedure</a> for best practices regarding battery charging, use, and maintenance. We emphasize that quadcopter batteries should not be left unattended while charging.</p>
+<p>Each quadcopter accepts a different type of battery with a different charging protocol. See your quadcopter's manual for exact specifications. Before each flight, the POC/RPIC should ensure that at least two fully charged batteries are readily available for the quadcopter being operated. Flight should only be conducted using fully charged batteries. </p>
+<h3 id="63-weather">6.3 Weather</h3>
+<p>Weather is one of the largest variables in quadcopter flight, especially in Florida. The FAA heavily discourages flight operations in precipitation, and we concur. All quadcopters are grounded in the event of rain. This protects both the equipment (which is expensive, our quadcopters are not IP rated) and the operator (in case of emergency, precipitation complicates execution of protocols). </p>
+<p>Wind represents the most common weather limitation for drone operations. Most consumer and commercial drones have maximum wind speed tolerances ranging from 20-35 mph (~9-16 m/s), though operational limits should be more conservative than manufacturer specifications. Generally limit operations to 15-20 mph (~7-9 m/s) for safe control. An estimate of the current wind speed at the Autonomy Park can be obtained from the anemometer via Home Assistant, or, in the case that the anemometer is malfunctioning, from the <a href="https://forecast.weather.gov/MapClick.php?CityName=Gainesville&amp;state=FL&amp;site=JAX&amp;textField1=29.6742&amp;textField2=-82.3363&amp;e=0">NWS forecast</a> which reports the wind speed at the Gainesville Regional Airport (KGNV). </p>
+<p>For detailed hourly conditions at KGNV as well as the aviation forecast, the METAR and TAF can be obtained <a href="https://aviationweather.gov/data/metar/?ids=KGNV&amp;taf=1">here</a>. </p>
+<p>If Starlink is to be used for remote operations, ensure that there is minimal cloud cover to reduce latency.</p>
+<h3 id="64-quadcopter-setup">6.4 Quadcopter Setup</h3>
+<p>No quadcopter should EVER be powered outside the netted facility at the Autonomy Park, or in a region of the indoor lab which contains individuals not protected by a net. Moreover, no quadcopter battery should be installed outside the netted facility unless the quadcopter is fastened to the ground and the area around the quadcopter is secured, as powering the quadcopter provides the potential for flight.</p>
+<p>In the event that the quadcopter must be brought indoors (software update, hardware maintenance, or similar troubleshooting), the propellers of the quadcopter should be removed before powering the quadcopter and bringing it indoors. Ensure the quadcopter's battery is not installed when removing the propellers. Note that the quadcopter motors always have the potential to rotate rapidly, and can cause damage to loose hair or clothing. Hair should be tied back to prevent entanglement and loose clothing should be secured or removed, i.e., tuck long/loose shirts in. </p>
+<p>During normal operations, move the quadcopter into the netted facility. If at the Autonomy Park, bring a walkie talkie so you may communicate with the RPIC or VO. If using the Astro or Alta X, unfold the propeller arms, lock the arms out, and spread the propellers so they are not touching one other. All quadcopters should be placed at least 9 ft (~3 m) from any net if outdoors and at least 3 ft (~1 m) from any wall or net if indoors. Once the quadcopter is in its takeoff position, insert the battery. Ensure the battery is firmly seated. When the battery is seated, plug the drone in to power it on. Powering the drone should be your last task inside the netted facility and you should have a clear path to the exit. Leave the netted facility and close it appropriately. </p>
+<h3 id="65-wireless-connectivity">6.5 Wireless Connectivity</h3>
+<p>The RPIC and VO should ensure that there is little to no latency when communicating with the quadcopter (either over radio for piloted flight, or WiFi for autonomous flight) prior to takeoff. On the Astro, should navigate to the "Vehicle Overview" menu, and select the "Connectivity" tab to ensure the quadcopter is connected to <code>UFLAutonomyPark_5GHz</code>. On all other wifi-enabled quadcopters, the quality of connection should be verified on the Unifi dashboard at <code>192.168.1.1</code> under the "Client Devices" menu. Prior to autonomous flight, the quality of data transmission for critical ROS topics should also be verified using the <code>ros2 topic hz /your_topic_name</code> command. </p>
+<h2 id="70-piloted-flight-procedures">7.0 PILOTED FLIGHT PROCEDURES</h2>
+<p>This section discusses best practices for piloted flight of quadcopters at the Autonomy Park. The quadcopters in the SCC/NCR lab, in their current configuration, can only be controlled in an offboard configuration using ROS2 and will thus not be discussed in this section. </p>
+<p>The descriptions of the manual, position, and altitude mode are sourced from the <a href="https://docs.freeflysystems.com/astro/pilots-operating-handbook/flight-part-1-flight-modes">Freefly Docs</a>.</p>
+<h3 id="71-non-negotiables">7.1 Non-Negotiables</h3>
+<ol>
+<li>The RPIC should always have their hands on the controller when flying a quadcopter.</li>
+<li>The RPIC must have the quadcopter within their VLOS at all times.</li>
+<li>The RPIC must never perform aerobatics with the quadcopter.</li>
+<li>NO QUADCOPTER OPERATIONS MAY EVER BE CONDUCTED WHILE A PERSON IS INSIDE OF THE NETTED FACILITY.</li>
+</ol>
+<h3 id="72-takeoff">7.2 Takeoff</h3>
+<p>Ensure no people are in netted facility and it has been closed using the provided carabiners. You can either use the provided PX4 autonomous takeoff protocol, which will then place the drone into a loiter state after a successful takeoff, or do it yourself. The PX4 takeoff will cause the drone to rise ~9 ft (2.5 m) AGL. After manual takeoff, switch into your desired flight mode. NEVER MANUALLY TAKE OFF IN POSITION OR ALTITUDE MODE. THE QUADCOPTER HAS BEEN KNOWN TO TIP OVER IN THESE STATES. </p>
+<h3 id="73-manual-mode">7.3 Manual Mode</h3>
+<p>Any RPIC should be qualified to pilot the quadcopter in manual mode. This skill can be honed virtually in the <a href="https://www.liftoff-game.com/">Liftoff</a> simulation using a real RC transmitter on the "Steve" computer in the indoor lab space. </p>
+<p>In Manual Mode, when the pitch and roll stick is centered, the aircraft will attempt to remain level and will drift with the wind. The aircraft will require constant throttle adjustment to hold altitude.</p>
+<p>In Manual Mode, the pitch and roll stick controls the aircraft angle. The further upward the pitch stick, the further the quadcopter will tilt forward. When the pitch stick is pulled downward, the quadcopter will tilt backward. Similarly, for roll in the left and right directions. Lateral speed is not controlled by the autopilot.</p>
+<p>The throttle stick controls motor speed directly. Deflecting the throttle stick left and right controls the yaw rate. The speed of yaw rotation is proportional to stick deflection.</p>
+<h3 id="74-position-mode">7.4 Position Mode</h3>
+<p>In Position Mode, when the sticks are centered, the quadcopter will maintain its position over a point on the ground and maintain altitude, correcting for disturbances.</p>
+<p>In Position Mode, the pitch/roll stick commands the speed of the drone relative to the ground. The further upward the pitch/roll stick, the faster the quadcopter will fly forward. When the pitch/roll stick is pulled downward, the quadcopter will fly backward. Similarly, the pitch/roll stick will move the quadcopter in the left and right directions when moved to the left and right.</p>
+<p>The throttle stick commands vertical speed. The further upward the throttle stick, the faster the quadcopter will climb. Conversely, the lower the throttle stick position, the faster the quadcopter will descend. Deflecting the throttle stick left and right controls the yaw rate, with the speed of rotation proportional to stick deflection.</p>
+<h3 id="75-altitude-mode">7.5 Altitude Mode</h3>
+<p>Similar to Position mode, the pitch/roll stick moves the quadcopter laterally relative to the ground and the throttle stick commands vertical speed and yaw. However, while the drone can hold its vertical position using the barometer, lateral speed is not controlled by the autopilot in Altitude mode. The quadcopter will drift with the wind, will not stop immediately after lateral movement, and will probably not hold a single point above the ground without pilot input. </p>
+<h3 id="76-landing">7.6 Landing</h3>
+<p>The landing area of the quadcopter should be flat, clear of any debris, and at least 3m away from any net or wall if outdoors, and at least 1m clear of any net or wall if indoors. If you are flying in position mode and the drone is in a stable hovering state, you may use the autonomous landing protocol designed by PX4. Otherwise, bring the quadcopter to the ground gently by lowering the throttle until all landing gear have made contact with the ground. Then, reduce the throttle to zero and DISARM THE QUADCOPTER. This landing procedure can be performed in Manual, Position, and Altitude mode. </p>
+<h2 id="80-autonomous-flight-procedures">8.0 AUTONOMOUS FLIGHT PROCEDURES</h2>
+<h3 id="81-offboard-mode">8.1 Offboard Mode</h3>
+<p>Offboard mode is inherently the most dangerous operating condition for any quadcopter. You are handing over the wheel to an autonomous algorithm that is (in our case) experimental/cutting edge. EXTREME PRECAUTIONS MUST BE TAKEN IN THIS MODE. To prevent damage to property or injury to individuals, any code written to be deployed on the quadcopters should be THOROUGHLY vetted in our PX4 simulation environment. We have curated a "digital twin" environment, which even models the geometry of the Autonomy Park netted facility. </p>
+<p>Note that on PX4-enabled quadcopters, offboard mode can be overridden by sending any RC command. The quadcopter will then enter postion mode, enabling the RPIC to safely pilot the quadcopter to the home location if something goes wrong while in offboard mode. </p>
+<h3 id="82-return-to-home-mode">8.2 Return to Home Mode</h3>
+<p>This flight mode is only present on PX4-enabled quadcopters and does not pertain to the Parrot Bebops. In this mode, the quadcopter will abandon its active command/mode, fly to a predefined altitude, and fly itself back to the GPS coordinates at which it took off. If your quadcopter does not have obstacle avoidance enabled, it will run into obstacles on its way home. We recommend to never use this mode unless in dire circumstances (i.e., as a failsafe). The default parameter causes the quadcopter to rise to 60m before returning home. This will (obviously) cause the quadcopter to shoot up vertically into the top net. To avoid this, ensure the following parameters are set before flight:
+</p><div class="highlight"><pre><span></span><code>RTL_RETURN_ALT = 2.5 M
+RTL_DESCEND_ALT = 2.5 M
+</code></pre></div>
+Additionally, in the "Safety" settings, make sure that all RTL and takeoff altitudes are not greater than ~9 ft (2.5 m). 
+<h3 id="83-ros-2-code">8.3 ROS 2 Code</h3>
+<p>When writing packages for PX4-enabled quadcopters at the Autonomy Park, NEVER "roll your own" flight stack (e.g., rig up a takeoff, landing, offboard mode switcher + coordinate transformations). The <a href="https://github.com/UFL-Autonomy-Park/aero_common">aero-common</a> package has been carefully designed to ensure consistency in all quadcopter autonomous operations.</p>
+<h2 id="90-post-flight-operations">9.0 POST-FLIGHT OPERATIONS</h2>
+<p>The drone should be disarmed as soon as it lands. If another operation/experiment run is planned within a short duration and the battery percentage is adequately high (&gt;50%), leave the drone in the netted facility powered on (i.e., in the disarmed state with the battery still installed).</p>
+<p>No operator should enter the net if more experiments will be conducted. The only appropriate time for an operator to enter the netted facility containing quadcopters with batteries installed is after the conclusion of an experiment, and for the sole purpose of disconnecting the battery. When an operator enters the net, they must have a walkie-talkie on their person to communicate with the RPIC/VO who is inside the shed. The RPIC/VO should ensure that all methods of controlling the drone (e.g. Herelink remote and any ROS terminals) are secured and prevented from sending any accidental takeoff commands. Prior to the operator approaching the quadcopter, the RPIC/VO must verbally confirm that the quadcopter is in a Disarmed state. </p>
+<h2 id="100-multi-agent-operations">10.0 MULTI-AGENT OPERATIONS</h2>
+<p>This section of the SOP is under development.</p>
+<h2 id="110-emergency-procedures">11.0 EMERGENCY PROCEDURES</h2>
+<p>Research involving quadcopters is inherently dangerous and subject to mission failure in a variety of ways.</p>
+<h3 id="111-loss-of-feedback">11.1 Loss of Feedback</h3>
+<p>In the case of piloted or autonomous flight, loss of feedback can lead to unstable quadcopter behavior (e.g. uncontrolled flight into obstacles or the ground), or an inability to land the quadcopter. In the event that feedback is lost via ROS or via radio, the drone failsafe (PX4 parameters <code>COM_OBL_RC_ACT</code> or <code>COM_OF_LOSS_T</code>) should activate, causing the drone to either land or loiter, depending on how the drone has been configured by the user. </p>
+<p>If the failsafe does not engage and the drone is in a safe, hovering state, the user should take over command using the remote control and land the drone safely. If the remote control will not engage, the VO should attempt to restart the MAVROS telemetry node and send a landing command using the Xbox controller. </p>
+<h3 id="112-loss-of-control">11.2 Loss of Control</h3>
+<p>In the event of total loss of control (i.e., catastrophic failure in which the onboard computer cannot be reached and the RC controller will not send commands), the operators must let the quadcopter exhaust its battery and land (the <code>COM_FAIL_ACT_T</code> should be set to land mode), or, unfortunately, crash. During this period the quadcopter should be kept within VLOS and attempts should be made to reconnect with the quadcopter by restarting remote controls and ROS nodes, but NO PERSON SHOULD ENTER THE NET WHILE THE QUADCOPTER IS IN FLIGHT. </p>
+<p>In the event of a full crash, the drone must be safely disarmed and the battery must be disconnected/removed. The period after a crash represents the highest likelihood of flight crew injury and must be taken seriously. The blades of the quadcopter may still spin, causing unexpected motion, even after a catastrophic crash. The RPIC must DISARM the drone or flip the KILL SWITCH on the RC before anyone enters the netted facility to power down the drone.</p>
+<p>The operator entering the netted facility must be wearing appropriate PPE, including gloves to protect their hands. No operator should approach a "live" quadcopter that cannot be confirmed to be disarmed. In the case that the quadcopter cannot be confirmed to be disarmed, the "drone recovery kit" consisting of a moving blanket, leather gloves, and a long sleeve smock should be used to physically disable the drone. The blanket should be used to ensure that the propellers cannot rotate, preventing flight. Approach the drone carefully and quickly. Never reach over the travel path of the propellers. Quickly pull the power or battery and DO NOT ATTEMPT TO DIAGNOSE THE HARDWARE BEFORE POWER HAS BEEN DISENGAGED. </p>
+<h2 id="120-accidents-and-injuries">12.0 ACCIDENTS AND INJURIES</h2>
+<p>In the case of an incident involving only equipment (e.g., the quadcopter crashes inside of the netted facility and the landing gear is damaged, but no people are harmed), report the incident to your PI. </p>
+<p>In the case of an accident involving physical injury, CALL 911 IF THE INJURY IS SERIOUS OR LIFE-THREATENING, and get medical attention ASAP. If the injury is not serious, apply first aid. If the injury requires medical attention, call AmeriSys at 1-800-455-2079 before consultation with a medical professional. Once the injury has been treated or emergency personnel have arrived, contact your PI to notify them of the incident and report the accident to <a href="https://apps.ehs.ufl.edu/incidents">UF Environmental Health &amp; Safety</a>.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
