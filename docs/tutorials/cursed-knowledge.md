@@ -13,3 +13,9 @@ sudo rm -rf /var/cache/app-info
 sudo apt clean
 sudo apt update
 ```
+
+## Homebrews
+The Optical Flow sensor has a built-in distance sensor.
+The LiDaR is usually the primary distance sensor.
+When I say "distance" sensor, I mean the sensor used for the purposes of local altitude estimation (not AMSL or ellipsoidal of course).
+PX4 will fallback to which ever one it detects first. Usually, it every time was plugged in correctly, that will mean the LiDAR. However, if your LiDAR is broken or unplugged, you will never know because the fallback check happens once on boot and will never change without a reboot.
