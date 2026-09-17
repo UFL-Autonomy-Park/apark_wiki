@@ -21,6 +21,8 @@ title: Freefly Astro
 
 ## IP Reservations
 
+See the Google Drive doc on this.
+
 | Device Name | Username | IP Address    | Password |
 | :---------- | :------- | :------------ | :------- |
 | `astro1`    |          | `192.168.1.121` |          |
@@ -59,7 +61,7 @@ title: Freefly Astro
     Found devices
     selected     serial   version    addresses
     ---------- --------- --------- -----------------
-               131502818  v3.5.8     {'192.168.1.121'}
+               131502818  vX.X.X     {'192.168.1.121'}
 
     Note: Use 'device select' command to select a device to interact with
           Use 'device deselect' command to reset selection
@@ -74,7 +76,7 @@ title: Freefly Astro
 
 4.  Clone and build the `astro_mavros` package from GitLab:
     ```bash
-    git clone [https://uflautonomypark@bitbucket.org/autonomy-park-air-team/astro_mavros.git](https://uflautonomypark@bitbucket.org/autonomy-park-air-team/astro_mavros.git)
+    git clone https://github.com/UFL-Autonomy-Park/astro_mavros
     cd astro_mavros && auterion-cli app build
     ```
 
