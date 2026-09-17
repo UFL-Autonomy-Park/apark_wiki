@@ -2,26 +2,22 @@
 title: Minimal Startup
 ---
 
-The `ncr_bebop` repo on the Gitea server contains all of the necessary packages for a minimal startup, joy control, and setpoint control for the Parrot Bebop 2 drones in the NCR lab. To build all packages and install the ROS2 driver for the Bebop, follow the instructions in the [ROS 2 Bebop Autonomy (Driver Support)](../parrot/ros2-bebop.md) guide.
+Author: Max Gardenswartz
 
-Typically, you will need to build `ros2_parrot_arsdk` followed by `ros2_bebop_driver`, and then you can build `bebop_teleop`. In the `bebop_teleop` package, make sure that the namespace is correct for the Bebop you are using.
+The `https://github.com/UFL-Autonomy-Park/bebop_ws` repo contains all of the necessary packages for a minimal startup, joy control, and setpoint control for the Parrot Bebop 2 drones in the NCR lab. To build all packages and install the ROS2 driver for the Bebop, follow the instructions in the README.mds. Make sure to read all submodules README.mds.
 
-To run the packages in the `ncr_bebop` repo do `cd ncr_bebop && source install/setup.bash`. Then, open four separate terminals and run
-```
-# Run joy (make sure PS4 Dualshock controller is connected)
-ros2 run joy joy_node
-```
-```
-# Run Bebop driver
-ros2 launch ros2_bebop_driver bebop_node_launch.xml ip:=YOUR.BEBOP.IP.ADDRESS 
-```
-```
-# Mocap topics
-ros2 launch vrpn_mocap client.launch.yaml server:=192.168.1.202 port:=3883 
-```
-```
-# Teleop node
-ros2 run bebop_teleop joy_cmd_node
-```
+DO NOT FORGET TO CORRECTLY ROTATE THE BEBOP's FRAME IN THE MOCAP SOFTWARE.
 
-Once all nodes are running and the Bebop is connected, press the PS button to take off. A subsequent press of the PS button will land the Bebop. To switch to setpoint mode, press X. Only do this if you have confirmed that position feedback for your Bebop is available. 
+Our code assumes the mocap gives FLU. YOU MUST place the bebop at the origin of the lab (marked on floor), nose aligned with the positive x axis, and setup the frame to be FLU in OptiTrack.
+
+In Optitrack, red is x, green is y, and blue is z.
+
+This Bebop_ws does not contain example code for offboard control. It's the just the suite that's ready to accept velocity-level commands.
+
+Here's some example code:
+
+https://github.com/UFL-Autonomy-Park/bebop-rise-controller
+
+Use the main.launch.py file. All params needed for bebop_ws are here. This launch file launches the example code AND the bebop_ws.
+
+Take the quadoff. "Start" on the XBOX 360 controller. Land is the adjacent one. "A" to enter/exit offboard and start running code.
