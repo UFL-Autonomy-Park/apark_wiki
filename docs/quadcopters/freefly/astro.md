@@ -11,8 +11,10 @@ title: Freefly Astro
     COM_OBL_RC_ACT = Position Mode (this is default)
     NAV_RCL_ACT = Land mode (this is not default)
     COM_LOW_BAT_ACT = Land Mode (this is not default)
-    RTL_RETURN_ALT = 8 ft
-    RTL_DESCEND_ALT = 8 ft
+    RTL_RETURN_ALT = 8 ft or 2 m (this is not default)
+    RTL_DESCEND_ALT = 8 ft or 2 m (this is not default)
+    BAT_CRIT = 40 (this is not default)
+    BAT_EMERGENCY = 30 (this is not default)
 	```
 	Additionally, in the "Safety" settings, make sure that all RTL and takeoff altitudes are not greater than 2.5m.
 
