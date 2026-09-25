@@ -5,3 +5,7 @@ The indoor lab (MAE-A 313) has a space of about 18 ft by 9 ft by 44 ft (5.5m, 2.
 
 ## Outdoor Lab Dimensions
 As of December 21, 2025, the outdoor lab (Autonomy Park) is 240 ft (73 m) long, 60 ft (18 m) wide, and 20 ft (7 m) tall. However, it is scheduled to be expanded in Spring 2026.
+
+The Autonomy Park is located at the UF Energy Park, called the UF Solar Park on Apple and Google maps:
+- [Google Maps Link](https://maps.app.goo.gl/MvcM2w51dQvM2ucF7)
+- [Apple Maps Link](https://maps.apple/p/SC3wj3MogVh~9x)
