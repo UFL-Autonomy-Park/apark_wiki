@@ -1,12 +1,13 @@
 # Access Requests
 
 The Autonomy Park is located at the UF Energy Park, called the UF Solar Park on Apple and Google maps:
+
 - [Google Maps Link](https://maps.app.goo.gl/MvcM2w51dQvM2ucF7)
 - [Apple Maps Link](https://maps.apple/p/SC3wj3MogVh~9x)
 
 ## Mandatory Training
 
-All access requests will be **DENIED** if you do not complete the online training first. Reach out to Dr. Kamalapurkar; a safety manager will add you to the Canvas.
+All access requests will be **DENIED** if you do not complete the online training first.
 
 ### Safety Video
 
@@ -23,7 +24,7 @@ All access requests will be **DENIED** if you do not complete the online trainin
 
 ### Quiz
 
-Afer the video, you must take the following quiz and score at least 80% for your training to be considered complete.
+After the video, you **must** take the following quiz and **score at least 80%** for your training to be considered complete! Reach out to **Dr. Kamalapurkar** and a safety manager will add you to the Canvas.
 
 [Canvas Link to the Quiz](https://ufl.instructure.com/courses/583272/quizzes)
 
