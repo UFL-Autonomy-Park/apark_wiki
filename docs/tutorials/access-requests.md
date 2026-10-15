@@ -42,7 +42,7 @@ This request gives you access to both sheds next to the park where all equipment
 - Access Type: **Building Only**
 - Building(s): **Autonomy Park**
 - Rooms: **1644 & 1645**
-- Supervisor: **Rushikesh Kamalapurkar** (Put your advisor if you're a MAE graduate student)
+- Supervisor: **Rushikesh Kamalapurkar**
 - Details/Justification: **Autonomy Park access for robotics research**
 
 ### Second submission
@@ -53,7 +53,7 @@ This request is needed for bathroom access in the Student Design Center at the S
 - Access Type: **Building Only**
 - Building(s): **Solar Park**
 - Rooms: **0980**
-- Supervisor: **Rushikesh Kamalapurkar** (Put your advisor if you're a MAE graduate student)
+- Supervisor: **Rushikesh Kamalapurkar**
 - Details/Justification: **Bathroom access for Autonomy Park**
 
 ### Gate code
