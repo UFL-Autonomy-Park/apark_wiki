@@ -17,9 +17,9 @@ hide:
 </style>
 
 <div style="text-align: center;">
-  <img src="images/index/apark-logo-banner-nobg.webp" alt="Autonomy Park logo banner." width="85%">
+  <img src="images/index/apark-logo-banner-nobg.png" alt="Autonomy Park logo banner." width="85%">
   <br>
-  <img src="images/index/robot-banner.webp" alt="Autonomy Park robots." width="85%">
+  <img src="images/index/robot-banner.jpg" alt="Autonomy Park robots." width="85%">
 </div>
 
 <p class="home-tagline">The wiki for the UF Autonomy Park and the SCC Lab: our robots, hardware, networks, and software.</p>

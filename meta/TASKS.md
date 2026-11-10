@@ -79,7 +79,8 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 
 ## B. Content and cleanup
 
-### T-004 Asset register (used vs unused) — `DOING`
+### T-004 Asset register (used vs unused) — `APPROVED`
+- **Max 2026-11-10: resolved; handled or no longer relevant.**
 - Unreferenced in `docs/`: `images/gallery/20250425-park-visit.jpg`, `images/homebrew/solder-wick.jpg`. No unreferenced PDFs.
 - **Used from `possible_assets/` so far (processed copies only, in `docs/images/`):** people photos (3, People page), `MAE-A 313.heic` (cropped, no people), `Autonomy Park Sky View.webp` (left panel only). The rest of `possible_assets/` (465 MB, untracked + gitignored) is not yet triaged.
 - **Never publish without an OK:** photos with identifiable people (`Warren Dixon.jpg` and `UF NCR Logo.svg` are not to be used at all). Plan: table in `meta/ASSETS.md` (file, where used, people in photo, compress?, keep/drop).
@@ -141,10 +142,12 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 - 2026-10-21: I drafted a `glance` sentence for the 42 pages that lacked one (not the home page, which has no byline, nor the empty ROSbot page). Pages I edited got Max appended to `author`, `assisted_by: Claude`, and `updated: 2026-10-21`, per the rule. Draft wording: read each page's box in `mkdocs serve`, then OK or rewrite. Pilot note follows.
 - Now a 5-second "what is this and why do I care?", one or two sentences, in front matter (DESIGN §5). Pilot on `edit-wiki`, using Max's wording. For other pages I will draft the sentence and Max approves or rewrites.
 
-### T-011 Introduce Autonomy Park vs. Indoor Lab — `TODO`
+### T-011 Introduce Autonomy Park vs. Indoor Lab — `APPROVED`
+- **Max 2026-11-10: resolved; handled or no longer relevant.**
 - Autonomy Park: UF resource. Indoor Lab (MAE-A 313, mocap): Dr. Kamalapurkar's lab, not a university resource. Landing page + `applies_to` badge on every page.
 
-### T-012 Personnel and access — `TODO`
+### T-012 Personnel and access — `APPROVED`
+- **Max 2026-11-10: resolved; handled or no longer relevant.**
 - Public page: **Max Gardenswartz, Opeyemi Owolabi (lab managers), Rushikesh Kamalapurkar (PI)**, with UF emails and photos. Emails are as given by Max. Photos are in `possible_assets/Misc/` (compress before adding; LFS).
 - Document separately: (1) safety training complete, (2) Facilities has actually granted keycode access. Each lab (Autonomy Park, Indoor Lab) has individual keycodes.
 - Trainee roster stays out of the repo until Max says otherwise.
@@ -155,7 +158,8 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 - Earlier facts from Max: **Bebops** are good but aging; the biggest limitation is batteries (age unknown, they keep failing); the fleet is to be replaced soon, TBD, probably Starling 2 Max (T-049). **Astros:** three (see T-013). **Alta-X:** one, Gen 1, retired.
 - A table in Start Here / Robots: each robot × {Indoor Lab, Autonomy Park}. Known: Bebop is the only quadcopter flown indoors (safety). Homebrew is outdoor only. Go1 is the only robot safe in either. RosBots live only in the Indoor Lab. Everything else: Max to confirm.
 
-### T-023 Placeholder convention for unverified pages — `TODO`
+### T-023 Placeholder convention for unverified pages — `APPROVED`
+- **Max 2026-11-10: resolved; page verification is no longer done.**
 - A standard banner (`status: draft` / `unverified`) for pages awaiting a subject-matter author, e.g. Homebrew assembly, ground robots. Max's rule: "unknown" is acceptable; undocumented is not.
 
 ---
@@ -165,7 +169,8 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 ### T-015 Migrate IP reservations and equipment status from Google Drive — `APPROVED` (first batch done by T-093; Max 2026-10-21 unblocked it and said the wiki's Bebop battery and fleet tables replace the Google Sheets; the Batteries page no longer links the sheet)
 - Needs Drive access. Max says IPs, SSIDs, router models, and room numbers are OK to publish (Q1). Still never: passwords or 2FA details.
 
-### T-016 Credentials page — `TODO` (baseline agreed)
+### T-016 Credentials page — `APPROVED` (baseline agreed)
+- **Max 2026-11-10: resolved; handled or no longer relevant.**
 - What the public page may say about how access and credentials are handled is a security decision for Max. Details are intentionally **not** recorded in this tracked file (the repo is public); see the private notes Max has.
 - **Agreed by Max (2026-10-21):** the public page says only *how to request access* and *who to ask* (link to the People page), and contains no passwords and no 2FA details. Where the detailed, access-controlled documentation lives: see T-047.
 - Max:
@@ -182,10 +187,12 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 - Unverified by me: the Windows `winget` IDs and the Linux commands (written from the tools' documentation; I could only run macOS). Please sanity-check on a second OS when convenient.
 - Max:
 
-### T-019 Stale-page detection in CI — `DECISION`
+### T-019 Stale-page detection in CI — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - Warn when `verified:` is older than N months.
 
-### T-028 Software setup hub page (ROS 2, Gazebo, uv, ...) — `DECISION`
+### T-028 Software setup hub page (ROS 2, Gazebo, uv, ...) — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - **Software list decision (Max asked, 2026-10-21): build it as we go, then audit at the end.** Done: `start-here/software-setup/software.md` ("Software We Use") exists as a draft with 18 rows from software already named on existing pages; versions not yet documented are red *Unknown*. Rule (DESIGN §13): any page that introduces software adds a row. At the end I run one pass that searches every page for software names missing from the table. Why as-we-go: it costs one row per page we touch and cannot become a big discovery job. Status: `REVIEW` (draft).
 - Original proposal: ONE page, `Start Here → Software Setup`, is the canonical place for *how to install* each tool and *which version we use*. Other pages say "Requires: ROS 2 Jazzy (see Software Setup)" and only document what is specific to them. Details in the chat reply and DESIGN §13.
 - Candidates already in the wiki: `start-here/software-setup/simulation-installation.md`, `contribute/edit-wiki.md` (uv/git/git-lfs), `vmware-guide.pdf`, `zerotier-vpn.md`.
@@ -234,7 +241,8 @@ Goal: one page (inside the Software Setup hub, T-028) that lists everything that
 - Needs Max to confirm the org's current teams and default repo permission; I cannot see the org settings.
 - Max:
 
-### T-034 Should this repo have tests? — `DECISION` (discussion)
+### T-034 Should this repo have tests? — `APPROVED` (discussion)
+- **Max 2026-11-10: no changes; closed.**
 - My recommendation: yes, a few cheap automated checks, none of them "unit tests" in the software sense. Candidates, in priority order:
     1. **Strict build on every pull request** (`mkdocs build --strict`): catches broken links and missing files. Today CI only runs on `main`, i.e. *after* a mistake is live. This also lets us test the LFS-in-CI path from a branch.
     2. **Image/PDF reference check**: every referenced file exists, no unreferenced assets (T-004).
@@ -305,7 +313,8 @@ Rule (DESIGN §7): lab-authored content is a page; vendor manuals stay PDF; no h
 - Wording change only; no technical content changes. I list every changed sentence in the commit message.
 - Max:
 
-### T-041 Ask Max for each page's author — `MAX-TBD`
+### T-041 Ask Max for each page's author — `APPROVED`
+- **Max 2026-11-10: resolved; done.**
 - Worksheet: **`meta/AUTHORS.md`**: one row per page (44), with a git-history *hint* and a blank column for Max. Max can edit it directly. I apply only filled rows and never blanks. Two rows are pre-filled (edit-wiki, lab-spaces).
 - Applying the answers also adds the front matter, `updated` (last real edit from git, or today for new pages), and a draft `glance` sentence per page for Max to approve (T-006, T-010).
 - Max:
@@ -347,7 +356,8 @@ Current violations, with proposed names (each needs a redirect, which `redirects
 - Risk: more URL churn. Redirects cover pages but not PDFs. Max: OK to proceed, and which of the "Max to choose" names?
 - Max:
 
-### T-043 Standardize attachment types — `DECISION` (later, per Max)
+### T-043 Standardize attachment types — `APPROVED`
+- **Max 2026-11-10: apply it.** Done: the standard is in `meta/DESIGN.md` section 7 and on Edit the Wiki. The two `.webp` banners became `robot-banner.jpg` and `apark-logo-banner-nobg.png` (1600 px); 31 photos over 1600 px and 400 KB were resized (43.8 MB to 8.7 MB). `.png` stays out of LFS; `.mov` clips were converted to `.mp4`. Decision on the old question: PNGs stay out of Git LFS and must stay under 1 MB.
 Proposal (to review when we get to it):
 | Kind | Standard | Convert from |
 |---|---|---|
@@ -365,7 +375,8 @@ Proposal (to review when we get to it):
 - Max to find out the camera model and how many the Indoor Lab has. Goes on the Indoor Lab pages and into the equipment inventory (T-024 style). Until then the page says *Unknown*.
 - Max:
 
-### T-045 Verify that cloning the repo works, following the Edit the Wiki page — `DOING`
+### T-045 Verify that cloning the repo works, following the Edit the Wiki page — `APPROVED`
+- **Max 2026-11-10: resolved; ignore.**
 - **Part A, done by Claude (2026-10-21):** fresh clone of the branch into an empty folder, then `uv sync --locked` and a full build. Result: clone OK; PDFs and photos arrive as real files (LFS smudge works); lockfile installs; build has no warnings; 51 LFS files.
 - **Part B, `MAX-TBD` (needs the branch pushed, so it waits for the history cleanup, see T-017):** follow `contribute/edit-wiki.md` literally on a machine that has none of the tools, ideally one per OS (Linux/WSL, macOS, Windows). Record every place the page was wrong, missing a step, or confusing, and I fix the page. Specific risks: Windows `winget` IDs; SSH key setup is not covered by the page (the clone URL is SSH); whether new users get GitHub access in time; LFS bandwidth on first clone.
 - **Part C, after merge:** confirm the first CI deploy publishes real PDFs/photos, not LFS pointer text (see T-003).
@@ -376,7 +387,8 @@ Proposal (to review when we get to it):
 - To do: move into the Compatibility page (T-030) as a "planned changes" entry; link from `homebrew-docker.md`; list what must be re-tested at the switch (MAVROS launch files, namespaces, the NTRIP/RTK path, `astro_mavros`, the parameter template, which currently configures MAVROS only). Update when #29368 merges. Q18.
 - Max:
 
-### T-047 Where robot credentials live — `DECISION`
+### T-047 Where robot credentials live — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - Robot logins are needed somewhere reliable and access-controlled (today's location is not good enough). Details are not recorded in this tracked file (public repo). The wiki lists only device name, username, IP, and a pointer to where to request access; it never lists the password. Revisit the credential columns on the Husky/Jackal pages with this task.
 - Max:
 
@@ -386,7 +398,6 @@ Proposal (to review when we get to it):
 
 ### T-049 Starling 2 Max, and replacing the Bebop fleet — `APPROVED`
 - **Max 2026-11-10:** Ignore; resolved.
-- **Reminder to Max:** put the Starling 2 Max files in the wiki. A graduate student lent them to Max.
 - Context: the Bebop fleet is to be replaced with new quadcopters (TBD, probably Starling 2 Max). Bebop limits: aging, and the batteries (age unknown) keep failing. When the decision is made: mark Bebop pages deprecated or "being replaced", add a Starling 2 Max hub page, and update the indoor-flight facts (today only the Bebop flies indoors).
 - Max:
 
@@ -477,7 +488,8 @@ Proposal (to review when we get to it):
 - A page on flying the Astros. Max expects to copy the flight warnings onto it: the flight-modes `danger` (T-064) and the battery warning (T-065) are shared snippets in `snippets/`, so it only needs an include line **once Max confirms each applies to the Astro** (which flight modes it has, what its battery management does, how the controller works). Do not copy the text by hand. Needs Max: the Astro flight procedure, controller (AMC) usage, failsafe settings (today a warning block of parameters on `astro.md`), and charging/storage.
 - Max:
 
-### T-024 Jetson inventory — `DOING` (page `infrastructure/jetsons.md` started; counting needs Max and helpers)
+### T-024 Jetson inventory — `APPROVED` (page `infrastructure/jetsons.md` started; counting needs Max and helpers)
+- **Max 2026-11-10: resolved; handled or no longer relevant.**
 - All Jetsons run JetPack 6.0 rev 2 (per Max). Table: device, robot, JetPack, hostname, status. Needs Max to confirm per device.
 - Max 2026-10-21: the lab has about 30 Jetsons. Most are set up, but they are not all labeled and no one has counted them. There are also Orin NXs that Max has not inventoried. Max suggests a page for the Jetsons, or an "Inventory" page (Q34). Max cannot reasonably do this alone and will ask others for help. First-pass data from the IP sheet (T-093): only about a dozen Jetsons have reserved IPs (Homebrew: 4, with homebrew-jetson-08 added 2026-10-21; Husky and Jackal: 4; Alta: 1; Unitree: 4), far fewer than 30. Counting and labeling the rest is a to-do for Max and helpers (backlog).
 
@@ -531,7 +543,7 @@ Proposal (to review when we get to it):
 - Max:
 
 ### T-132 Come back to Who Has Access: a Canvas chain — `DROPPED` (Max 2026-11-06: the Who Has Access page is removed; the roster is private to lab managers)
-- Max 2026-11-03: the cleared-only list is fine for now. Later he wants help setting up a chain with Canvas (if possible and free) so the list stays current. **Remind Max at the end of every session until done.**
+- Max 2026-11-03: the cleared-only list is fine for now. Later he wants help setting up a chain with Canvas (if possible and free) so the list stays current.
 - Max:
 
 ### T-131 Document all the networking equipment — `APPROVED` (Max, in person)
@@ -546,7 +558,8 @@ Proposal (to review when we get to it):
 - Not started: no facts yet (see Q52).
 - Max:
 
-### T-120 Astro parameters reference — `TODO`
+### T-120 Astro parameters reference — `APPROVED`
+- **Max 2026-11-10: resolved; done.**
 - Same treatment as the Homebrew parameters, simpler (the Astro stack 2.3.x is on PX4 1.15; Freefly does not port parameters on upgrade either). Needs a parameter export from an Astro (Max, in person).
 - Max:
 
@@ -580,7 +593,8 @@ Proposal (to review when we get to it):
 ### T-129 Autonomy Park origin and frame, with a figure — `APPROVED` (see Q51)
 - Max:
 
-### T-130 Microhard radios page, when the first one is installed — `TODO` (future work)
+### T-130 Microhard radios page, when the first one is installed — `APPROVED` (future work)
+- **Max 2026-11-10: resolved; done.**
 - Max:
 
 ### T-133 Max writes the guide for updating ROS 2 — `APPROVED`
@@ -713,7 +727,8 @@ Imported the Desktop parameter changes (GPS/IMU Z offsets, FRD note), added a Re
 - **Open:** Q86, Q88.
 - Max:
 
-### T-149 Each robot's Overview must walk from hardware setup to manual operation and autonomy — `TODO`
+### T-149 Each robot's Overview must walk from hardware setup to manual operation and autonomy — `APPROVED`
+- **Max 2026-11-10: resolved; done.**
 - Max 2026-11-09: at some point every robot's Overview page should explain everything needed, from setting up the hardware (for example batteries) to manual operation and autonomy.
 - Max:
 
@@ -875,7 +890,8 @@ Imported the Desktop parameter changes (GPS/IMU Z offsets, FRD note), added a Re
 - Max 2026-10-21: back up the OptiTrack Motive calibration file for the Indoor Lab. Needs Max at the Indoor Lab. Open: where the backup lives (and the file must not go in the public repo if it carries anything sensitive); once it exists, say on `mocap-calibration.md` where it is and how to restore it (T-025).
 - Max:
 
-### T-083 Download for the Autonomy Park discovery server configurations — `MAX-TBD`
+### T-083 Download for the Autonomy Park discovery server configurations — `APPROVED`
+- **Max 2026-11-10: resolved; done.**
 - Max 2026-10-21: add a download of the discovery server configurations for the Autonomy Park (a file Max attaches, linked with `{ download="..." }` as a button, T-063). Needs Max: the file(s), and which page they belong on (probably the RTK Setup page or a new discovery-server page under Infrastructure). Check the files contain no passwords, keys, or other secrets before they are committed (public repo).
 - Max:
 
@@ -919,7 +935,8 @@ Imported the Desktop parameter changes (GPS/IMU Z offsets, FRD note), added a Re
 - **Max 2026-11-10:** Done (Max).
 - Not listed anywhere yet. Max to ask someone to write. Indoor Lab only. I will create the page skeleton and an "authors wanted" status.
 
-### T-029 Rename Drive IP-reservation documents and obtain SOP source — `MAX-TBD`
+### T-029 Rename Drive IP-reservation documents and obtain SOP source — `APPROVED`
+- **Max 2026-11-10: resolved; done.**
 - See T-005. Needed before the last NCR mentions can go.
 
 ### T-027 Check the Indoor Lab Wi-Fi SSID — `APPROVED`

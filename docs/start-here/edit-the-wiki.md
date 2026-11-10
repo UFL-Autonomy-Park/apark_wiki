@@ -130,7 +130,7 @@ A PDF sits in the same folder as the page that uses it and is linked by file nam
 An image goes in `docs/images/`, in a folder named for its topic. From a page in `docs/start-here/`, the path looks like this:
 
 ```markdown
-![Autonomy Park robots](../images/index/robot-banner.webp)
+![Autonomy Park robots](../images/index/robot-banner.jpg)
 ```
 
 Count the `../` by how deep the page is. A page in `docs/robots/quadcopters/homebrew/` needs `../../../images/` at the start of the path. If an image does not show up in the preview, the number of `../` is almost always the reason. Always write alt text (the text in the square brackets) that says what the picture shows.
@@ -146,6 +146,8 @@ Another page is linked by its `.md` file:
 Git LFS keeps the repository small. These file types are stored with LFS automatically, as listed in `.gitattributes`:
 
 `.pdf` `.jpg` `.mp4` `.mov` `.heic` `.avif`
+
+Use one format per kind of file: photos as `.jpg` (1600 px or less on the long side), screenshots as `.png`, diagrams as `.svg`, videos as short muted `.mp4` clips (longer videos go on YouTube), and vendor manuals as `.pdf`. Never use `.webp`.
 
 If you turned on Git LFS (see [Requirements](#requirements)), you do nothing special. Add the file and commit as usual.
 
