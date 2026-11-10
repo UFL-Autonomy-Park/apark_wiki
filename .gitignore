@@ -46,3 +46,27 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+# macOS
+.DS_Store
+
+# Local-only working material (NOT for the public repo: personal data, large raw media, drafts)
+/possible_assets/
+/Autonomy Park and SCC Lab Roster.xlsx
+/*.xlsx
+
+# Python / mkdocs build
+/site/
+/.venv/
+/venv/
+__pycache__/
+*.pyc
+
+# Local-only security notes (never commit)
+/meta/private/
+/unused/originals/
+
+# Raw Google Drive exports and files awaiting review (may hold sensitive data)
+/Relevant Google Drive Files/
+/NDAA Compliant RC Controllers.pdf
+/Mocap/
+/oct22-new-stuff/
