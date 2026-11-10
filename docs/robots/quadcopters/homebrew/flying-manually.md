@@ -1,12 +1,15 @@
 ---
 title: Flying Manually
 author: "Max Gardenswartz"
-updated: 2026-10-21
+updated: 2026-11-10
 assisted_by: Claude
 applies_to: [apark]
 glance: >-
   How to fly a Homebrew manually: pre-flight, the transmitter's switches, takeoff, in-flight conduct, and landing. Read the warnings first.
 ---
+
+!!! warning "This Guide Is for Max Gardenswartz's Personal Radio"
+    This guide is for Max Gardenswartz's personal radio (a Taranis QX7). It is not a long-term solution for the lab. After Max graduates, flying manually will need to be set up again from scratch.
 
 New to flying? Practice in a simulator first.
 
@@ -25,32 +28,6 @@ New to flying? Practice in a simulator first.
 --8<-- "battery-watch-danger.md"
 
 --8<-- "qx7-personal-note.md"
-
-## Safety and Legal Requirements
-**Flying these drones is inherently dangerous.** Failure to follow these protocols results in personal liability for equipment damage and FAA violations.
-
-### Range and Legal Boundaries
-* **The Net is the Limit:** Only fly inside the Autonomy Park’s net. Legally, the net is considered an "indoor" environment.
-* **FAA Warning:** Flying outside the net requires an FAA license, a registered drone, and prior airspace clearance via an approved vendor. Violations can carry fines between $10,000 and $100,000.
-* **Line of Sight:** The pilot must maintain a continuous line of sight with the drone at all times.
-
-### Personal & Bystander Safety
-* **Attire:** Tie back loose hair and clothing. 
-* **No Gloves:** Pilots must never wear gloves; full tactile feedback from the gimbals is required for precise control.
-* **The "Live" Rule:** Never work on a drone that has a battery and propellers attached if a receiver is connected to the flight controller. Even without a transmitter powered on, rogue signals or software glitches can trigger motors.
-
-## Pre-Flight Preparation
-### Hardware Setup
-1.  **Receiver:** Ensure the FrSky receiver is correctly wired and paired to the Taranis QX7.
-2.  **GPS Fix:** **Do not power on the drone indoors and carry it outside.** The GPS EKF will initialize with poor data. Power on (or reboot via radio) only once the drone is at its takeoff position in the Park.
-3.  **Battery Monitoring:** Always have a dedicated ground station operator monitoring battery voltage over the wireless telemetry link. 
-
-### Pilot Readiness
-If you are not an experienced pilot, you must practice in a simulator first.
-* **Recommended:** *Liftoff* (Steam)
-* **Alternative:** *FPV FreeRider* (Steam)
-* **Note:** *DRL Simulator* is not recommended due to unrealistic "out-of-the-box" physics.
-* **Note:** If flying at night, ensure the Park's floodlights are active.
 
 ## Transmitter Configuration (Taranis QX7)
 The following mapping is standard for the Homebrew fleet. Refer to the diagram below for switch locations.
