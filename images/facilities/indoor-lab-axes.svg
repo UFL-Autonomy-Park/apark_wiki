@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 646" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" font-size="15">
+  <title id="t">Indoor Lab mocap axes, plan view</title>
+  <desc id="d">Top-down view of the Indoor Lab, north up. The origin is 9 ft from each side wall and 24 ft from the south end. The door is in the east wall near the north end and opens inward, toward the lab; the hallway is outside it. Positive x points west, positive z points north, positive y points up.</desc>
+  <rect x="190" y="60" width="216" height="528" fill="#808080" fill-opacity="0.08"/>
+  <path d="M406,96 V60 H190 V588 H406 V132" fill="none" stroke="#737373" stroke-width="2"/>
+  <!-- Door in the east wall, near the north end. Hinge at (406,132); gap 96 to 132 (about 3 ft at 12 px/ft, illustrative). Opens inward: leaf drawn open at 90 degrees, dashed arc shows the swing. -->
+  <line x1="406" y1="132" x2="370" y2="132" stroke="#737373" stroke-width="3"/>
+  <path d="M370,132 A36,36 0 0 1 406,96" fill="none" stroke="#737373" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="400" y1="96" x2="412" y2="96" stroke="#737373" stroke-width="2"/>
+  <line x1="400" y1="132" x2="412" y2="132" stroke="#737373" stroke-width="2"/>
+  <text x="418" y="118" fill="#737373" font-style="italic">hallway</text>
+  <line x1="298" y1="300" x2="214" y2="300" stroke="#e53935" stroke-width="3"/>
+  <polygon points="200,300 214,293 214,307" fill="#e53935"/>
+  <line x1="298" y1="300" x2="298" y2="86" stroke="#1e88e5" stroke-width="3"/>
+  <polygon points="298,72 291,86 305,86" fill="#1e88e5"/>
+  <circle cx="298" cy="300" r="9" fill="none" stroke="#43a047" stroke-width="3"/>
+  <circle cx="298" cy="300" r="3" fill="#43a047"/>
+  <text x="312" y="326" fill="#43a047" font-weight="600">+y (up)</text>
+  <text x="312" y="344" fill="#737373">origin</text>
+  <text x="182" y="296" text-anchor="end" fill="#e53935" font-weight="600">+x</text>
+  <text x="182" y="316" text-anchor="end" fill="#737373">west window</text>
+  <text x="298" y="46" text-anchor="middle" fill="#1e88e5" font-weight="600">+z (north)</text>
+  <text x="416" y="66" fill="#737373">z = +20 ft</text>
+  <text x="416" y="84" fill="#737373">(6 m)</text>
+  <text x="416" y="594" fill="#737373">z = −24 ft</text>
+  <text x="416" y="612" fill="#737373">(7.5 m)</text>
+  <text x="190" y="614" fill="#737373">x = +9 ft</text>
+  <text x="190" y="632" fill="#737373">(2.75 m)</text>
+  <text x="406" y="614" text-anchor="end" fill="#737373">x = −9 ft</text>
+  <text x="406" y="632" text-anchor="end" fill="#737373">(2.75 m)</text>
+</svg>

@@ -1,0 +1,11 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s31f6:
+      dhcp4: true
+      dhcp4-overrides:
+        use-routes: false
+        use-dns: false
+    enp6s0:
+      dhcp4: true

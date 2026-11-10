@@ -1,0 +1,5372 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Max Gardenswartz">
+      
+      
+      
+        <link rel="prev" href="../../maintain/updating-here4-gnss-firmware/">
+      
+      
+        <link rel="next" href="../example-parameters-for-px4-main/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../images/index/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Case Study: Porting the Parameters to PX4 Main - Autonomy Park - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#case-study-porting-the-parameters-to-px4-main" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Autonomy Park - Wiki" class="md-header__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomy Park - Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Case Study: Porting the Parameters to PX4 Main
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../start-here/start-here/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../starling-2-max/" class="md-tabs__link">
+          
+  
+  
+  Robots
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/computing-hardware/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../networking/networking-equipment/" class="md-tabs__link">
+          
+  
+  
+  Networking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../software/software-we-use/" class="md-tabs__link">
+          
+  
+  
+  Software
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Autonomy Park - Wiki" class="md-nav__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    Autonomy Park - Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/start-here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/report-an-incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report an Incident
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/lab-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Rules
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/lab-spaces-and-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Spaces and Dimensions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Access
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/lab-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/github-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Access
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/admin-access-indoor-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Access (Indoor Lab)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/passwords/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passwords
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/schedule-a-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule a Time
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/edit-the-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit the Wiki
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quadcopters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../starling-2-max/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starling 2 Max
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parrot Bebop 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parrot Bebop 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/connecting-to-wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting to WiFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/firmware-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homebrew
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../px4-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PX4 Configuration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../calibration-and-per-drone-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calibration and Per-Drone Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microhard-radios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microhard Radios
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flying-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_11">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_11" id="__nav_3_1_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/motor-soldering-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/esc-soldering-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/esc-to-pdb-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC to PDB Soldering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/finish-soldering-the-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish Soldering the PDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/accessory-wires-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory Wires Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/arm-motor-subassembly-instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arm-Motor Subassembly Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_12">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_12" id="__nav_3_1_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/service-and-repair-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service and Repair Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/upgrading-px4-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrading PX4 Firmware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/building-px4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building PX4
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/updating-here4-gnss-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Here4 GNSS Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_13" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_13" id="__nav_3_1_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Porting the Parameters to PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Porting the Parameters to PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-this-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Is For
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-max-did" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Max Did
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-comparison-against-source-was-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Comparison Against Source Was Done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-and-px4-migrates-the-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed, and PX4 Migrates the Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renamed-but-the-migrated-value-does-not-mean-what-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed, but the Migrated Value Does Not Mean What You Want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed-completely-behavior-now-hardcoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed Completely, Behavior Now Hardcoded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replaced-by-a-differently-shaped-parameter-no-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Replaced by a Differently Shaped Parameter, No Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-name-new-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Name, New Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-name-changed-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Name, Changed Meaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmetic-changes-and-new-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosmetic Changes and New Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-parameters-worth-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Parameters Worth a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactions-between-your-own-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactions Between Your Own Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#things-in-the-old-reference-that-the-source-changed-or-refuted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things in the Old Reference That the Source Changed or Refuted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-calibration-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Calibration Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisions-max-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisions Max Made
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-produced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Was Produced
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-tested-and-what-is-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Was Tested, and What Is Left
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-for-the-next-person" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist for the Next Person
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-parameters-for-px4-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Parameters for PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mavros-link-saturation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: MAVROS Link Saturation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lidar-and-can-sensor-burnout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Lidar and CAN Sensor Burnout
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../position-mode-instability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Position Mode Instability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Freefly
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_2" id="__nav_3_1_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Astro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Astro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/usb-c-port/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USB-C Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_2_6" id="__nav_3_1_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/flying-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_3" id="__nav_3_1_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retired
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retired
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/retired/freefly-alta-x/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Alta X
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/repairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repairs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ground Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clearpath
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/husky-a200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Husky A200
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/jackal-ugv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jackal UGV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitree
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/go1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Go1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/b1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Harness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/rosbot-2-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROSbot 2 Pro
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/computing-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/jetsons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetsons
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/radio-and-rc-setup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio and RC Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/wireless-controllers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Controllers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/mocap-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mocap Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/security-cameras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Cameras
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/weather-station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather Station
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/miscellaneous-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/networking-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Equipment
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/networking-setup-indoor-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Setup (Indoor Lab)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/reserving-a-static-ip-address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserving a Static IP Address
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/chrony-time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrony Time Sync
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/zerotier-vpn-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZeroTier VPN Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/file-backup-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Backup Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/ntrip-caster-for-rtk-on-quadcopters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTRIP Caster for RTK on Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/software-we-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software We Use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ip-reservations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Reservations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/quadcopter-flight-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopter Flight Practice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/upgrading-ros-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrading ROS 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ai-for-debugging-jetsons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI for Debugging Jetsons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/github-contribution-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Contribution Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ubuntu-in-vmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu in VMware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ubuntu-in-virtualbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu in VirtualBox
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/what-is-safe-to-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Safe to Upgrade
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/autonomy-park-sitl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy Park SITL
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-this-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Is For
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-max-did" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Max Did
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-comparison-against-source-was-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Comparison Against Source Was Done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-and-px4-migrates-the-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed, and PX4 Migrates the Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renamed-but-the-migrated-value-does-not-mean-what-you-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renamed, but the Migrated Value Does Not Mean What You Want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed-completely-behavior-now-hardcoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed Completely, Behavior Now Hardcoded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replaced-by-a-differently-shaped-parameter-no-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Replaced by a Differently Shaped Parameter, No Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-name-new-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Name, New Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-name-changed-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Name, Changed Meaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmetic-changes-and-new-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosmetic Changes and New Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-parameters-worth-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Parameters Worth a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactions-between-your-own-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactions Between Your Own Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#things-in-the-old-reference-that-the-source-changed-or-refuted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things in the Old Reference That the Source Changed or Refuted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-calibration-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Calibration Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisions-max-made" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisions Max Made
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-produced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Was Produced
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-was-tested-and-what-is-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Was Tested, and What Is Left
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-for-the-next-person" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist for the Next Person
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="case-study-porting-the-parameters-to-px4-main">Case Study: Porting the Parameters to PX4 Main</h1>
+<div class="page-meta"><span><b>Written by</b> Max Gardenswartz</span><span><b>Updated</b> 2026-11-03</span><span class="page-meta__badge">Autonomy Park</span></div>
+
+<div class="admonition abstract">
+<p class="admonition-title">At a glance</p>
+<p>A worked example of porting the Homebrew parameter template from PX4 1.16.2 to PX4 main: the method, the kinds of changes you will meet, and the decisions made. Read it before upgrading the fleet.</p>
+</div>
+<p><strong>Date:</strong> 2026-10-22. Max is flight-testing PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a> (RTCM corrections over uXRCE-DDS) on a real Homebrew quadcopter on a branch of PX4 <code>main</code>. The flights were a success, and the PR has since been merged. The feature is expected (likely) in PX4 1.19.0 as a stable feature.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Do not use this case study, or the files it produced, to port to 1.18.0 or any other stable release.</strong> What was tested is <code>main</code> as of 2026-10-22 (commit <code>5f429033bf</code>, the 1.19 development line). <code>main</code> already differs from <code>release/1.18</code>, and it will differ from future stable releases. For example, <code>GNSS_CHECK</code>, <code>GNSS_REQ_*</code> and <code>SENS_GNSS0_*</code> exist only on <code>main</code>; <code>release/1.18</code> still has <code>EKF2_GPS_CHECK</code>, <code>EKF2_REQ_*</code> and <code>SENS_GPS0_*</code>. The point of this document is the <strong>method and the kinds of decisions</strong>, not the answers. Whoever upgrades the fleet must regenerate everything against the release they actually target.</p>
+</div>
+<h2 id="what-this-is-for">What This Is For</h2>
+<p>Someone, one day, will upgrade PX4 on every Homebrew quadcopter. The upgrade tutorial (written separately) tells you what to click. It does not tell you what to put in the parameter template, because that depends on what changed between the two PX4 versions. This case study shows one complete example of that part, for the parameters only, so a future graduate student knows what the work looks like.</p>
+<p>The outputs of such a port are three things:</p>
+<ol>
+<li>A new <a href="../example-parameters-for-px4-main/">Example Parameters for PX4 Main</a>: the reference with one row per parameter, why it has its value, and whether it is at the default.</li>
+<li>A matching <a href="../example-parameters-px4-main.params">example-parameters-px4-main.params</a>: the file you apply in QGroundControl after the airframe defaults are loaded.</li>
+<li>A check of <a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a>: the list of parameters that are unique to each drone. If any of those names changed, that sensor has to be recalibrated after the upgrade.</li>
+</ol>
+<h2 id="what-max-did">What Max Did</h2>
+<p>Max used an AI assistant (Claude) as a research helper, with one rule: <strong>everything is verified against the PX4 source, nothing is guessed.</strong> The assistant was not trusted for what it remembered about PX4. It was used to do the reading and diffing quickly, and every claim had to point at a file.</p>
+<p><strong>What was fed in</strong></p>
+<ul>
+<li><a href="../../parameters/">Parameters</a>: the 1.16.2 reference, 202 documented parameters.</li>
+<li><a href="../../homebrew-px4-v1.16.2.params">homebrew-px4-v1.16.2.params</a>: the 1.16.2 template of just parameters in the <a href="../../parameters/">Parameters</a> page.</li>
+<li><a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a>: the per-drone parameters that should never save transfered between drones but need to be ported/preserved during an update</li>
+</ul>
+<p><strong>What was asked</strong></p>
+<blockquote>
+<p>These params are all what my quadcopter uses for PX4 1.16.2. I'm about to test something in the current mainline PX4 code. Which of these params have had their names changed or have been reworked? You must verify against source. Do not guess.</p>
+</blockquote>
+<p>Then, after reading the findings, Max made a decision on each case (below) and asked for the new files.</p>
+<h2 id="how-the-comparison-against-source-was-done">How the Comparison Against Source Was Done</h2>
+<p>This is the part to copy. Release notes and parameter descriptions were used only as leads.</p>
+<ol>
+<li><strong>Pin the code.</strong> Check out each version you care about as its own <code>git worktree</code>: the tag you came from (<code>v1.16.2</code>), and the version you are going to (here <code>main</code>, plus <code>v1.17.0</code> and <code>release/1.18</code> to understand the history).</li>
+<li><strong>Generate the parameter metadata from each tree.</strong> PX4 builds a <code>parameters.json</code> from the <code>*.yaml</code> / <code>*.c</code> parameter definitions (the <code>metadata_parameters</code> target in <code>cmake/metadata.cmake</code>). A full firmware build is not needed; the same generator scripts can be run directly (<code>Tools/serial/generate_config.py</code>, <code>Tools/module_config/generate_params.py</code>, <code>src/lib/parameters/px_process_params.py</code>). On 1.16.2 one extra argument was needed (<code>--inject-xml src/lib/parameters/parameters_injected.xml</code>).</li>
+<li><strong>Diff the metadata.</strong> For every parameter in your list: does the name exist? Same type? Same default, min, max, units? Same enum values and bitmask bits? That one script answered "renamed or removed?" for all 202 parameters at once. Result: 176 names survive, 26 do not.</li>
+<li><strong>Read the migration code.</strong> <code>src/lib/parameters/param_translation.cpp</code> (<code>param_modify_on_import</code>) is where PX4 renames old parameters automatically. Read it, do not assume. Check also <em>where it is called from</em> (see Renamed).</li>
+<li><strong>Read what consumes the parameter.</strong> A changed default or a deleted parameter only matters through the code that uses it, for example <code>Commander.cpp</code>, <code>sdcardCheck.cpp</code>, <code>battery.cpp</code>, <code>gnss_checks.cpp</code>, <code>mixer_module.cpp</code>, <code>ManualControl.cpp</code>.</li>
+<li><strong>Diff the layered defaults.</strong> The "Is Default" column in our document is not just the metadata default. It is the metadata default overridden by <code>rc.board_defaults</code> (Cube Orange), <code>rc.mc_defaults</code> and the airframe file <code>4001_quad_x</code>. Compare those files across versions too. Here none of them changed for the parameters in our document.</li>
+<li><strong>Validate the new template mechanically.</strong> A script checks every name in the new <code>.params</code> against the generated <code>parameters.json</code> of the target: it exists, the type matches, the value is inside min/max, enum values are legal. That check caught a real error (see "Renamed, and PX4 Migrates the Value").</li>
+<li><strong>Only then judge.</strong> Each finding gets a decision from a human.</li>
+</ol>
+<h2 id="the-cases">The Cases</h2>
+<p>Each case below is a <em>kind</em> of change you will meet again. The parameter names are just examples from this run.</p>
+<h3 id="renamed-and-px4-migrates-the-value">Renamed, and PX4 Migrates the Value</h3>
+<table>
+<thead>
+<tr>
+<th>1.16.2</th>
+<th><code>main</code></th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EKF2_GPS_POS_X/Y/Z</code></td>
+<td><code>SENS_GNSS0_OFFX/Y/Z</code></td>
+<td>Renamed twice: <code>SENS_GPS0_*</code> on <code>release/1.18</code>, then <code>SENS_GNSS0_*</code> on <code>main</code>.</td>
+</tr>
+<tr>
+<td><code>EKF2_GPS_DELAY</code></td>
+<td><code>SENS_GNSS0_DELAY</code> (and <code>SENS_GNSS1_DELAY</code>)</td>
+<td>The migration copies the value to both slots.</td>
+</tr>
+<tr>
+<td><code>EKF2_REQ_EPH/EPV/HDRIFT/NSATS/PDOP/SACC/VDRIFT</code></td>
+<td><code>GNSS_REQ_*</code></td>
+<td>Same defaults.</td>
+</tr>
+<tr>
+<td><code>MPC_LAND_RC_HELP</code></td>
+<td>bit 1 of <code>MPC_AUTO_NUDGING</code></td>
+<td>Our value was 0, so nothing to carry.</td>
+</tr>
+</tbody>
+</table>
+<p>What to learn:</p>
+<ul>
+<li><strong>Release notes do not give a full picture of parameter changes.</strong> Only some changes will be highlighted in the release notes. Many will not.</li>
+<li><strong>PX4 cannot migrate parameters for you.</strong> PX4 has some code (<code>param_modify_on_import</code>) to try and "upgrade" old parameters, but you cannot rely on this. Manual re-selection and porting of all parameter is required. PX4 will silently get rid of old parameter names!</li>
+<li><strong>The type can change with the name.</strong> <code>EKF2_GPS_DELAY</code> was a float (type 9 in the <code>.params</code> file); <code>SENS_GNSS0_DELAY</code> is an int32 (type 6). The mechanical validation in step 7 caught this.</li>
+<li><strong>A renamed parameter can have a new matching rule.</strong> In this case study's upgrade, it happens to be that the antenna offsets are now matched to the receiver by device ID (<code>SENS_GNSS0_ID</code>). With all IDs at 0 PX4 falls back to the uORB instance index, which the parameter description itself calls "only reliable for serial GPS". Our Here4 is DroneCAN. If no slot matches, the offsets silently stay zero.</li>
+</ul>
+<h3 id="renamed-but-the-migrated-value-does-not-mean-what-you-want">Renamed, but the Migrated Value Does Not Mean What You Want</h3>
+<p><code>EKF2_GPS_CHECK</code> (1023) became <code>GNSS_CHECK</code>. The same 1023 would be carried over, but <code>GNSS_CHECK</code> has a <strong>new bit 10 (fix type)</strong> and a new bit 11 (jamming). With 1023, bit 10 is off, so the new <code>GNSS_REQ_FIX</code> would never be enforced (which we want to enforce since this was not possible to enforce in 1.16.2). The new template sets <code>GNSS_CHECK</code> = 2047 (the default) explicitly.</p>
+<p>Lesson: when a bitmask is renamed, compare the bit list, not just the name.</p>
+<h3 id="removed-completely-behavior-now-hardcoded">Removed Completely, Behavior Now Hardcoded</h3>
+<table>
+<thead>
+<tr>
+<th>Removed</th>
+<th>What it did for us</th>
+<th>What is true on <code>main</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COM_KILL_DISARM</code> = 0</td>
+<td>Disarm immediately after kill</td>
+<td>Hardcoded 5 s. See the deep dive below.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_SDCARD</code> = 2</td>
+<td>No SD card blocks arming</td>
+<td>A missing SD card is only a warning. The setting is lost.</td>
+</tr>
+<tr>
+<td><code>COM_POSCTL_NAVL</code> = 1</td>
+<td>Land when position is lost in Position mode</td>
+<td>Removed in 1.17.0. Falls back to Altitude, then Stabilized, never Land.</td>
+</tr>
+<tr>
+<td><code>COM_DISARM_MAN</code>, <code>COM_TAKEOFF_ACT</code>, <code>COM_OBC_LOSS_T</code>, <code>COM_IMB_PROP_ACT</code></td>
+<td>Our values equal the new hardcoded behavior</td>
+<td>Nothing lost.</td>
+</tr>
+<tr>
+<td><code>BAT2_I_CHANNEL</code></td>
+<td>Default only</td>
+<td>Gone with <code>BAT1_I_CHANNEL</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>For every removed parameter ask two questions: <strong>is our value the same as what is now hardcoded</strong> (then nothing changes) and <strong>if not, what do we lose</strong> (then someone must decide). Max reviewed this list and accepted it, after considering <code>COM_KILL_DISARM</code> below.</p>
+<p><strong><code>COM_KILL_DISARM</code>.</strong> It was the one that worried Max most. Kill still stops the motors immediately, but on <code>main</code> the vehicle no longer disarms at once: it stays armed for a hardcoded 5 s, and flipping the kill switch back in that time restarts the motors. The parameter was removed in PX4 PR <a href="https://github.com/PX4/PX4-Autopilot/pull/26736">#26736</a>. An irreversible kill was wanted to minimize the consequences of reactivating a killed drone, but the new behavior is acceptable. <strong>Pilots must now remember that after landing on a kill, they cannot deactivate kill too quickly: if kill was set less than 5 seconds ago, the drone can take off again.</strong> Max verified the new kill-switch logic in the test flights.</p>
+<h3 id="replaced-by-a-differently-shaped-parameter-no-migration">Replaced by a Differently Shaped Parameter, No Migration</h3>
+<ul>
+<li><code>COM_RC_OVERRIDE</code> (3: auto and offboard) and <code>COM_RC_STICK_OV</code> (30 %) became <strong><code>MAN_OVERRIDE_SPD</code></strong>. Only <code>COM_RC_OVERRIDE</code> = 0 migrates (to -1); our 3 would have been dropped silently. The unit changed from a 30 % displacement to stick <em>travel per second</em> (default 1.0), so the old "30" cannot be converted. In code (<code>ManualControl.cpp</code>, <code>Commander::manualControlCheck()</code>) any of the four sticks moving faster than the threshold, in auto or offboard mode on a multicopter, switches to Position mode.</li>
+<li><code>FD_ACT_MOT_C2T</code>, <code>FD_ACT_MOT_THR</code>, <code>FD_ACT_MOT_TOUT</code> became <code>MOTFAIL_C2T</code>, <code>MOTFAIL_OFF</code>, <code>MOTFAIL_TIME</code>. No migration, different defaults (the C2T default went from 2 to 35) and a different time unit. Our policy for these was "leave at default", so we use the new defaults.</li>
+</ul>
+<h3 id="same-name-new-default">Same Name, New Default</h3>
+<p>Our reference documents "Is Default" for every row, and many rows said "left at the default". When the default moves, those rows move with it unless a human says otherwise.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>1.16.2 default</th>
+<th><code>main</code> default</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BAT1/2/3_V_CHARGED</code></td>
+<td>4.05 V</td>
+<td>4.2 V</td>
+<td>Accept 4.2 V (reasoning below).</td>
+</tr>
+<tr>
+<td><code>COM_FLTT_LOW_ACT</code></td>
+<td>3 (Return)</td>
+<td>1 (Warning)</td>
+<td>Accept the new default.</td>
+</tr>
+<tr>
+<td><code>FD_ACT_EN</code></td>
+<td>1</td>
+<td>0</td>
+<td>Accept the new default.</td>
+</tr>
+<tr>
+<td><code>EKF2_MIN_RNG</code></td>
+<td>0.1 m</td>
+<td>0.01 m</td>
+<td>Already 0.01 m. Now equals the default (the 1.16.2 note, "expected to become the default", is confirmed).</td>
+</tr>
+<tr>
+<td><code>MAV_PROTO_VER</code></td>
+<td>0</td>
+<td>2</td>
+<td>Already 2. Now equals the default.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked example: <code>BAT1_V_CHARGED</code>.</strong> The old 4.05 V was a workaround. The voltage is measured on a quadcopter drawing about 5 A, and sag makes a full 4.2 V cell read about 4.05 V. On <code>main</code> the default is 4.2 V and the description no longer advises setting it lower. What does that do to the safety-critical thresholds? <code>battery.cpp</code> interpolates linearly between <code>V_EMPTY</code> (3.6 V) and <code>V_CHARGED</code>, so the same fractional thresholds now correspond to higher voltages:</p>
+<table>
+<thead>
+<tr>
+<th>Threshold</th>
+<th style="text-align: right;">Fraction</th>
+<th style="text-align: right;">Voltage with 4.05 V</th>
+<th style="text-align: right;">Voltage with 4.2 V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BAT_LOW_THR</code></td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">3.76 V</td>
+<td style="text-align: right;">3.81 V</td>
+</tr>
+<tr>
+<td><code>BAT_CRIT_THR</code></td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">3.71 V</td>
+<td style="text-align: right;">3.75 V</td>
+</tr>
+<tr>
+<td><code>BAT_EMERGEN_THR</code></td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">3.67 V</td>
+<td style="text-align: right;">3.69 V</td>
+</tr>
+<tr>
+<td><code>COM_ARM_BAT_MIN</code></td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">3.83 V</td>
+<td style="text-align: right;">3.90 V</td>
+</tr>
+</tbody>
+</table>
+<p>Every warning and the arming limit now trip earlier, which is more conservative. Max accepted it and left all four fractions unchanged. Two more consumers of <code>V_CHARGED</code> were found while reading <code>battery.cpp</code>: the over-voltage "spike" fault threshold (cells × <code>V_CHARGED</code> × 1.05) and the battery scale used only when <code>MC_BAT_SCALE_EN</code> is on (default 0, not set).</p>
+<h3 id="same-name-changed-meaning">Same Name, Changed Meaning</h3>
+<p><code>COM_RCL_EXCEPT</code> = 7 is a bitmask. Bit 1 meant "Hold" in 1.16.2; on <code>main</code> it means "Auto modes" (Hold, Takeoff, Land, Return, Descend, Follow Target, Precland, Orbit), and bits 3 and 4 are new. The same value 7 now also ignores RC loss during Takeoff, Land and Return. The metadata diff does not flag this as a rename or a default change; only comparing the bit lists does. Max accepted the new meaning in anticipation of allowing multi-agent setups (in which requiring multiple RCs is not possible since we only have one).</p>
+<h3 id="cosmetic-changes-and-new-options">Cosmetic Changes and New Options</h3>
+<p>No action, but the <strong>description column</strong> in the reference was updated so it matches updated descriptions from <code>main</code>:</p>
+<ul>
+<li>Relabelled options: <code>BAT*_SOURCE</code> ("Power Module / Analog"), <code>COM_ARM_WO_GPS</code> (1 is now "Allow arming (with warning)", 2 "Allow arming (no warning)"; our 0 still means deny), <code>COM_FLTMODE*</code> ("Position / Cruise"), <code>COM_RC_IN_MODE</code> ("Joystick" is now "MAVLink"), <code>COM_PREARM_MODE</code>.</li>
+<li>New options: <code>NAV_RCL_ACT</code> 7, <code>COM_LOW_BAT_ACT</code> 4, <code>SENS_EN_SF1XX</code> 8 and 9, new <code>COM_FLTMODE*</code> values.</li>
+<li>Widened behavior: <code>COM_ARM_HFLT_CHK</code> now also covers watchdog dump files.</li>
+</ul>
+<p><code>COM_ARM_HFLT_CHK</code> is also a lesson in <strong>keeping a workaround on purpose</strong>. We set it to 0 because a failed USB connection blocks arming. PX4 issue <a href="https://github.com/PX4/PX4-Autopilot/issues/29346">#29346</a> (hardfault of the USB MAVLink task after arming following a USB unplug) is <strong>open at the time of writing (2026-10-22)</strong> and, per Max, affects our board. It is filed against the Cube Orange+, and its author says it is fixed on <code>main</code> by PRs #28185 and #28197; that was not verified in source. So the parameter stays 0, and the reference links the issue so a later reader knows when to revisit it.</p>
+<h3 id="new-parameters-worth-a-decision">New Parameters Worth a Decision</h3>
+<ul>
+<li><strong><code>GNSS_REQ_FIX</code></strong> (new, default 3). Value 6 means RTK fixed. Max chose 6: there is no reason to fly without RTK anymore ever since Max set it up to be plug-and-play. Before this, Max would just wait for RTK anyways before flying. The check fails when the reported fix type is below the setting (<code>gnss_checks.cpp</code>) and needs bit 10 of <code>GNSS_CHECK</code> (see "Renamed, but the Migrated Value Does Not Mean What You Want"). With <code>COM_ARM_WO_GPS</code> = 0, arming is denied unless the receiver reports RTK fixed. <strong>It is a strict check, which is decisive before arming.</strong> Once the strict checks have passed on the ground, the checks that decide while armed are the relaxed ones with fixed limits (3D fix, 50 m, 10 m/s), so losing RTK in flight does not trip it. Any offboard code the user writes should really land immediately on a fix type below 6, just like Max's offboard tests do.</li>
+<li><strong><code>EKF2_SENS_EN</code></strong> (new, default 8191 = all 13 sources on). Next section.</li>
+<li><strong><code>GNSS_REQ_TIME</code></strong> (new, 10 s): left at default. Not every new parameter needs a value in the template; it still has to be looked at.</li>
+</ul>
+<h3 id="interactions-between-your-own-decisions">Interactions Between Your Own Decisions</h3>
+<p>This is where a human decision and the source can disagree.</p>
+<p><strong>Stick override versus nudging.</strong> Max first wanted both <code>MAN_OVERRIDE_SPD</code> at its default and <code>MPC_AUTO_NUDGING</code> = 3 (yaw and landing nudging), so that the RC could adjust yaw and landing in autonomous flight. The source says otherwise: the <code>MPC_AUTO_NUDGING</code> description requires <code>MAN_OVERRIDE_SPD</code> = -1, and <code>manualControlCheck()</code> has no exception for nudging. With both on, only slow stick movements nudge, and a fast one switches to Position mode. Max decided that <strong>stick override is far more important</strong>, so <code>MPC_AUTO_NUDGING</code> stays 0. The two are effectively mutually exclusive, which was not visible from the parameter names.</p>
+<p><strong><code>EKF2_SENS_EN</code> against the <code>*_CTRL</code> parameters.</strong> Each fusion source runs only if its <code>EKF2_SENS_EN</code> bit <strong>and</strong> its own control parameter are both nonzero (<code>intended() = enabled &amp;&amp; available</code>; <code>available</code> comes from <code>EKF2_GPS_CTRL</code>, <code>EKF2_OF_CTRL</code>, <code>EKF2_RNG_CTRL</code>, <code>EKF2_BARO_CTRL</code>, <code>EKF2_MAG_TYPE</code>). <code>EKF2_SENS_EN</code> is applied only while disarmed. Max's bit choices:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Bit</th>
+<th>Source</th>
+<th style="text-align: center;">Set</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>GNSS 0</td>
+<td style="text-align: center;">1</td>
+<td>The Here4.</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>GNSS 1</td>
+<td style="text-align: center;">0</td>
+<td>There is no second GPS.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Optical flow</td>
+<td style="text-align: center;">1</td>
+<td>Must match <code>EKF2_OF_CTRL</code> = 1.</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>External vision</td>
+<td style="text-align: center;">0</td>
+<td>RTK is good; no mocap.</td>
+</tr>
+<tr>
+<td style="text-align: right;">4 to 7</td>
+<td>Aux global position 0 to 3</td>
+<td style="text-align: center;">0</td>
+<td>None fitted.</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Barometer</td>
+<td style="text-align: center;">1</td>
+<td>Height estimate.</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Range finder</td>
+<td style="text-align: center;">1</td>
+<td>Must match <code>EKF2_RNG_CTRL</code> = 1 or 2.</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Magnetometer</td>
+<td style="text-align: center;">1</td>
+<td>Critical.</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>Airspeed</td>
+<td style="text-align: center;">0</td>
+<td>Quadcopter.</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>Ranging beacon</td>
+<td style="text-align: center;">0</td>
+<td>None.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Max's doubt, kept on purpose.</strong> Max was unsure how this has to match <code>EKF2_OF_CTRL</code> and <code>EKF2_RNG_CTRL</code>, and whether turning GNSS 1 off could stop the GPS from loading. The source answers the first (it is an AND), but not how it behaves on the vehicle. Being unsure is fine and expected; that is what a test flight, and an in-person check that the GPS still loads, are for. Write the doubt down in the reference, as was done here.</p>
+<p><strong>A human error caught in review.</strong> Max's first draft computed the value as 1798 from the binary string <code>0011100000110</code>. Read with bit 0 on the right, that string has bit 0 clear and bit 1 set: GNSS 0 off, GNSS 1 on, the opposite of the bit list next to it. The bits listed (0, 2, 8, 9, 10) give 1 + 4 + 256 + 512 + 1024 = <strong>1797</strong> = <code>0011100000101</code>. Always recompute a bitmask from the bit list and check it against the <code>module.yaml</code>/enum, not against the string.</p>
+<h3 id="things-in-the-old-reference-that-the-source-changed-or-refuted">Things in the Old Reference That the Source Changed or Refuted</h3>
+<ul>
+<li>The 1.16.2 note that <code>EKF2_MIN_RNG</code> "is expected to become the default in 1.18" was wrong about the version: it already was in 1.17.0.</li>
+<li>The 1.16.2 note that RTK over uXRCE-DDS is impossible "because there is no topic for it yet" was true on 1.16.2, and was exactly what PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a> changed: it added <code>/fmu/in/rtcm_corrections</code>. That PR has since been merged after the test flights succeeded, so the sentence is now out of date for <code>main</code>, and for 1.19.0 when it is released (likely).</li>
+<li><code>BAT3_I_OVERWRITE</code> exists on <code>main</code> (it did not in 1.16.2).</li>
+<li>The new <code>MOTFAIL_*</code> descriptions on <code>main</code> still refer to the old <code>FD_ACT_*</code> names. <strong>Upstream descriptions are not reliable either.</strong></li>
+<li><code>BAT_V_OFFS_CURR</code> was in the 1.16.2 <code>.params</code> template but had no row and no reason in the 1.16.2 reference. It now has a row saying exactly that.</li>
+</ul>
+<h2 id="the-calibration-parameters">The Calibration Parameters</h2>
+<p><a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a> lists what is unique to each drone. If a name there changed, the sensor must be recalibrated after the upgrade, because its saved value would no longer be read.</p>
+<p>All 107 per-drone names were checked against <code>main</code>: <code>CAL_GYRO*</code>, <code>CAL_ACC*</code>, <code>CAL_MAG*</code> (offsets, scales, <code>ODIAG</code>, <code>ID</code>, <code>PRIO</code>, <code>ROT</code>), <code>CAL_BARO*</code>, <code>SENS_BOARD_X/Y_OFF</code>, <code>RC1</code> to <code>RC10</code> (<code>MIN</code>/<code>TRIM</code>/<code>MAX</code>), <code>BAT1_V_DIV</code>, <code>BAT1_A_PER_V</code>, <code>LND_FLIGHT_T_HI/LO</code>, <code>COM_FLIGHT_UUID</code>, <code>EKF2_MAG_DECL</code>. <strong>All names exist on both 1.16.2 and <code>main</code>, with the same type and default.</strong> The only change is that <code>SENS_BOARD_X/Y/Z_OFF</code> now have a range of ±45°, and the sample values are well inside it. No entry of <a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a> needs to change for this port.</p>
+<p><strong>The test flight verified that the calibration parameters survived the upgrade: seemingly all of them carried over without being ported by hand.</strong> This is new as of the flights for PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a>. One candidate addition is <code>SENS_GNSS0_ID</code> (see "Renamed, and PX4 Migrates the Value"), a new per-drone value.</p>
+<h2 id="decisions-max-made">Decisions Max Made</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAN_OVERRIDE_SPD</code></td>
+<td>Keep the default (1.0).</td>
+</tr>
+<tr>
+<td><code>MPC_AUTO_NUDGING</code></td>
+<td>Keep 0. Override matters more (see "Interactions Between Your Own Decisions").</td>
+</tr>
+<tr>
+<td>Removed parameters with hardcoded behavior</td>
+<td>Accepted, after the kill-switch investigation.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_FIX</code></td>
+<td>6, require RTK fixed. <code>GNSS_CHECK</code> set to 2047 so it is enforced.</td>
+</tr>
+<tr>
+<td>Renamed parameters</td>
+<td>Ported with their values.</td>
+</tr>
+<tr>
+<td>New defaults (<code>BAT*_V_CHARGED</code>, <code>COM_FLTT_LOW_ACT</code>, <code>FD_ACT_EN</code>, etc.)</td>
+<td>Accepted. "Is Default" column updated.</td>
+</tr>
+<tr>
+<td>Battery thresholds</td>
+<td>Unchanged fractions; the 4.2 V shift is more conservative and accepted.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_HFLT_CHK</code></td>
+<td>Keep 0, link issue <a href="https://github.com/PX4/PX4-Autopilot/issues/29346">#29346</a> (open on 2026-10-22).</td>
+</tr>
+<tr>
+<td><code>EKF2_SENS_EN</code></td>
+<td>1797, with the bit table above. Doubts recorded.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-was-produced">What Was Produced</h2>
+<ul>
+<li><a href="../example-parameters-px4-main.params">example-parameters-px4-main.params</a>: 194 parameters (the 1.16.2 file had 201). Every name, type and range validated against the metadata generated from <code>main</code>. Differences from the 1.16.2 template: 13 removed outright; 13 renamed (11 carried over with their values, one with a type change, plus <code>GNSS_CHECK</code> and <code>MPC_AUTO_NUDGING</code>, which get explicit values); <code>GNSS_REQ_FIX</code>, <code>EKF2_SENS_EN</code>, <code>MAN_OVERRIDE_SPD</code> and three <code>MOTFAIL_*</code> added; and five values moved to the new defaults (<code>BAT1/2/3_V_CHARGED</code>, <code>COM_FLTT_LOW_ACT</code>, <code>FD_ACT_EN</code>).</li>
+<li><a href="../example-parameters-for-px4-main/">Example Parameters for PX4 Main</a>: every row has its "Is Default" mark recomputed against the layered defaults of <code>main</code> (no mismatches), descriptions updated, a new GNSS section, a new MOTFAIL section, the <code>EKF2_SENS_EN</code> bit table, and a closing table of removed or renamed parameters.</li>
+<li><a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a>: verified unchanged.</li>
+</ul>
+<h2 id="what-was-tested-and-what-is-left">What Was Tested, and What Is Left</h2>
+<ul>
+<li><strong>Firmware was built and the drone flew.</strong> The flight tests are described in PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a>. Max also verified the new kill-switch logic.</li>
+<li><strong>Not recorded as verified:</strong> that <code>SENS_GNSS0_OFFX/Y/Z</code> reach <code>vehicle_gnss.antenna_offset</code>; that the estimator reports GNSS, flow, range, baro and mag as intended with <code>EKF2_SENS_EN</code> = 1797 (<code>estimator_fusion_control</code>); that the GPS still loads with GNSS 1 off; that arming is denied below RTK fixed; that issue <a href="https://github.com/PX4/PX4-Autopilot/issues/29346">#29346</a> still affects the vehicle.</li>
+<li>The migration-path claim (see "Renamed, and PX4 Migrates the Value") and the claims about PRs <a href="https://github.com/PX4/PX4-Autopilot/pull/28185">#28185</a> and <a href="https://github.com/PX4/PX4-Autopilot/pull/28197">#28197</a> are inferences or hearsay, labelled as such.</li>
+<li><code>main</code> moves daily. The result is valid for commit <code>5f429033bf</code> and the PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a> branch on 2026-10-22, and for nothing else.</li>
+</ul>
+<h2 id="checklist-for-the-next-person">Checklist for the Next Person</h2>
+<ol>
+<li>Pin both versions as worktrees; generate <code>parameters.json</code> for each.</li>
+<li>Diff names, types, defaults, ranges, enums and bit lists for every documented parameter.</li>
+<li>Read the migration code and where it is called from.</li>
+<li>For each removed parameter: compare your value to the new hardcoded behavior; read the consumer.</li>
+<li>For each changed default: recompute everything that depends on it.</li>
+<li>Diff the layered defaults (board, airframe, <code>rc.mc_defaults</code>).</li>
+<li>Look at the <strong>new</strong> parameters in the groups you use (<code>GNSS_*</code>, <code>EKF2_SENS_EN</code> here); not every one needs a value.</li>
+<li>Make the human decisions explicit and write the doubts down.</li>
+<li>Validate the new template mechanically against the target's metadata.</li>
+<li>Check <a href="../../calibration-and-per-drone-parameters/">Calibration Parameters</a> names the same way.</li>
+<li>Re-read every claim that came from a description or a release note, and either check it in code or label it unverified.</li>
+</ol></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
