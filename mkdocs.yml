@@ -5,16 +5,27 @@ theme:
   logo: images/index/apark-logo.png
   features:
     - content.code.copy
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.sections
 extra:
   generator: false
 extra_css:
   - stylesheets/extra.css
+hooks:
+  - hooks/page_meta.py
 markdown_extensions:
   - attr_list
+  - md_in_html
   - admonition
   - codehilite
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: snippets
+      check_paths: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.pathconverter:
       base_path: "apark-wiki" # default: ''
       relative_path: "" # default ''
@@ -24,3 +35,120 @@ plugins:
   - mkdocs-pdf
   - glightbox
   - search
+nav:
+  - Home: index.md
+  - Start Here:
+      - Start Here: start-here/start-here.md
+      - Contacts: start-here/contacts.md
+      - Safety: start-here/safety.md
+      - Report an Incident: start-here/report-an-incident.md
+      - Lab Rules: start-here/lab-rules.md
+      - Lab Spaces and Dimensions: start-here/lab-spaces-and-dimensions.md
+      - Access:
+          - Lab Access: start-here/access/lab-access.md
+          - GitHub Access: start-here/access/github-access.md
+          - Admin Access (Indoor Lab): start-here/access/admin-access-indoor-lab.md
+          - Passwords: start-here/access/passwords.md
+      - Schedule a Time: start-here/schedule-a-time.md
+      - Edit the Wiki: start-here/edit-the-wiki.md
+      - FAQ: start-here/faq.md
+  - Robots:
+      - Quadcopters:
+          - Starling 2 Max: robots/quadcopters/starling-2-max.md
+          - Parrot Bebop 2:
+              - Overview: robots/quadcopters/parrot-bebop-2/overview.md
+              - Known Issues: robots/quadcopters/parrot-bebop-2/known-issues.md
+              - Batteries: robots/quadcopters/parrot-bebop-2/batteries.md
+              - Connecting to WiFi: robots/quadcopters/parrot-bebop-2/connecting-to-wifi.md
+              - Autonomy: robots/quadcopters/parrot-bebop-2/autonomy.md
+              - Firmware Update: robots/quadcopters/parrot-bebop-2/firmware-update.md
+          - Homebrew:
+              - Overview: robots/quadcopters/homebrew/overview.md
+              - Known Issues: robots/quadcopters/homebrew/known-issues.md
+              - Batteries: robots/quadcopters/homebrew/batteries.md
+              - RTK Setup: robots/quadcopters/homebrew/rtk-setup.md
+              - PX4 Configuration: robots/quadcopters/homebrew/px4-configuration.md
+              - Parameters: robots/quadcopters/homebrew/parameters.md
+              - Calibration and Per-Drone Parameters: robots/quadcopters/homebrew/calibration-and-per-drone-parameters.md
+              - Microhard Radios: robots/quadcopters/homebrew/microhard-radios.md
+              - Flying Manually: robots/quadcopters/homebrew/flying-manually.md
+              - Autonomy: robots/quadcopters/homebrew/autonomy.md
+              - Build:
+                  - Overview: robots/quadcopters/homebrew/build/overview.md
+                  - Motor Soldering Guide: robots/quadcopters/homebrew/build/motor-soldering-guide.md
+                  - ESC Soldering Guide: robots/quadcopters/homebrew/build/esc-soldering-guide.md
+                  - ESC to PDB Soldering: robots/quadcopters/homebrew/build/esc-to-pdb-soldering.md
+                  - Finish Soldering the PDB: robots/quadcopters/homebrew/build/finish-soldering-the-pdb.md
+                  - Accessory Wires Overview: robots/quadcopters/homebrew/build/accessory-wires-overview.md
+                  - Arm-Motor Subassembly Instructions: robots/quadcopters/homebrew/build/arm-motor-subassembly-instructions.md
+              - Maintain:
+                  - Service and Repair Manual: robots/quadcopters/homebrew/maintain/service-and-repair-manual.md
+                  - Upgrading PX4 Firmware: robots/quadcopters/homebrew/maintain/upgrading-px4-firmware.md
+                  - Building PX4: robots/quadcopters/homebrew/maintain/building-px4.md
+                  - Updating Here4 GNSS Firmware: robots/quadcopters/homebrew/maintain/updating-here4-gnss-firmware.md
+              - Case Studies:
+                  - "Case Study: Porting the Parameters to PX4 Main": robots/quadcopters/homebrew/case-studies/porting-the-parameters-to-px4-main.md
+                  - Example Parameters for PX4 Main: robots/quadcopters/homebrew/case-studies/example-parameters-for-px4-main.md
+                  - "Case Study: MAVROS Link Saturation": robots/quadcopters/homebrew/case-studies/mavros-link-saturation.md
+                  - "Case Study: Lidar and CAN Sensor Burnout": robots/quadcopters/homebrew/case-studies/lidar-and-can-sensor-burnout.md
+                  - "Case Study: Position Mode Instability": robots/quadcopters/homebrew/case-studies/position-mode-instability.md
+          - Freefly:
+              - Overview: robots/quadcopters/freefly/overview.md
+              - Astro:
+                  - Overview: robots/quadcopters/freefly/astro/overview.md
+                  - Known Issues: robots/quadcopters/freefly/astro/known-issues.md
+                  - RTK Setup: robots/quadcopters/freefly/astro/rtk-setup.md
+                  - USB-C Port: robots/quadcopters/freefly/astro/usb-c-port.md
+                  - Batteries: robots/quadcopters/freefly/astro/batteries.md
+                  - Operate:
+                      - Parameters: robots/quadcopters/freefly/astro/operate/parameters.md
+                      - Dashboard: robots/quadcopters/freefly/astro/operate/dashboard.md
+                      - Flying Manually: robots/quadcopters/freefly/astro/operate/flying-manually.md
+                  - Autonomy: robots/quadcopters/freefly/astro/autonomy.md
+              - Retired:
+                  - Freefly Alta X: robots/quadcopters/freefly/retired/freefly-alta-x.md
+              - Repairs: robots/quadcopters/freefly/repairs.md
+      - Ground Robots:
+          - Clearpath:
+              - Overview: robots/ground-robots/clearpath/overview.md
+              - Husky A200: robots/ground-robots/clearpath/husky-a200.md
+              - Jackal UGV: robots/ground-robots/clearpath/jackal-ugv.md
+          - Unitree:
+              - Overview: robots/ground-robots/unitree/overview.md
+              - Go1: robots/ground-robots/unitree/go1.md
+              - B1: robots/ground-robots/unitree/b1.md
+              - Harness: robots/ground-robots/unitree/harness.md
+          - ROSbot 2 Pro: robots/ground-robots/rosbot-2-pro.md
+  - Hardware:
+      - Computing Hardware: hardware/computing-hardware.md
+      - Jetsons: hardware/jetsons.md
+      - Radio and RC Setup Guide: hardware/radio-and-rc-setup-guide.md
+      - Wireless Controllers: hardware/wireless-controllers.md
+      - RTK Setup: hardware/rtk-setup.md
+      - Mocap Calibration: hardware/mocap-calibration.md
+      - Security Cameras: hardware/security-cameras.md
+      - Weather Station: hardware/weather-station.md
+      - Miscellaneous Equipment: hardware/miscellaneous-equipment.md
+  - Networking:
+      - Networking Equipment: networking/networking-equipment.md
+      - Networking Setup (Indoor Lab): networking/networking-setup-indoor-lab.md
+      - Reserving a Static IP Address: networking/reserving-a-static-ip-address.md
+      - Chrony Time Sync: networking/chrony-time-sync.md
+      - ZeroTier VPN Install: networking/zerotier-vpn-install.md
+      - File Backup Server: networking/file-backup-server.md
+      - NTRIP Caster for RTK on Quadcopters: networking/ntrip-caster-for-rtk-on-quadcopters.md
+  - Software:
+      - Software We Use: software/software-we-use.md
+      - IP Reservations: software/ip-reservations.md
+      - Quadcopter Flight Practice: software/quadcopter-flight-practice.md
+      - Upgrading ROS 2: software/upgrading-ros-2.md
+      - AI for Debugging Jetsons: software/ai-for-debugging-jetsons.md
+      - GitHub Contribution Guide: software/github-contribution-guide.md
+      - Ubuntu in VMware: software/ubuntu-in-vmware.md
+      - Ubuntu in VirtualBox: software/ubuntu-in-virtualbox.md
+      - What Is Safe to Upgrade: software/what-is-safe-to-upgrade.md
+      - Autonomy Park SITL: software/autonomy-park-sitl.md
+
+validation:
+  links:
+    absolute_links: relative_to_docs

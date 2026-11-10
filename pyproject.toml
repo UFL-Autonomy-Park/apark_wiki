@@ -1,0 +1,23 @@
+[project]
+name = "apark-wiki"
+version = "0.1.0"
+description = "Documentation site for the UF Autonomy Park and the SCC Indoor Lab."
+readme = "README.md"
+authors = [
+    { name = "Max Gardenswartz", email = "134117510+mgardenswartz@users.noreply.github.com" }
+]
+requires-python = ">=3.10.14"
+dependencies = [
+    "mkdocs>=1.6.1",
+    "mkdocs-glightbox>=0.5.2",
+    "mkdocs-material>=9.7.7",
+    "mkdocs-pdf>=0.1.2",
+    # mkdocs-glightbox 0.5.2 allows any selectolax >= 0.3.29, but selectolax 1.x makes
+    # it silently replace every content <img> with an empty <p>. Remove the cap once
+    # glightbox supports selectolax 1.x.
+    "selectolax<1",
+]
+
+# Docs site, not an installable package.
+[tool.uv]
+package = false

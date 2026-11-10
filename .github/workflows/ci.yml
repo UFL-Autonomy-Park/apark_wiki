@@ -11,13 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # LFS files are cached to stay inside GitHub's free LFS bandwidth quota.
+      - name: Hash LFS objects
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+      - uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+      - name: Fetch LFS files
+        run: git lfs pull
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
+      - uses: astral-sh/setup-uv@v6
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
@@ -25,7 +32,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-pdf
-      - run: pip install mkdocs-glightbox
-      - run: mkdocs gh-deploy --force
+      - run: uv sync --locked
+      - run: uv run mkdocs gh-deploy --force

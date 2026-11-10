@@ -1,0 +1,2 @@
+!!! note "The Taranis QX7 Is Max Gardenswartz's Personal Radio"
+    The Taranis QX7 belongs to Max Gardenswartz personally, not to the lab, and he will not leave it with the lab when he graduates in 2028. He set it up for test flights because it was familiar and convenient. Research funds can only buy equipment that is on the Blue list, so the lab needs a better long-term plan: see [Radio and RC Setup](/hardware/radio-and-rc-setup-guide.md).
