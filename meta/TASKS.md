@@ -187,10 +187,12 @@ Strategy (Max 2026-10-21): get as far as possible without hardware, then stack u
 - Unverified by me: the Windows `winget` IDs and the Linux commands (written from the tools' documentation; I could only run macOS). Please sanity-check on a second OS when convenient.
 - Max:
 
-### T-019 Stale-page detection in CI — `DECISION`
+### T-019 Stale-page detection in CI — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - Warn when `verified:` is older than N months.
 
-### T-028 Software setup hub page (ROS 2, Gazebo, uv, ...) — `DECISION`
+### T-028 Software setup hub page (ROS 2, Gazebo, uv, ...) — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - **Software list decision (Max asked, 2026-10-21): build it as we go, then audit at the end.** Done: `start-here/software-setup/software.md` ("Software We Use") exists as a draft with 18 rows from software already named on existing pages; versions not yet documented are red *Unknown*. Rule (DESIGN §13): any page that introduces software adds a row. At the end I run one pass that searches every page for software names missing from the table. Why as-we-go: it costs one row per page we touch and cannot become a big discovery job. Status: `REVIEW` (draft).
 - Original proposal: ONE page, `Start Here → Software Setup`, is the canonical place for *how to install* each tool and *which version we use*. Other pages say "Requires: ROS 2 Jazzy (see Software Setup)" and only document what is specific to them. Details in the chat reply and DESIGN §13.
 - Candidates already in the wiki: `start-here/software-setup/simulation-installation.md`, `contribute/edit-wiki.md` (uv/git/git-lfs), `vmware-guide.pdf`, `zerotier-vpn.md`.
@@ -239,7 +241,8 @@ Goal: one page (inside the Software Setup hub, T-028) that lists everything that
 - Needs Max to confirm the org's current teams and default repo permission; I cannot see the org settings.
 - Max:
 
-### T-034 Should this repo have tests? — `DECISION` (discussion)
+### T-034 Should this repo have tests? — `APPROVED` (discussion)
+- **Max 2026-11-10: no changes; closed.**
 - My recommendation: yes, a few cheap automated checks, none of them "unit tests" in the software sense. Candidates, in priority order:
     1. **Strict build on every pull request** (`mkdocs build --strict`): catches broken links and missing files. Today CI only runs on `main`, i.e. *after* a mistake is live. This also lets us test the LFS-in-CI path from a branch.
     2. **Image/PDF reference check**: every referenced file exists, no unreferenced assets (T-004).
@@ -353,7 +356,8 @@ Current violations, with proposed names (each needs a redirect, which `redirects
 - Risk: more URL churn. Redirects cover pages but not PDFs. Max: OK to proceed, and which of the "Max to choose" names?
 - Max:
 
-### T-043 Standardize attachment types — `DECISION` (later, per Max)
+### T-043 Standardize attachment types — `APPROVED`
+- **Max 2026-11-10: apply it.** Done: the standard is in `meta/DESIGN.md` section 7 and on Edit the Wiki. The two `.webp` banners became `robot-banner.jpg` and `apark-logo-banner-nobg.png` (1600 px); 31 photos over 1600 px and 400 KB were resized (43.8 MB to 8.7 MB). `.png` stays out of LFS; `.mov` clips were converted to `.mp4`. Decision on the old question: PNGs stay out of Git LFS and must stay under 1 MB.
 Proposal (to review when we get to it):
 | Kind | Standard | Convert from |
 |---|---|---|
@@ -383,7 +387,8 @@ Proposal (to review when we get to it):
 - To do: move into the Compatibility page (T-030) as a "planned changes" entry; link from `homebrew-docker.md`; list what must be re-tested at the switch (MAVROS launch files, namespaces, the NTRIP/RTK path, `astro_mavros`, the parameter template, which currently configures MAVROS only). Update when #29368 merges. Q18.
 - Max:
 
-### T-047 Where robot credentials live — `DECISION`
+### T-047 Where robot credentials live — `APPROVED`
+- **Max 2026-11-10: no changes; closed.**
 - Robot logins are needed somewhere reliable and access-controlled (today's location is not good enough). Details are not recorded in this tracked file (public repo). The wiki lists only device name, username, IP, and a pointer to where to request access; it never lists the password. Revisit the credential columns on the Husky/Jackal pages with this task.
 - Max:
 
@@ -393,7 +398,6 @@ Proposal (to review when we get to it):
 
 ### T-049 Starling 2 Max, and replacing the Bebop fleet — `APPROVED`
 - **Max 2026-11-10:** Ignore; resolved.
-- **Reminder to Max:** put the Starling 2 Max files in the wiki. A graduate student lent them to Max.
 - Context: the Bebop fleet is to be replaced with new quadcopters (TBD, probably Starling 2 Max). Bebop limits: aging, and the batteries (age unknown) keep failing. When the decision is made: mark Bebop pages deprecated or "being replaced", add a Starling 2 Max hub page, and update the indoor-flight facts (today only the Bebop flies indoors).
 - Max:
 
@@ -539,7 +543,7 @@ Proposal (to review when we get to it):
 - Max:
 
 ### T-132 Come back to Who Has Access: a Canvas chain — `DROPPED` (Max 2026-11-06: the Who Has Access page is removed; the roster is private to lab managers)
-- Max 2026-11-03: the cleared-only list is fine for now. Later he wants help setting up a chain with Canvas (if possible and free) so the list stays current. **Remind Max at the end of every session until done.**
+- Max 2026-11-03: the cleared-only list is fine for now. Later he wants help setting up a chain with Canvas (if possible and free) so the list stays current.
 - Max:
 
 ### T-131 Document all the networking equipment — `APPROVED` (Max, in person)

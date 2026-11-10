@@ -164,6 +164,22 @@ A missing fact is written as **<em class="unknown">Unknown</em>**, in red italic
 
 ## 7. Media conventions (proposed)
 
+**Attachment types (Max 2026-11-10, T-043).** One format per kind of file. Convert anything else before you commit it.
+
+| Kind | Standard | Convert from |
+|---|---|---|
+| Photos | `.jpg`, 1600 px or less on the long side, in Git LFS | `.heic`, `.avif`, `.jpeg`, `.tif`, `.webp` |
+| Screenshots | `.png`, cropped to the relevant window, under 1 MB | `.bmp`, `.gif` stills |
+| Drawn diagrams | `.svg` where we can draw them, otherwise `.png` | |
+| Images that need transparency (logos) | `.png`, 1600 px or less wide | `.webp` |
+| Video | `.mp4` (H.264), muted, short clips only, 1280 px wide or less, in Git LFS. Longer video goes on YouTube with a text summary | `.mov`, `.avi`, `.mkv` |
+| Manuals | `.pdf`, vendor-authored only. Lab-written content becomes a page | `.docx`, `.pptx` |
+
+- `.webp` is not used anywhere. `.png` stays out of Git LFS, so keep each one small (a `.png` over 1 MB should be a `.jpg`, or reduced).
+- Convert video with `ffmpeg -i in.mov -an -vf scale=1280:-2 -c:v libx264 -crf 28 -pix_fmt yuv420p -movflags +faststart out.mp4`.
+- Embed a clip that should play by itself like this: `<video src="..." autoplay loop muted playsinline controls width="100%"></video>`. In raw HTML the path is relative to the built page, not to the `.md` file, so check it in the built site.
+- Put the date in a clip's caption.
+
 **Images**
 - Store in `docs/images/<topic>/`, lowercase-hyphenated names.
 - Photos use the `.jpg` extension (never `.jpeg`) and are ≤ 1600 px on the long edge; `.jpg` is tracked in Git LFS regardless.
@@ -174,7 +190,7 @@ A missing fact is written as **<em class="unknown">Unknown</em>**, in red italic
 - Do not use relative paths one level too shallow. Verify with `mkdocs serve`; CI runs a link check (planned).
 
 **Video**
-- Short clips (< 60 s, < 20 MB) can be stored in Git LFS as `.mp4`. Anything longer: upload to a UF-hosted/YouTube unlisted link and embed with a title and one-line description of what to watch for.
+- Short clips (< 60 s, < 20 MB, muted) can be stored in Git LFS as `.mp4`. Anything longer: upload to a UF-hosted/YouTube unlisted link and embed with a title and one-line description of what to watch for.
 - Always give a text summary beneath a video; people skip videos.
 
 **PDFs, and content that lives outside the wiki**
