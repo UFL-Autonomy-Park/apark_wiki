@@ -10,7 +10,7 @@ glance: >-
   The ROSbot 2 Pro, a small wheeled robot at the Indoor Lab. This page is waiting for its author.
 ---
 
-![A ROSbot 2 Pro: a small black four-wheeled robot with purple wheel rims, a lidar on top, a depth camera on a bracket, and a Wi-Fi antenna.](../../images/ground-robots/rosbot-2-pro.jpg){ width="50%" }
+![A ROSbot 2 Pro: a small black four-wheeled robot with purple wheel rims, a lidar on top, a depth camera on a bracket, and a Wi-Fi antenna.](../../images/ground-robots/rosbot-2-pro-orthoview.jpeg){ width="50%" }
 
 *The ROSbot 2 Pro (product image).*
 

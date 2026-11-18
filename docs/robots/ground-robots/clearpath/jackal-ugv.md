@@ -1,7 +1,7 @@
 ---
 title: Jackal UGV
 author: "Wyatt Cross, Max Gardenswartz"
-updated: 2026-11-10
+updated: 2026-11-18
 applies_to: [apark]
 assisted_by: Claude
 glance: >-
@@ -26,7 +26,6 @@ We have three Jackals.
 |---|---|---|---|
 | jackal1 | No: needs ground_docker | Autonomy Park | 2026-11-06 |
 | jackal2 | No: needs ground_docker | On loan to Shubham Kolle and Dr. Jie Fu (expect return 2027-01-01) | 2026-11-06 |
-| jackal3 | No: needs ground_docker | Panama City. It needs to be recovered as soon as possible. | 2026-11-06 |
 
 ## Manual
 

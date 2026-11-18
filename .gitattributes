@@ -7,3 +7,9 @@
 *.mov filter=lfs diff=lfs merge=lfs -text
 *.heic filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/unitree-b1-withbackpack.jpeg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/unitree-b1-and-go1.jpeg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/rosbot-2-pro-orthoview.jpeg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/unitree-go1-fleet.jpeg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/unitree-go1-orthographicview.jpeg filter=lfs diff=lfs merge=lfs -text
+images/ground-robots/unitree-go1-wiring-diagram.svg filter=lfs diff=lfs merge=lfs -text
