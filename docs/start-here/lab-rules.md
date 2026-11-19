@@ -21,6 +21,7 @@ glance: >-
 * **Minimize spectators.** Our labs are for research and must be shared. Lots of unnecessary workers can become a safety issue.
 * **Every robot must have an RC with a kill switch.** For quadcopters, a disarm switch **will not cut it**. For ground robots, this usually means a dead-man switch.
 * **Keep things nice.** Put all robots away when done, close the blinds, and turn off all lights.
+* **Never enter the net with a live robot.** An armed but crashed quadcopter is a good example. If you cannot remotely kill a robot, that is your failure to follow the rules and good coding practices. Wait for the battery to die. Never try and manually overpower it.
 * **Report all crashes and injuries to Dr. Kamalapurkar.** See [Report an Incident](report-an-incident.md).
 
 ## Flying
