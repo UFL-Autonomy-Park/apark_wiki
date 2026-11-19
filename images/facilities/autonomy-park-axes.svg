@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 810 412" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" font-size="15">
+  <title id="t">Autonomy Park frame, plan view</title>
+  <desc id="d">Top-down view of the Autonomy Park, with the +x axis along the long side, to the right. The origin is at the center of the park. The +y axis points along the short side, toward the top of the page. The +z axis points up, out of the page. Two sheds sit beyond the -x end: the main shed, closer to the net, and the storage shed. True north is rotated 33.83072 degrees counterclockwise from +y, and east is 33.83072 degrees counterclockwise from +x.</desc>
+  <rect x="100" y="140" width="584" height="146" fill="#808080" fill-opacity="0.08"/>
+  <rect x="100" y="140" width="584" height="146" fill="none" stroke="#737373" stroke-width="2"/>
+  <rect x="56" y="238" width="36" height="48" fill="#808080" fill-opacity="0.25" stroke="#737373" stroke-width="2"/>
+  <text x="56" y="230" fill="#737373" font-size="13">main shed</text>
+  <rect x="0" y="250" width="48" height="36" fill="#808080" fill-opacity="0.25" stroke="#737373" stroke-width="2"/>
+  <text x="0" y="304" fill="#737373" font-size="13">storage shed</text>
+  <line x1="392" y1="213" x2="654" y2="213" stroke="#e53935" stroke-width="3"/>
+  <polygon points="668,213 654,206 654,220" fill="#e53935"/>
+  <line x1="392" y1="213" x2="392" y2="128" stroke="#1e88e5" stroke-width="3"/>
+  <polygon points="392,114 385,128 399,128" fill="#1e88e5"/>
+  <circle cx="392" cy="213" r="9" fill="none" stroke="#43a047" stroke-width="3"/>
+  <circle cx="392" cy="213" r="3" fill="#43a047"/>
+  <text x="656" y="236" text-anchor="end" fill="#e53935" font-weight="600">+x</text>
+  <text x="404" y="104" fill="#1e88e5" font-weight="600">+y</text>
+  <text x="408" y="240" fill="#43a047" font-weight="600">+z (up)</text>
+  <text x="408" y="258" fill="#737373">origin (center)</text>
+  <text x="392" y="322" text-anchor="middle" fill="#737373">240 ft (73 m)</text>
+  <line x1="100" y1="306" x2="684" y2="306" stroke="#737373" stroke-width="1"/>
+  <text x="696" y="218" fill="#737373">60 ft</text>
+  <text x="696" y="236" fill="#737373">(18 m)</text>
+  <line x1="720" y1="400" x2="686" y2="350" stroke="#737373" stroke-width="2"/>
+  <polygon points="680,341 684,356 695,349" fill="#737373"/>
+  <text x="672" y="338" fill="#737373" font-weight="600">N</text>
+  <line x1="720" y1="400" x2="768" y2="372" stroke="#737373" stroke-width="2" stroke-dasharray="5 3"/>
+  <polygon points="778,366 764,368 771,380" fill="#737373"/>
+  <text x="780" y="360" fill="#737373" font-weight="600">E</text>
+</svg>

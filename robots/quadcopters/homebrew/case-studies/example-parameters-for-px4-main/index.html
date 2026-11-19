@@ -1,0 +1,7160 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Max Gardenswartz">
+      
+      
+      
+        <link rel="prev" href="../porting-the-parameters-to-px4-main/">
+      
+      
+        <link rel="next" href="../mavros-link-saturation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../images/index/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Example Parameters for PX4 Main - Autonomy Park - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-parameters-for-px4-main" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Autonomy Park - Wiki" class="md-header__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autonomy Park - Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example Parameters for PX4 Main
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../start-here/start-here/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../starling-2-max/" class="md-tabs__link">
+          
+  
+  
+  Robots
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/computing-hardware/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../networking/networking-equipment/" class="md-tabs__link">
+          
+  
+  
+  Networking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../software/software-we-use/" class="md-tabs__link">
+          
+  
+  
+  Software
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Autonomy Park - Wiki" class="md-nav__button md-logo" aria-label="Autonomy Park - Wiki" data-md-component="logo">
+      
+  <img src="../../../../../images/index/apark-logo.png" alt="logo">
+
+    </a>
+    Autonomy Park - Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/start-here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/report-an-incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report an Incident
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/lab-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Rules
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/lab-spaces-and-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Spaces and Dimensions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Access
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/lab-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/github-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Access
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/admin-access-indoor-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Access (Indoor Lab)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/access/passwords/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passwords
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/schedule-a-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule a Time
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/edit-the-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edit the Wiki
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quadcopters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../starling-2-max/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starling 2 Max
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parrot Bebop 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parrot Bebop 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/connecting-to-wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting to WiFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parrot-bebop-2/firmware-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homebrew
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homebrew
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../px4-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PX4 Configuration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../calibration-and-per-drone-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calibration and Per-Drone Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../microhard-radios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microhard Radios
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flying-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_11">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_11" id="__nav_3_1_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/motor-soldering-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/esc-soldering-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC Soldering Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/esc-to-pdb-soldering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ESC to PDB Soldering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/finish-soldering-the-pdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish Soldering the PDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/accessory-wires-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessory Wires Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build/arm-motor-subassembly-instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arm-Motor Subassembly Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_12">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_12" id="__nav_3_1_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/service-and-repair-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service and Repair Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/upgrading-px4-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrading PX4 Firmware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/building-px4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building PX4
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintain/updating-here4-gnss-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Here4 GNSS Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_13" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_13" id="__nav_3_1_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porting-the-parameters-to-px4-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Porting the Parameters to PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Parameters for PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Parameters for PX4 Main
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#bat-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BAT: Battery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ca-control-allocator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CA: Control Allocator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-commander" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COM: Commander
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ekf2-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF2: Estimator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EKF2: Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ekf2_sens_en-bit-map-for-the-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF2_SENS_EN bit map for the Homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fd-failure-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FD: Failure Detector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gf-geofence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GF: Geofence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss-gnss-quality-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS: GNSS Quality Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gps-serial-gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS: Serial GPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#man-manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAN: Manual Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mav-mavlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAV: MAVLink
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mc-multicopter-autotune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MC: Multicopter Autotune
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIS: Mission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motfail-motor-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTFAIL: Motor Failure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-multicopter-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPC: Multicopter Position Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV: Navigator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pld-precision-landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PLD: Precision Landing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm-motor-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PWM: Motor Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-radio-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RC: Radio Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtl-return-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTL: Return Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sens-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SENS: Sensors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sep-septentrio-gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEP: Septentrio GPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ser-serial-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SER: Serial Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sf1xx-lightware-lidar-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SF1XX: LightWare Lidar (I2C)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sys-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SYS: System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thr-thrust-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THR: Thrust Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uavcan-dronecan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAVCAN: DroneCAN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-usb-mavlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB: USB MAVLink
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uxrce-a-mavros-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uXRCE: A MAVROS Alternative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed-or-renamed-since-v1162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed or renamed since v1.16.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mavros-link-saturation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: MAVROS Link Saturation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lidar-and-can-sensor-burnout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Lidar and CAN Sensor Burnout
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../position-mode-instability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Position Mode Instability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Freefly
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_2" id="__nav_3_1_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Astro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Astro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/known-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/usb-c-port/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USB-C Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/batteries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batteries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_2_6" id="__nav_3_1_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_1_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/operate/flying-manually/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flying Manually
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/astro/autonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4_3" id="__nav_3_1_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retired
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retired
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/retired/freefly-alta-x/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Freefly Alta X
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../freefly/repairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repairs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Robots
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ground Robots
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearpath
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clearpath
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/husky-a200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Husky A200
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/clearpath/jackal-ugv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jackal UGV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitree
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/go1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Go1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/b1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/unitree/harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Harness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ground-robots/rosbot-2-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROSbot 2 Pro
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/computing-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/jetsons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetsons
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/radio-and-rc-setup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio and RC Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/wireless-controllers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Controllers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/rtk-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTK Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/mocap-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mocap Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/security-cameras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Cameras
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/weather-station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather Station
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/miscellaneous-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/networking-equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Equipment
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/networking-setup-indoor-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking Setup (Indoor Lab)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/reserving-a-static-ip-address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserving a Static IP Address
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/chrony-time-sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrony Time Sync
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/zerotier-vpn-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZeroTier VPN Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/file-backup-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Backup Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../networking/ntrip-caster-for-rtk-on-quadcopters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTRIP Caster for RTK on Quadcopters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/software-we-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software We Use
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ip-reservations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Reservations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/quadcopter-flight-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadcopter Flight Practice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/upgrading-ros-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrading ROS 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ai-for-debugging-jetsons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI for Debugging Jetsons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/github-contribution-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Contribution Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ubuntu-in-vmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu in VMware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/ubuntu-in-virtualbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu in VirtualBox
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/what-is-safe-to-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Safe to Upgrade
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../software/autonomy-park-sitl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy Park SITL
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#bat-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BAT: Battery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ca-control-allocator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CA: Control Allocator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-commander" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COM: Commander
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ekf2-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF2: Estimator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EKF2: Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ekf2_sens_en-bit-map-for-the-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF2_SENS_EN bit map for the Homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fd-failure-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FD: Failure Detector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gf-geofence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GF: Geofence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnss-gnss-quality-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS: GNSS Quality Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gps-serial-gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS: Serial GPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#man-manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAN: Manual Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mav-mavlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MAV: MAVLink
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mc-multicopter-autotune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MC: Multicopter Autotune
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIS: Mission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motfail-motor-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTFAIL: Motor Failure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpc-multicopter-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPC: Multicopter Position Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV: Navigator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pld-precision-landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PLD: Precision Landing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm-motor-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PWM: Motor Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rc-radio-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RC: Radio Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtl-return-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTL: Return Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sens-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SENS: Sensors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sep-septentrio-gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SEP: Septentrio GPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ser-serial-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SER: Serial Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sf1xx-lightware-lidar-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SF1XX: LightWare Lidar (I2C)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sys-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SYS: System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thr-thrust-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        THR: Thrust Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uavcan-dronecan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAVCAN: DroneCAN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-usb-mavlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB: USB MAVLink
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uxrce-a-mavros-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uXRCE: A MAVROS Alternative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removed-or-renamed-since-v1162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed or renamed since v1.16.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="example-parameters-for-px4-main">Example Parameters for PX4 Main</h1>
+<div class="page-status page-status--draft"><strong>Draft.</strong> An example for the case study only. Valid only for PX4 main at commit 5f429033bf and the PR 29368 branch on 2026-10-22.</div>
+
+<div class="page-meta"><span><b>Written by</b> Max Gardenswartz</span><span><b>Updated</b> 2026-10-22</span><span class="page-meta__badge">Autonomy Park</span></div>
+
+<div class="admonition abstract">
+<p class="admonition-title">At a glance</p>
+<p>The parameter reference produced by the porting case study. It is an example of the result, not a template to load on a real Homebrew.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Example Only: Do Not Load These on a Homebrew</p>
+<p>These parameters were made for PX4 <code>main</code> at commit <code>5f429033bf</code> and the open PR #29368 branch, tested on 2026-10-22. Loading them on 1.16.2 or on any stable release can set parameters that do not exist, or that mean something different. The parameters to use on the fleet are in <a href="../../parameters/">Parameters</a>.</p>
+<p>The matching file is <a href="../example-parameters-px4-main.params">example-parameters-px4-main.params</a>. It is also an example only. The method is in <a href="../porting-the-parameters-to-px4-main/">Case Study: Porting the Homebrew Parameters to PX4 Main</a>.</p>
+</div>
+<p>Reference: PX4 <strong>main</strong> at commit <code>5f429033bf</code> (2026-10-22, the 1.19 development line), with the open pull request <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a> (RTCM corrections over uXRCE-DDS) as the branch under test. This is the main-line port of the v1.16.2 version of this document; <a href="../porting-the-parameters-to-px4-main/">the case study</a> shows how it was made. "Default" means the main metadata default <strong>plus</strong> the CubePilot Cube Orange board defaults (<code>rc.board_defaults</code>), the multicopter defaults in <code>rc.mc_defaults</code> (which overrides <code>RTL_RETURN_ALT</code> and <code>RTL_DESCEND_ALT</code> and sets <code>MAV_TYPE</code>), and the Generic Quadcopter airframe defaults (<code>4001_quad_x</code>, which sets the <code>CA_ROTOR*</code> positions). None of those layered defaults changed from 1.16.2 for the parameters in this document.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Do not use this for porting to 1.18.0 or any other stable release.</strong> Main differs from release/1.18 (for example <code>GNSS_CHECK</code>, <code>GNSS_REQ_*</code> and <code>SENS_GNSS0_*</code> exist only on main; release/1.18 still has <code>EKF2_GPS_CHECK</code>, <code>EKF2_REQ_*</code> and <code>SENS_GPS0_*</code>). Regenerate this document against the target release.</p>
+</div>
+<p>Legend: ✅ = matches the multicopter default, ❌ = differs from the multicopter default.</p>
+<h2 id="bat-battery">BAT: Battery</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BAT1_CAPACITY</code></td>
+<td>-1</td>
+<td>Disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (unknown). Left disabled so remaining charge is estimated from voltage only. The current sensor is not working, so coulomb counting would integrate invalid current. Set to 16000 mAh (all Homebrew batteries) once current sensing is verified.</td>
+</tr>
+<tr>
+<td><code>BAT1_I_OVERWRITE</code></td>
+<td>0 A</td>
+<td>Idle-current overwrite disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled, the measured current is used).</td>
+</tr>
+<tr>
+<td><code>BAT1_N_CELLS</code></td>
+<td>6</td>
+<td>6S battery</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unknown). Should be set by the user to match the battery.</td>
+</tr>
+<tr>
+<td><code>BAT1_R_INTERNAL</code></td>
+<td>−1 Ω</td>
+<td>Use the online estimate</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (use the online estimate). Left at default because the current sensor is not working, and both the sag compensation and the online estimate need valid current. The PX4 parameter description says this is <em>per cell</em>.</td>
+</tr>
+<tr>
+<td><code>BAT1_SOURCE</code></td>
+<td>0</td>
+<td>Battery 1 read from the power module</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (labelled "Power Module / Analog" on main, "Power Module" in 1.16.2). The other options are 1 (External, from MAVLink battery status messages) and 2 (ESCs, taken from the <code>esc_status</code> message, which per the v1.16.2 description requires the ESCs to report both voltage and current). PX4 currently cannot read the current from the PDB. Max thinks setting this to 2 might fix that, but this is not verified, and since the notes for <code>COM_ARM_CHK_ESCS</code> say these ESCs do not support telemetry, it may not be possible at all. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>BAT1_V_CHARGED</code></td>
+<td>4.2 V</td>
+<td>4.2 V per cell when full</td>
+<td style="text-align: center;">✅</td>
+<td>Default 4.2 V on main (4.05 V in 1.16.2). The old 4.05 V was a deliberate workaround: the voltage is read from a quadcopter drawing about 5 A, and battery sag makes a full 4.2 V cell read about 4.05 V. Main changed the default and dropped the 1.16.2 description's advice to set this below 4.2 V; Max decided to trust the new default. Remaining charge is a linear interpolation between <code>BAT1_V_EMPTY</code> and <code>BAT1_V_CHARGED</code> (<code>battery.cpp</code>), so at the same measured voltage the estimate is now lower and every threshold below triggers at a higher voltage (more conservative; see <code>BAT_LOW_THR</code>, <code>BAT_CRIT_THR</code>, <code>BAT_EMERGEN_THR</code>, <code>COM_ARM_BAT_MIN</code>). The value also sets the over-voltage "spike" fault threshold (cells × <code>BAT1_V_CHARGED</code> × 1.05) and the battery scale used by <code>MC_BAT_SCALE_EN</code> (default 0, not set here).</td>
+</tr>
+<tr>
+<td><code>BAT1_V_EMPTY</code></td>
+<td>3.6 V</td>
+<td>3.6 V per cell when empty</td>
+<td style="text-align: center;">✅</td>
+<td>Default 3.6 V. The PX4 LiPo default, defined as the per-cell voltage under load when the pack is effectively empty.</td>
+</tr>
+<tr>
+<td><code>BAT2_A_PER_V</code></td>
+<td>17</td>
+<td>Battery 2 current scale at board default</td>
+<td style="text-align: center;">✅</td>
+<td>Default 17 (Cube Orange board default). Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_CAPACITY</code></td>
+<td>−1 mAh</td>
+<td>Battery 2 capacity unknown</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1. Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_I_OVERWRITE</code></td>
+<td>0 A</td>
+<td>Idle-current overwrite disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_N_CELLS</code></td>
+<td>0</td>
+<td>Cell count unknown</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_R_INTERNAL</code></td>
+<td>−1 Ω</td>
+<td>Use the online estimate</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1. Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_SOURCE</code></td>
+<td>−1</td>
+<td>Battery 2 disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (Disabled). Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_V_CHANNEL</code></td>
+<td>−1</td>
+<td>Battery 2 voltage ADC channel at board default</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (board default). Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_V_CHARGED</code></td>
+<td>4.2 V</td>
+<td>4.2 V per cell when full</td>
+<td style="text-align: center;">✅</td>
+<td>Default 4.2 V (4.05 V in 1.16.2). Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_V_DIV</code></td>
+<td>10.1</td>
+<td>Battery 2 voltage divider at board default</td>
+<td style="text-align: center;">✅</td>
+<td>Default 10.1 (Cube Orange board default). Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT2_V_EMPTY</code></td>
+<td>3.6 V</td>
+<td>3.6 V per cell when empty</td>
+<td style="text-align: center;">✅</td>
+<td>Default 3.6 V. Leave at default since there is no BAT2.</td>
+</tr>
+<tr>
+<td><code>BAT3_CAPACITY</code></td>
+<td>−1 mAh</td>
+<td>Battery 3 capacity unknown</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1. Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT3_N_CELLS</code></td>
+<td>0</td>
+<td>Cell count unknown</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT3_R_INTERNAL</code></td>
+<td>−1 Ω</td>
+<td>Use the online estimate</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1. Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT3_SOURCE</code></td>
+<td>−1</td>
+<td>Battery 3 disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (Disabled). Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT3_V_CHARGED</code></td>
+<td>4.2 V</td>
+<td>4.2 V per cell when full</td>
+<td style="text-align: center;">✅</td>
+<td>Default 4.2 V (4.05 V in 1.16.2). Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT3_V_EMPTY</code></td>
+<td>3.6 V</td>
+<td>3.6 V per cell when empty</td>
+<td style="text-align: center;">✅</td>
+<td>Default 3.6 V. Leave at default since there is no BAT3.</td>
+</tr>
+<tr>
+<td><code>BAT_AVRG_CURRENT</code></td>
+<td>15 A</td>
+<td>15 A expected in-flight current</td>
+<td style="text-align: center;">✅</td>
+<td>Default 15 A. Only used to initialize the in-flight average-current estimate, which feeds remaining-flight-time and RTL triggering.</td>
+</tr>
+<tr>
+<td><code>BAT_CRIT_THR</code></td>
+<td>0.25</td>
+<td>Critical at 25% remaining</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.07. Triggers the critical-battery reaction (land) much earlier, so the Homebrew lands with a healthy reserve (about 3.75 V per cell with the linear 3.6–4.2 V mapping; 3.71 V in 1.16.2 with 4.05 V). Must stay below <code>BAT_LOW_THR</code> and above <code>BAT_EMERGEN_THR</code>. Units are normalized 0–1, not percent.</td>
+</tr>
+<tr>
+<td><code>BAT_EMERGEN_THR</code></td>
+<td>0.15</td>
+<td>Emergency at 15% remaining</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.05. Immediate-landing level (about 3.69 V per cell with the linear 3.6–4.2 V mapping; 3.67 V in 1.16.2). Must stay below <code>BAT_CRIT_THR</code>.</td>
+</tr>
+<tr>
+<td><code>BAT_LOW_THR</code></td>
+<td>0.35</td>
+<td>Low at 35% remaining</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.15. First warning level (about 3.81 V per cell with the linear 3.6–4.2 V mapping; 3.76 V in 1.16.2). Must stay above <code>BAT_CRIT_THR</code>.</td>
+</tr>
+<tr>
+<td><code>BAT_V_OFFS_CURR</code></td>
+<td>0</td>
+<td>No current-sensor voltage offset</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Offset in volts, as seen by the ADC input of the current sensor, subtracted before the battery current is computed from the voltage. It was in the 1.16.2 <code>.params</code> template but had no row in the 1.16.2 document and no reason was recorded; the value equals the default, so it is kept as is.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>BAT1_V_DIV</code> and <code>BAT1_A_PER_V</code> are calibrated separately for every quadcopter!</p>
+<p>On main only batteries 1 and 2 have <code>BAT*_V_DIV</code>, <code>BAT*_A_PER_V</code> and <code>BAT*_V_CHANNEL</code>, so those do not exist for battery 3. <code>BAT*_I_CHANNEL</code> no longer exists for any battery, and <code>BAT*_I_OVERWRITE</code> now exists for all three (in 1.16.2 battery 3 had no <code>BAT3_I_OVERWRITE</code>).</p>
+<h2 id="ca-control-allocator">CA: Control Allocator</h2>
+<p>Positions are along the body X and Y axes, in metres, relative to the center of gravity. They describe the physical span of the airframe and are critical to the motor mixer and flight stability. The Generic Quadcopter airframe (<code>4001_quad_x</code>) sets them to ±1 m. The metadata default is 0.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CA_ROTOR0_PX</code></td>
+<td>0.25 m</td>
+<td>Rotor 0 at +0.25 m on X</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR0_PY</code></td>
+<td>0.25 m</td>
+<td>Rotor 0 at +0.25 m on Y</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR1_PX</code></td>
+<td>−0.25 m</td>
+<td>Rotor 1 at −0.25 m on X</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR1_PY</code></td>
+<td>−0.25 m</td>
+<td>Rotor 1 at −0.25 m on Y</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR2_PX</code></td>
+<td>0.25 m</td>
+<td>Rotor 2 at +0.25 m on X</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR2_PY</code></td>
+<td>−0.25 m</td>
+<td>Rotor 2 at −0.25 m on Y</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR3_PX</code></td>
+<td>−0.25 m</td>
+<td>Rotor 3 at −0.25 m on X</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+<tr>
+<td><code>CA_ROTOR3_PY</code></td>
+<td>0.25 m</td>
+<td>Rotor 3 at +0.25 m on Y</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 m (airframe 4001). Physical span of the airframe.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="com-commander">COM: Commander</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COM_ACT_FAIL_ACT</code></td>
+<td>0</td>
+<td>Warning only on actuator failure</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (warning only). The action taken when the failure detector reports a failed actuator (motor); the other options are 1 Hold, 2 Land, 3 Return, and 4 Terminate. It only matters if the actuator failure check is enabled and configured through <code>FD_ACT_EN</code> and the <code>MOTFAIL_*</code> parameters (see the FD and MOTFAIL sections). Max is unsure whether this should be changed to Land (2) since the current sensor is not working, but he uses 0 and it has been fine.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_AUTH_MET</code></td>
+<td>0</td>
+<td>One-step arming</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (one arm: request authorization and arm as soon as it is received). The alternative is 1 (two-step arm: the first arm command requests authorization and the second arms if it is authorized). It is only used when <code>COM_ARM_AUTH_REQ</code> is on, so it has no effect here.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_AUTH_REQ</code></td>
+<td>0</td>
+<td>No arm authorization required</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). No authorization is required to arm other than the arm switch.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_BAT_MIN</code></td>
+<td>0.50</td>
+<td>Refuse to arm below 50% battery</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (uses <code>BAT_CRIT_THR</code>). Prevents permanently damaging the battery through negligence. 0.50 corresponds to about 3.90 V per cell with the 3.6–4.2 V mapping (3.83 V in 1.16.2), so arming now needs a slightly fuller pack.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_CHK_ESCS</code></td>
+<td>0</td>
+<td>ESC arming checks disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). Enables checks of the ESCs' online status and failures. It is specific to ESCs that report telemetry and must only be enabled if the ESCs support it; these ESCs do not.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_HFLT_CHK</code></td>
+<td>0</td>
+<td>Disabled; allow arming even if hardfault files are on the SD card</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 (enabled). On main the check also covers watchdog dump files. Enabling means a failed USB connection prevents all further arming until you delete the logs from SD (via the NuttX terminal or taking the SD card out). Super annoying. <strong>Still needed on main as of 2026-10-22:</strong> <a href="https://github.com/PX4/PX4-Autopilot/issues/29346">PX4 issue #29346</a> (hardfault of the USB MAVLink task after arming following a USB unplug) is <strong>open at the time of writing</strong>, and Max reports it affects our board. The issue is filed against the Cube Orange+; its author says it is fixed on <code>main</code> by PRs #28185 and #28197, which was not verified here, so this stays 0 until a test confirms the problem is gone. Trade-off: with the check off the vehicle can arm after an accidental USB disconnect.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_MAG_STR</code></td>
+<td>1</td>
+<td>Deny arming on a magnetic disturbance</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2 (warning only). Controls what happens when the estimator detects a strong magnetic disturbance, as checked according to <code>EKF2_MAG_CHECK</code>: 0 disabled, 1 deny arming, 2 warning only. Denying arming, not just warning, keeps a vehicle with a disturbed magnetometer on the ground.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_WO_GPS</code></td>
+<td>0</td>
+<td>Deny arming when the GNSS checks fail</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 ("Allow arming (with warning)"; called "Warning only" in 1.16.2). For an autonomous quadcopter, having no usable GPS should stop it from moving forward. These drones only ever fly outdoors. On main, 0 denies arming in all modes when a check enabled in <code>GNSS_CHECK</code> fails (reported as, for example, "Preflight: GPS fix too low"; <code>estimatorCheck.cpp</code>). The 1.16.2 text also said a global position estimate is required, which is why <code>EKF2_HGT_REF</code> must stay 1; that part was not re-checked on main. With <code>GNSS_CHECK</code> = 2047 and <code>GNSS_REQ_FIX</code> = 6 (see the GNSS section) arming is denied unless the receiver reports RTK fixed.</td>
+</tr>
+<tr>
+<td><code>COM_ARMABLE</code></td>
+<td>1</td>
+<td>Arming allowed</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (arming allowed). Set it to 0 to prevent arming entirely, for example for safety or maintenance reasons, so the vehicle cannot be used by accident.</td>
+</tr>
+<tr>
+<td><code>COM_DISARM_LAND</code></td>
+<td>2.0 s</td>
+<td>2.0 s of successful landing detected</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2.0 s. PX4 must detect that the vehicle is on the ground for this long before disarming the motors at the end of Land mode procedure.</td>
+</tr>
+<tr>
+<td><code>COM_DISARM_PRFLT</code></td>
+<td>10 s</td>
+<td>Disarm after 10 s without takeoff</td>
+<td style="text-align: center;">✅</td>
+<td>Default 10 s. If the vehicle is armed and has not taken off within this time, it disarms again (a negative value disables this). The user has 10 s to act after arming.</td>
+</tr>
+<tr>
+<td><code>COM_DL_LOSS_T</code></td>
+<td>5 s</td>
+<td>GCS connection counted as lost after 5 s</td>
+<td style="text-align: center;">❌</td>
+<td>Default 10 s. Tighter is better, and 10 s is too generous, especially for an autonomous quadcopter. Because <code>NAV_DLL_ACT</code> is set as 0 later, this value is <strong>ignored</strong>, but it's good to have.</td>
+</tr>
+<tr>
+<td><code>COM_FAIL_ACT_T</code></td>
+<td>5 s</td>
+<td>Wait 5 s in Hold before a failsafe action</td>
+<td style="text-align: center;">✅</td>
+<td>Default 5 s. Before a failsafe action (Return, Land, or Hold) is executed, PX4 first waits this long in Hold mode so the user can realize something is wrong. During that time the pilot cannot take over with the stick override (<code>MAN_OVERRIDE_SPD</code>), although switching modes is still allowed; afterwards the configured action runs and the stick override works again. A value of 0 removes the delay. From the description it applies to the failsafes that are active here, such as RC loss (<code>NAV_RCL_ACT</code>) and offboard loss (<code>COM_OBL_RC_ACT</code>); the GCS-loss failsafe is disabled (<code>NAV_DLL_ACT</code> = 0), so it never starts this wait (my reading of the description; not tested). The stick-override part comes from the 1.16.2 description (<code>COM_RC_OVERRIDE</code>) and was not re-verified against the failsafe code on main, where the override is now <code>MAN_OVERRIDE_SPD</code>.</td>
+</tr>
+<tr>
+<td><code>COM_FLT_TIME_MAX</code></td>
+<td>−1 s</td>
+<td>No maximum flight time</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (disabled). When set, the vehicle aborts the current operation and returns to launch once the time since takeoff exceeds this value, with a warning every minute starting at 90 % of it. No maximum flight time is used; the battery thresholds limit the flight time instead.</td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE1</code></td>
+<td>2</td>
+<td>Slot 1: Position ("Position / Cruise" on main)</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Necessary for using the Taranis QX7 remote specifically. With <code>RC_MAP_FLTMODE</code> the mode is picked by the range channel 5 is in, across six slots. <strong>A different RC would need a different scheme.</strong></td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE2</code></td>
+<td>1</td>
+<td>Slot 2: Altitude</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Same Taranis QX7 scheme.</td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE3</code></td>
+<td>4</td>
+<td>Slot 3: Hold</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Same Taranis QX7 scheme.</td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE4</code></td>
+<td>1</td>
+<td>Slot 4: Altitude</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Same Taranis QX7 scheme. Slots 2 and 4 are both Altitude.</td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE5</code></td>
+<td>11</td>
+<td>Slot 5: Land</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Same Taranis QX7 scheme.</td>
+</tr>
+<tr>
+<td><code>COM_FLTMODE6</code></td>
+<td>8</td>
+<td>Slot 6: Stabilized</td>
+<td style="text-align: center;">❌</td>
+<td>Default −1 (unassigned). Same Taranis QX7 scheme.</td>
+</tr>
+<tr>
+<td><code>COM_FLTT_LOW_ACT</code></td>
+<td>1</td>
+<td>Warning when remaining flight time is low</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (Warning) on main; the 1.16.2 default was 3 (Return), which is what this document used to use. The new default is accepted, so a drone that previously returned now only warns. Options: 0 None, 1 Warning, 3 Return. It should hardly ever matter since the Park is so small. What is critical is that the return heights stay below the net, which is covered by <code>RTL_RETURN_ALT</code> and <code>RTL_DESCEND_ALT</code>.</td>
+</tr>
+<tr>
+<td><code>COM_HOME_EN</code></td>
+<td>1</td>
+<td>Home position set automatically</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (enabled). PX4 sets the home position automatically when possible (per Max, on arm or boot). Requires reboot. Home cannot be reset without arming, which is one reason the geofence altitude limit is not used (see <code>GF_MAX_VER_DIST</code>).</td>
+</tr>
+<tr>
+<td><code>COM_HOME_IN_AIR</code></td>
+<td>0</td>
+<td>Home is never set in the air</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). If enabled, the autopilot may set its home position after takeoff (back-computed from the local position when one is available). Disabled so that home is never set while flying.</td>
+</tr>
+<tr>
+<td><code>COM_LOW_BAT_ACT</code></td>
+<td>2</td>
+<td>Land mode</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (Warning only). Land instead of just warning at critical battery. Option 4 (return at the critical level, terminate at the emergency level) is new on main and not used.</td>
+</tr>
+<tr>
+<td><code>COM_OBL_RC_ACT</code></td>
+<td>4</td>
+<td>Land mode (on offboard loss)</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (Position mode). Note: this is the <em>offboard</em>-loss action, not RC loss (see <code>NAV_RCL_ACT</code>).</td>
+</tr>
+<tr>
+<td><code>COM_OF_LOSS_T</code></td>
+<td>0.5</td>
+<td>0.5 s offboard-loss timeout</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1.0 s. Lowering makes crashes less likely during offboard network dropouts since the failsafe triggers faster. Too low may make this sensitive to network lag, but lower than 0.5 should be tested for feasibility.</td>
+</tr>
+<tr>
+<td><code>COM_POS_FS_EPH</code></td>
+<td>5 m</td>
+<td>Failsafe above 5 m horizontal position error</td>
+<td style="text-align: center;">✅</td>
+<td>Default 5 m (−1 disables). The horizontal position error (EPH) above which PX4 triggers a failsafe; once the error has been below the threshold, a factor of 2.5 is applied before the position is invalidated. Kept at default because the offboard code should land, or refuse to arm, whenever the GPS fix type is not 6 (RTK fixed), long before PX4's own failsafe matters.</td>
+</tr>
+<tr>
+<td><code>COM_POS_LOW_ACT</code></td>
+<td>5</td>
+<td>Land on a low position accuracy</td>
+<td style="text-align: center;">❌</td>
+<td>Default 3 (Return). The action taken when the position accuracy is worse than the <code>COM_POS_LOW_EPH</code> threshold (0 None, 1 Warning, 2 Hold, 3 Return, 4 Terminate, 5 Land). Set to Land so that a poor position estimate lands the vehicle instead of returning it. Per the v1.16.2 description the action is only executed in Mission or Hold (loiter) modes, and otherwise it is only a warning; while <code>COM_POS_LOW_EPH</code> is disabled it has no effect at all.</td>
+</tr>
+<tr>
+<td><code>COM_POS_LOW_EPH</code></td>
+<td>−1 m</td>
+<td>Low accuracy failsafe disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (disabled). Threshold for <code>COM_POS_LOW_ACT</code>. The local position must still be valid for it to apply, which requires some velocity aiding or a large dead-reckoning time (<code>EKF2_NOAID_TOUT</code>), together with a high <code>COM_POS_FS_EPH</code>. No motivation to change.</td>
+</tr>
+<tr>
+<td><code>COM_PREARM_MODE</code></td>
+<td>0</td>
+<td>Prearm state disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). The prearmed state is an intermediate state between disarmed and armed in which non-throttling actuators are active; the options are 0 disabled, 1 safety button, 2 always. The prearm feature is not used here. Option 1 is labelled "When safety off" on main.</td>
+</tr>
+<tr>
+<td><code>COM_RC_IN_MODE</code></td>
+<td>3</td>
+<td>RC or MAVLink, keep first</td>
+<td style="text-align: center;">✅</td>
+<td>Default is 3 on main and in 1.16.2. Labelled "RC or MAVLink keep first until reboot" on main ("RC or Joystick keep first" in 1.16.2); "Joystick" is now "MAVLink" in the labels, and priority modes 5 to 8 are new.</td>
+</tr>
+<tr>
+<td><code>COM_RC_LOSS_T</code></td>
+<td>0.5 s</td>
+<td>RC counted as lost after 0.5 s without input</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.5 s. Time without a new setpoint from the RC or a joystick after which the connection is considered lost. It must be short, because the vehicle keeps using the last supplied setpoint until the timeout triggers.</td>
+</tr>
+<tr>
+<td><code>COM_RCL_EXCEPT</code></td>
+<td>7</td>
+<td>Mission, all auto modes, and Offboard</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (no exceptions). Bitmask to specify where to ignore loss of manual control and <strong>not</strong> trigger the failsafe specified in <code>NAV_RCL_ACT</code>. <strong>The bits changed since 1.16.2:</strong> bit 0 Mission, bit 1 "Auto modes" (was Hold only; now Hold, Takeoff, Land, Return, Descend, Follow Target, Precland and Orbit), bit 2 Offboard, and new bits 3 (external mode) and 4 (altitude cruise). Value 7 therefore now also ignores RC loss during Takeoff, Land, Return and the other auto modes, not only Mission, Hold and Offboard. Required for multi-agent setups since we only have one RC, but consider reverting to default when testing single-agent; RC then becomes required again.</td>
+</tr>
+<tr>
+<td><code>COM_SPOOLUP_TIME</code></td>
+<td>1.0 s</td>
+<td>1.0 s spool-up after arming</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1.0 s. The minimum time from arming the motors until the vehicle can be moved: the motors and propellers spool up to idle before being commanded faster, and the ESCs and smart batteries have time for their failure checks. Commands to move the vehicle are not applied until this time has passed after arming. No motivation to change.</td>
+</tr>
+<tr>
+<td><code>COM_VEL_FS_EVH</code></td>
+<td>1 m/s</td>
+<td>Failsafe above 1 m/s horizontal velocity error</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 m/s. The horizontal velocity error (EVH) above which PX4 triggers a failsafe, with the same factor of 2.5 between validating and invalidating as <code>COM_POS_FS_EPH</code>. No motivation to change.</td>
+</tr>
+<tr>
+<td><code>COM_WIND_MAX</code></td>
+<td>−1 m/s</td>
+<td>High wind failsafe disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (disabled). The estimated wind speed above which the action in <code>COM_WIND_MAX_ACT</code> is triggered. No motivation to change; just do not fly in wind.</td>
+</tr>
+<tr>
+<td><code>COM_WIND_MAX_ACT</code></td>
+<td>0</td>
+<td>No high wind action</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (None). The action taken at <code>COM_WIND_MAX</code> (1 Warning, 2 Hold, 3 Return, 4 Terminate, 5 Land). No motivation to change.</td>
+</tr>
+<tr>
+<td><code>COM_WIND_WARN</code></td>
+<td>−1 m/s</td>
+<td>Wind warning disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (disabled). When enabled, a warning is sent every minute while the estimated wind speed is above this value. No motivation to change.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ekf2-estimator">EKF2: Estimator</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EKF2_EV_CTRL</code></td>
+<td>0</td>
+<td>External vision fusion disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Only relevant if a motion-capture system outdoors or a computer-vision camera aids the position estimate. This quad and workspace has neither. The sample drone had 15 (all four bits: horizontal position, vertical position, 3D velocity, yaw); Max is surprised by that and does not know who set it. Per the v1.16 source this is not limited to mocap or cameras: it applies to any vision/odometry input PX4 receives (for example MAVLink <code>VISION_POSITION_ESTIMATE</code> or <code>ODOMETRY</code>, which a companion computer could send).</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_DELAY</code></td>
+<td>0 ms</td>
+<td>No external vision delay</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 ms. Delay of the external vision estimate relative to the IMU. Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_NOISE_MD</code></td>
+<td>0</td>
+<td>EV-reported variance</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (the measurement noise comes from the vision message, with the EV noise parameters as a lower bound; 1 uses the noise parameters directly). Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_POS_X</code></td>
+<td>0.000 m</td>
+<td>Vision sensor at the CG on X</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0. Position of the vision sensor focal point in the body frame. Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_POS_Y</code></td>
+<td>0.000 m</td>
+<td>Vision sensor at the CG on Y</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0. Position of the vision sensor focal point in the body frame. Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_POS_Z</code></td>
+<td>0.000 m</td>
+<td>Vision sensor at the CG on Z</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0. Position of the vision sensor focal point in the body frame. Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_EV_QMIN</code></td>
+<td>0</td>
+<td>No minimum vision quality</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (range 0 to 100). Minimum quality metric, an optional field some VIO systems provide, for external vision to be started and fused. Only relevant if a motion-capture system or a computer-vision camera aids PX4 in estimating pose and twist, which this vehicle does not use (<code>EKF2_EV_CTRL</code> = 0); RTK makes such sources likely unnecessary anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_EVV_NOISE</code></td>
+<td>0.1 m/s</td>
+<td>Vision velocity noise 0.1 m/s</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.1 m/s. Measurement noise for vision velocity measurements, used to lower bound or replace the uncertainty in the message. No motivation to change, and it is not relevant without external vision such as mocap anyway.</td>
+</tr>
+<tr>
+<td><code>EKF2_GPS_CTRL</code></td>
+<td>7</td>
+<td>Lon/lat + altitude + 3D velocity fusion</td>
+<td style="text-align: center;">✅</td>
+<td>Default 7. Dual-antenna heading (bit 3) stays off. Fusion also needs bit 0 of <code>EKF2_SENS_EN</code> (see below).</td>
+</tr>
+<tr>
+<td><code>EKF2_HGT_REF</code></td>
+<td>1</td>
+<td>GPS is the height reference</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1. This was contentious. The Astro's GPS vertical fix is much better than the Homebrew's, so without RTK the Homebrew tends to wander vertically when holding position in Position Mode (e.g., 0.5-1 m). Choosing 2 (range sensor) looks like a fix but makes <code>global_position_invalid</code> always true, so transitions into modes such as Hold are declined. This has the consequene that the drone gets stuck taking off (can never transition to Hold from Takeoff) or that <strong>it cannot land</strong> when using a ROS 2 teleop node if the code first dictates a transition to Hold mode. Hence: use RTK for better estimates and keep 1 so <code>global_position_invalid</code> stays false. (This is the lab's observation; I have not verified the <code>global_position_invalid</code> behaviour in the PX4 source. The source does say the range-sensor option should only be used over a flat surface, because the local NED origin then moves with ground level.)</td>
+</tr>
+<tr>
+<td><code>EKF2_IMU_POS_X</code></td>
+<td>0.0587 m</td>
+<td>IMU 0.0587 m forward of CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Max does not know who set this or where the value came from.</td>
+</tr>
+<tr>
+<td><code>EKF2_IMU_POS_Y</code></td>
+<td>0.000 m</td>
+<td>IMU on centerline</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0.</td>
+</tr>
+<tr>
+<td><code>EKF2_IMU_POS_Z</code></td>
+<td>0.000 m</td>
+<td>IMU at CG height</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0.</td>
+</tr>
+<tr>
+<td><code>EKF2_MAG_CHECK</code></td>
+<td>1</td>
+<td>Magnetic field strength check only</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (strength only). Bitmask of the checks that decide whether the magnetometer data is valid: bit 0 field strength (tolerance <code>EKF2_MAG_CHK_STR</code>, 0.2 gauss), bit 1 field inclination (<code>EKF2_MAG_CHK_INC</code>, 20 degrees), bit 2 wait for GNSS to provide the theoretical strength and inclination from the World Magnetic Model (WMM). If GNSS data is received the field is compared with the WMM, otherwise with an average value. The check is useful to reject occasional hard-iron disturbances, and with <code>COM_ARM_MAG_STR</code> = 1 a failed check denies arming. Max would enable all the checks (7), but everything works and he has never broken a magnetometer in a crash, so there is no motivation to move away from the default.</td>
+</tr>
+<tr>
+<td><code>EKF2_MIN_RNG</code></td>
+<td>0.01 m</td>
+<td>Expected ground range 0.01 m</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.01 m on main (it became the default in 1.17.0; 1.16.2 had 0.1 m). The range finder reading the estimator assumes when the vehicle is on the ground and not moving, and the range finder returns invalid data or none, for example because it is inside its minimum measurement distance. The terrain estimator then still has a terrain height at the start of flight. Max applied 0.01 m (the lowest allowed value) early on 1.16.2 because he expected it to become the default; that is now confirmed in source.</td>
+</tr>
+<tr>
+<td><code>EKF2_MULTI_IMU</code></td>
+<td>3</td>
+<td>Run 3 EKFs, one per IMU</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). The flight controller has 3 IMUs inside, and letting PX4 pick the best estimate among them is a good idea. Requires <code>SENS_IMU_MODE</code> = 0. Requires reboot. PX4 only rewrites this value itself when it is outside 1 to 4 while <code>SENS_IMU_MODE</code> is 0.</td>
+</tr>
+<tr>
+<td><code>EKF2_MULTI_MAG</code></td>
+<td>0</td>
+<td>Multi-EKF magnetometers disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). Maximum number of magnetometers to use for Multi-EKF; it requires <code>SENS_MAG_MODE</code> = 0 and a reboot. Left disabled because, unlike the IMUs, Max reports that the Cube does not have multiple magnetometers. The Here4 also provides a compass over DroneCAN (<code>UAVCAN_SUB_MAG</code>), so PX4 sees more than one. As far as I can tell, the sensors module chooses between them by priority and health (see the <code>CAL_MAGn_PRIO</code> parameters), not through <code>UAVCAN_ENABLE</code>. Max thinks both are reasonably accurate but is not sure which one is in use. If magnetometer issues appear, this is a good place to start.</td>
+</tr>
+<tr>
+<td><code>EKF2_OF_CTRL</code></td>
+<td>1</td>
+<td>Optical flow fusion enabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default is 1 in v1.16. Kept explicit so flow is always used. Flow data arrives over CAN (see <code>UAVCAN_SUB_FLOW</code>). Must match bit 2 of <code>EKF2_SENS_EN</code>: a source is fused only if its <code>EKF2_SENS_EN</code> bit and its own control parameter are both nonzero.</td>
+</tr>
+<tr>
+<td><code>EKF2_OF_POS_X</code></td>
+<td>0.04440 m</td>
+<td>Flow sensor 0.0444 m forward of CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_OF_POS_Y</code></td>
+<td>0.06670 m</td>
+<td>Flow sensor 0.0667 m right of CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_OF_POS_Z</code></td>
+<td>0.05080 m</td>
+<td>Flow sensor 0.0508 m below CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_A_HMAX</code></td>
+<td>5.0 m</td>
+<td>Range aid up to 5.0 m height</td>
+<td style="text-align: center;">✅</td>
+<td>Default 5.0 m (range 1 to 10). Maximum height above ground for the conditional range aid (<code>EKF2_RNG_CTRL</code> = 1): above it the estimator stops fusing the range finder for height.</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_A_VMAX</code></td>
+<td>1.0 m/s</td>
+<td>Range aid up to 1.0 m/s horizontal speed</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1.0 m/s (range 0.1 to 2). Maximum horizontal speed for the conditional range aid (<code>EKF2_RNG_CTRL</code> = 1): above it the estimator stops fusing the range finder for height.</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_CTRL</code></td>
+<td>1</td>
+<td>Range finder enabled (conditional mode)</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1. Range aiding is used at low speed and low altitude (takeoff/landing). Must match bit 9 of <code>EKF2_SENS_EN</code> (this parameter must stay 1 or 2 while that bit is set).</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_POS_X</code></td>
+<td>−0.00635 m</td>
+<td>Rangefinder 0.00635 m behind CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_POS_Y</code></td>
+<td>0.0539 m</td>
+<td>Rangefinder 0.0539 m right of CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_RNG_POS_Z</code></td>
+<td>0.114 m</td>
+<td>Rangefinder 0.114 m below CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Sensor mounting offset.</td>
+</tr>
+<tr>
+<td><code>EKF2_SENS_EN</code></td>
+<td>1797</td>
+<td>GNSS 0, optical flow, barometer, range finder, magnetometer</td>
+<td style="text-align: center;">❌</td>
+<td>Default 8191 (all 13 sources). New on main: a bitmask of which sensor fusion sources are enabled, applied only while disarmed (<code>EKF2::initFusionControl()</code>; in flight use the MAVLink command or the individual <code>*_CTRL</code> parameters). A source is fused only if <strong>both</strong> its <code>EKF2_SENS_EN</code> bit and its own control parameter are nonzero (<code>intended() = enabled &amp;&amp; available</code>, where <code>available</code> comes from <code>EKF2_GPS_CTRL</code>, <code>EKF2_OF_CTRL</code>, <code>EKF2_RNG_CTRL</code>, <code>EKF2_BARO_CTRL</code>, <code>EKF2_MAG_TYPE</code> and so on), so a mismatch silently disables a source. Bit map below. Value 1797 = 0b0011100000101. <strong>Not 1798</strong>: that string (0b0011100000110) clears bit 0 (GNSS 0 off) and sets bit 1 (GNSS 1 on).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ekf2_sens_en-bit-map-for-the-homebrew"><code>EKF2_SENS_EN</code> bit map for the Homebrew</h3>
+<p>Bit numbers and names are from the main <code>module.yaml</code> and the <code>SensEn</code> enum in <code>EKF2.hpp</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Bit</th>
+<th>Source</th>
+<th style="text-align: center;">Set</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>GNSS 0</td>
+<td style="text-align: center;">1</td>
+<td>The Here4. <code>EKF2_GPS_CTRL</code> is 7, so it matches.</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>GNSS 1</td>
+<td style="text-align: center;">0</td>
+<td>There is no second GPS and we do not want PX4 to think there is one. That GPS still loads and works with this bit off needs an in-person test.</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Optical flow</td>
+<td style="text-align: center;">1</td>
+<td>Must match <code>EKF2_OF_CTRL</code> (1).</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>External vision</td>
+<td style="text-align: center;">0</td>
+<td>RTK is good enough that feeding PX4 e.g. on-board computer vision would only confuse it, and the Park has no mocap. Matches <code>EKF2_EV_CTRL</code> = 0.</td>
+</tr>
+<tr>
+<td style="text-align: right;">4 to 7</td>
+<td>Aux global position 0 to 3</td>
+<td style="text-align: center;">0</td>
+<td>Nothing like this on the vehicle.</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Barometer</td>
+<td style="text-align: center;">1</td>
+<td>Very important source of height estimates. <code>EKF2_BARO_CTRL</code> is at its default of 1.</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Range finder</td>
+<td style="text-align: center;">1</td>
+<td>Must match <code>EKF2_RNG_CTRL</code> being enabled (1 or 2). It is 1.</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Magnetometer</td>
+<td style="text-align: center;">1</td>
+<td>Critical for estimation. <code>EKF2_MAG_TYPE</code> is at its default (Automatic).</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>Airspeed</td>
+<td style="text-align: center;">0</td>
+<td>Quadcopters, no airspeed sensor.</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>Ranging beacon</td>
+<td style="text-align: center;">0</td>
+<td>No ranging beacon.</td>
+</tr>
+</tbody>
+</table>
+<p>Bits 0, 2, 8, 9 and 10 set: 1 + 4 + 256 + 512 + 1024 = <strong>1797</strong>.</p>
+<p>Max is not fully sure how this bitmask should be matched with <code>EKF2_OF_CTRL</code> and <code>EKF2_RNG_CTRL</code>. The source shows the AND behaviour described above, but how it plays out on the real vehicle is exactly what the test flight is for.</p>
+<h2 id="fd-failure-detector">FD: Failure Detector</h2>
+<p>The actuator (motor) failure check moved into the ESC arming checks on main (<code>escCheck.cpp</code>). Its parameters were replaced: <code>FD_ACT_MOT_C2T</code>, <code>FD_ACT_MOT_THR</code> and <code>FD_ACT_MOT_TOUT</code> no longer exist and are superseded by <code>MOTFAIL_C2T</code>, <code>MOTFAIL_OFF</code> and <code>MOTFAIL_TIME</code> (no value migration). <code>FD_ACT_EN</code> still exists, but its default flipped from 1 to 0. Everything here stays at its default. Per the main description the check only works for ESCs that report current consumption; the notes for <code>COM_ARM_CHK_ESCS</code> say these ESCs do not, so with the check enabled it would be inert at best.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FD_ACT_EN</code></td>
+<td>0</td>
+<td>Actuator failure check disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled) on main; it was 1 in 1.16.2. If enabled, the HealthAndArmingChecks verify that each motor draws a minimum ESC current per throttle level, otherwise this indicates a motor failure. Leave at default.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gf-geofence">GF: Geofence</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GF_ACTION</code></td>
+<td>5</td>
+<td>Land mode on geofence violation</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2 (Hold mode). Land immediately rather than hover.</td>
+</tr>
+<tr>
+<td><code>GF_MAX_VER_DIST</code></td>
+<td>0 m</td>
+<td>Disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). <strong>Do not</strong> use this feature. Because the GPS fix moves during the 1-10 minute initial RTK fix, the relative altitude (relative to the fix when it first boots) will make the quadcopter think it's all over the place. Since you cannot reset the home position without arming, using this feature to prevent the quadcopter from hitting the net as an extra safety feature is moot. Just use CBFs. This feature would interfere with CBF offboard code anyways. If not using RTK (you should really just use it), the estimates are likely not good enough to prevent you from hitting the net. And, PX4's geofence does not take into account for instance the speed at which you approach a geofence, so it's not even enforceable as a never-cross-this boundary.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gnss-gnss-quality-requirements">GNSS: GNSS Quality Requirements</h2>
+<p>New on main. The receiver selection, the per-receiver antenna offsets and delays (<code>SENS_GNSS0_*</code>, see the SENS section) and the quality checks moved from EKF2 to the sensors module (<code>vehicle_gps_position</code>). The <code>GNSS_REQ_*</code> thresholds are the "strict" checks that qualify a receiver, mainly before arming. Once the strict checks have passed on the ground, the checks that decide while armed are the "relaxed" ones with fixed limits: at least a 3D fix, at most 50 m position accuracy and 10 m/s speed accuracy (<code>gnss_checks.cpp</code>). They replace <code>EKF2_GPS_CHECK</code> and <code>EKF2_REQ_*</code>. <code>GNSS_REQ_TIME</code> (default 10 s, the continuous healthy time required at startup) is new too and is left at its default.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GNSS_CHECK</code></td>
+<td>2047</td>
+<td>All checks except jamming</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2047 (range 0 to 4095). Replaces <code>EKF2_GPS_CHECK</code> (1023 in 1.16.2, bits 0 to 9). Bits: 0 satellite count, 1 PDOP, 2 EPH, 3 EPV, 4 speed accuracy, 5 horizontal position drift, 6 vertical position drift, 7 horizontal speed offset, 8 vertical speed offset, 9 spoofing, <strong>10 GNSS fix type (new)</strong>, 11 jamming (off). The automatic migration would carry 1023 over, which leaves bit 10 off and <code>GNSS_REQ_FIX</code> unenforced, so 2047 is set explicitly. Most 1.16.2 tests were done with 245 and without RTK, because Max did not yet know what he was doing.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_EPH</code></td>
+<td>3.0 m</td>
+<td>Maximum 3.0 m horizontal position error to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 3.0 m (range 0.1 to 100; it was 2 to 100 as <code>EKF2_REQ_EPH</code>). Replaces <code>EKF2_REQ_EPH</code>. Maximum horizontal position error (EPH) the receiver may report (bit 2 of <code>GNSS_CHECK</code>). On its own this threshold does not require RTK; <code>GNSS_REQ_FIX</code> does.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_EPV</code></td>
+<td>5.0 m</td>
+<td>Maximum 5.0 m vertical position error to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 5.0 m (range 0.1 to 100; 2 to 100 as <code>EKF2_REQ_EPV</code>). Replaces <code>EKF2_REQ_EPV</code>. Maximum vertical position error (EPV) the receiver may report (bit 3 of <code>GNSS_CHECK</code>).</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_FIX</code></td>
+<td>6</td>
+<td>RTK fixed required</td>
+<td style="text-align: center;">❌</td>
+<td>Default 3 (3D fix). New on main, no 1.16.2 equivalent. Values: 0 none, 2 2D, 3 3D, 4 RTCM code differential, 5 RTK float, 6 RTK fixed, 8 extrapolated. The strict check fails when the reported fix type is below this value (<code>gnss_checks.cpp</code>) and only runs if bit 10 of <code>GNSS_CHECK</code> is set. Max set 6 so that nobody flies without RTK any more: with <code>COM_ARM_WO_GPS</code> = 0 arming is denied unless the receiver reports RTK fixed. <strong>Scope:</strong> this is a strict check. While armed, only the relaxed checks decide (3D fix minimum), so losing RTK in flight does not by itself trip it; the offboard code should still land when the fix type drops below 6, as before.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_HDRIFT</code></td>
+<td>0.1 m/s</td>
+<td>Maximum 0.1 m/s horizontal drift to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.1 m/s (range 0.1 to 1.0, so this is also the strictest allowed value). Replaces <code>EKF2_REQ_HDRIFT</code>. Used for the horizontal position drift and horizontal speed offset checks (bits 5 and 7 of <code>GNSS_CHECK</code>), which only run when the vehicle is on the ground and stationary.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_NSATS</code></td>
+<td>6</td>
+<td>At least 6 satellites to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 6 (range 4 to 12). Replaces <code>EKF2_REQ_NSATS</code>. Minimum satellite count (bit 0 of <code>GNSS_CHECK</code>).</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_PDOP</code></td>
+<td>2.5</td>
+<td>Maximum PDOP 2.5 to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2.5 (range 1.5 to 5.0). Replaces <code>EKF2_REQ_PDOP</code>. Maximum position dilution of precision (bit 1 of <code>GNSS_CHECK</code>).</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_SACC</code></td>
+<td>0.5 m/s</td>
+<td>Maximum 0.5 m/s speed accuracy to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.5 m/s (range 0.5 to 5.0, so this is also the strictest allowed value). Replaces <code>EKF2_REQ_SACC</code>. Maximum speed accuracy (bit 4 of <code>GNSS_CHECK</code>). Per the main description, EKF2 also uses this limit for feeding GNSS velocity to the EKF-GSF yaw estimator and for trusting GNSS vertical velocity while the accelerometer clips, in flight too. No motivation to change.</td>
+</tr>
+<tr>
+<td><code>GNSS_REQ_VDRIFT</code></td>
+<td>0.2 m/s</td>
+<td>Maximum 0.2 m/s vertical drift to use GNSS</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.2 m/s (range 0.1 to 1.5). Replaces <code>EKF2_REQ_VDRIFT</code>. Used for the vertical position drift and vertical speed offset checks (bits 6 and 8 of <code>GNSS_CHECK</code>), which only run when the vehicle is on the ground and stationary.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gps-serial-gps">GPS: Serial GPS</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GPS_1_CONFIG</code></td>
+<td>0</td>
+<td>Serial GPS driver disabled</td>
+<td style="text-align: center;">❌</td>
+<td>Default 201 (GPS 1). The GPS is the Here4 on DroneCAN, so the serial GPS driver stays off.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="man-manual-control">MAN: Manual Control</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAN_ARM_GESTURE</code></td>
+<td>0</td>
+<td>Stick arm/disarm gesture disabled</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 (enabled). Prevents accidental arming/disarming by stick position.</td>
+</tr>
+<tr>
+<td><code>MAN_KILL_GEST_T</code></td>
+<td>−1</td>
+<td>Kill stick gesture disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default −1 (negative value disables the feature).</td>
+</tr>
+<tr>
+<td><code>MAN_OVERRIDE_SPD</code></td>
+<td>1.0 /s</td>
+<td>Stick override on, 1.0 stick travel per second</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1.0 (range -1 to 10; negative disables). Replaces <code>COM_RC_OVERRIDE</code> (3 in 1.16.2: auto and offboard modes) and <code>COM_RC_STICK_OV</code> (30 %). In auto and offboard modes, on a multicopter, the pilot takes over (Position mode, or Altitude if position is unavailable) when any of the four sticks moves faster than this threshold for several consecutive samples (<code>ManualControl.cpp</code>, <code>Commander::manualControlCheck()</code>). It measures stick speed in stick travel per second, not a 30 % displacement, so the sensitivity is not equivalent to the old setting; Max accepted the default. It is considered more important than stick nudging (see <code>MPC_AUTO_NUDGING</code>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mav-mavlink">MAV: MAVLink</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAV_0_CONFIG</code></td>
+<td>101</td>
+<td>MAVLink instance 0 on TELEM 1</td>
+<td style="text-align: center;">✅</td>
+<td>Default 101 (TELEM 1). The QGC telemetry radio connects here. Requires reboot. If torque-level control is ever wanted, note that (per Max, not verified by me) MAVROS does not support torque-level commands but uXRCE-DDS does, while RTK is not possible over uXRCE-DDS on main because there is no topic for it yet. The open PR <a href="https://github.com/PX4/PX4-Autopilot/pull/29368">#29368</a> (the branch under test on 2026-10-22, not merged) adds <code>/fmu/in/rtcm_corrections</code> (<code>px4_msgs/msg/RtcmData</code>) to the uXRCE-DDS client, which would remove the need to run MAVROS next to it for RTK. Torque-level control plus RTK would therefore need uXRCE-DDS and MAVROS running together. That would need a third serial port, because TELEM 1 and TELEM 2 are taken by the QGC radio and the Jetson link, and giving up the QGC radio is extremely dangerous for a torque-level offboard flight. Options are to wait until uXRCE-DDS supports RTK or MAVROS supports torque-level control, to write custom PX4 topics for RTK over uXRCE-DDS, or to solder a new cable and run uXRCE-DDS on another port such as GPS 2 (not tried).</td>
+</tr>
+<tr>
+<td><code>MAV_1_CONFIG</code></td>
+<td>102</td>
+<td>MAVLink instance 1 on TELEM 2</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). The FTDI-to-USB cable to the Jetson connects to the flight controller here. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_1_FLOW_CTRL</code></td>
+<td>2</td>
+<td>Serial flow control auto-detected</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2. The Jetson link. This setting tells PX4 to auto-detect flow control; PX4 does not write the parameter itself. Use 0 or 1 only if auto-detection fails. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_1_FORWARD</code></td>
+<td>0</td>
+<td>No message forwarding from the Jetson link</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Broadcast messages (or ones aimed at another system) arriving on the Jetson link are not forwarded to the other MAVLink links. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_1_MODE</code></td>
+<td>2</td>
+<td>Onboard message set</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2 (Onboard). The set of streamed messages on the Jetson link is the one meant for a companion computer. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_1_RATE</code></td>
+<td>0 B/s</td>
+<td>Rate limit chosen from the baud rate</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. With 0, PX4 uses half the theoretical bandwidth, baud/20 bytes per second; at 921600 baud that is 46080 B/s. PX4 does not write the parameter itself. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_PROTO_VER</code></td>
+<td>2</td>
+<td>Always use MAVLink 2</td>
+<td style="text-align: center;">✅</td>
+<td>Default is 2 on main (it was 0 in 1.16.2: start with MAVLink 1 and switch to 2 if the GCS sends version 2). Option 0 no longer exists; option 1 is now "Version 1 with auto-upgrade to v2 if detected". Not super critical.</td>
+</tr>
+<tr>
+<td><code>MAV_SYS_ID</code></td>
+<td>TBD (2–249)</td>
+<td>Unique number per homebrew vehicle</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1. <strong>Never use 1</strong> (every Astro requires 1 and it can't be changed). Choosing 1 will cause ROS 2 topic to intermingle between the Astro and Homebrew despite being namespaced. Must be unique. Range 1–250; never pick 250. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>MAV_TYPE</code></td>
+<td>2</td>
+<td>Quadrotor</td>
+<td style="text-align: center;">✅</td>
+<td>MC default 2 (metadata 0, generic micro air vehicle, overridden by <code>rc.mc_defaults</code>). The airframe type announced over MAVLink. Not super critical.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mc-multicopter-autotune">MC: Multicopter Autotune</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MC_AT_EN</code></td>
+<td>1</td>
+<td>Autotune module enabled</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). Allows autotuning the control cascade from QGC. This does <strong>not</strong> mean the quad tunes continuously in flight. Do not run it unless there is a reason to suspect poor control performance, which there really should not be.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mis-mission">MIS: Mission</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MIS_TAKEOFF_ALT</code></td>
+<td>2.5 m</td>
+<td>Take off to 2.5 m from ground level</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2.5 m. Take off to 2.5 m from ground level</td>
+</tr>
+</tbody>
+</table>
+<h2 id="motfail-motor-failure">MOTFAIL: Motor Failure</h2>
+<p>Replacement parameters for <code>FD_ACT_MOT_*</code>. All stay at their defaults and are inert while <code>FD_ACT_EN</code> is 0. The main descriptions of these three still mention the old <code>FD_ACT_*</code> names, so read them with that in mind.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MOTFAIL_C2T</code></td>
+<td>35 A/%</td>
+<td>Current-to-throttle scale 35 A/%</td>
+<td style="text-align: center;">✅</td>
+<td>Default 35 (range 0 to 50). The slope between the expected steady-state current and the linearized, normalized thrust command. The old <code>FD_ACT_MOT_C2T</code> default was 2, so the number is not comparable. Leave at default.</td>
+</tr>
+<tr>
+<td><code>MOTFAIL_OFF</code></td>
+<td>10 A</td>
+<td>Over/under-current offset 10 A</td>
+<td style="text-align: center;">✅</td>
+<td>Default 10 A (range 0 to 30). The check triggers if the difference between the expected and measured current is above this value. Leave at default.</td>
+</tr>
+<tr>
+<td><code>MOTFAIL_TIME</code></td>
+<td>1.0 s</td>
+<td>Violation must last 1.0 s</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1.0 s (range 0.01 to 10). The current thresholds must be exceeded for this long before a motor failure triggers. The old <code>FD_ACT_MOT_TOUT</code> was in milliseconds (default 100). Leave at default.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mpc-multicopter-position-control">MPC: Multicopter Position Control</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MPC_AUTO_NUDGING</code></td>
+<td>0</td>
+<td>Stick nudging in auto modes disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Replaces <code>MPC_LAND_RC_HELP</code> (0 in 1.16.2, so nothing is lost; a nonzero old value would have migrated to bit 1). Bitmask: bit 0 yaw nudging in all auto modes, bit 1 landing nudging (pitch/roll move the vehicle horizontally, the throttle stick scales the descent speed from 0 to 2 times <code>MPC_LAND_SPEED</code>, yaw rotates the heading). Deliberately left off: the main description says stick override must be disabled (<code>MAN_OVERRIDE_SPD</code> = -1) for nudging to work, and <code>Commander::manualControlCheck()</code> has no exception for nudging, so the two are mutually exclusive in practice. Max prefers the override. Other points from the 1.16.2 reasoning that still apply if this is ever enabled: the throttle stick on a Taranis QX7 does not spring back to center, so an RC left on with throttle low would double the descent speed of every Land, including a battery failsafe Land (<code>COM_LOW_BAT_ACT</code>) (my inference from the description), and it has no effect in Offboard. <code>MPC_LAND_RADIUS</code>, which limits how far landing nudging can move the quad, now defaults to -1 (no limit); it was 1000 m in 1.16.2.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nav-navigator">NAV: Navigator</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NAV_DLL_ACT</code></td>
+<td>0</td>
+<td>Disabled (no GCS-loss failsafe)</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Removes the need for QGC to stay connected. Required for multi-agent setups.</td>
+</tr>
+<tr>
+<td><code>NAV_RCL_ACT</code></td>
+<td>3</td>
+<td>Land mode on RC loss</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2 (Return mode). Land in place instead of returning. Option 7 ("Hold mode (no failsafe)") is new on main and not used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pld-precision-landing">PLD: Precision Landing</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PLD_SRCH_ALT</code></td>
+<td>2.5 m</td>
+<td>Climb to 2.5 m above home when searching for the landing target</td>
+<td style="text-align: center;">❌</td>
+<td>Default 10 m. Our flight space has a net at 8 m.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pwm-motor-outputs">PWM: Motor Outputs</h2>
+<p>These are what the motors for this quadcopter need. Output functions 101 to 104 are Motor 1 to Motor 4.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PWM_MAIN_FUNC1</code></td>
+<td>101</td>
+<td>Motor 1</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_FUNC2</code></td>
+<td>102</td>
+<td>Motor 2</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_FUNC3</code></td>
+<td>103</td>
+<td>Motor 3</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_FUNC4</code></td>
+<td>104</td>
+<td>Motor 4</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MAX1</code></td>
+<td>1900</td>
+<td>Output 1 maximum 1900 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MAX2</code></td>
+<td>1900</td>
+<td>Output 2 maximum 1900 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MAX3</code></td>
+<td>1900</td>
+<td>Output 3 maximum 1900 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MAX4</code></td>
+<td>1900</td>
+<td>Output 4 maximum 1900 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 2000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MIN1</code></td>
+<td>1100</td>
+<td>Output 1 minimum 1100 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MIN2</code></td>
+<td>1100</td>
+<td>Output 2 minimum 1100 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MIN3</code></td>
+<td>1100</td>
+<td>Output 3 minimum 1100 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1000. What the motors for this quadcopter need.</td>
+</tr>
+<tr>
+<td><code>PWM_MAIN_MIN4</code></td>
+<td>1100</td>
+<td>Output 4 minimum 1100 µs</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1000. What the motors for this quadcopter need.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rc-radio-control">RC: Radio Control</h2>
+<p>These are the Taranis QX7 template needed to use the radio with this quadcopter.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RC_CHAN_CNT</code></td>
+<td>18</td>
+<td>18 RC channels saved at RC calibration</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0. Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_KILLSWITCH_TH</code></td>
+<td>0.75</td>
+<td>Kill switch threshold 0.75</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.75. Fine as is.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_ARM_SW</code></td>
+<td>9</td>
+<td>Arm switch on RC channel 9</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_AUX1</code></td>
+<td>0</td>
+<td>AUX1 unassigned</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (unassigned). Channel 10 is the kill switch (<code>RC_MAP_KILL_SW</code>), so AUX1 must not also use it.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_FLTMODE</code></td>
+<td>5</td>
+<td>Flight mode selection on RC channel 5</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_KILL_SW</code></td>
+<td>10</td>
+<td>Kill switch on RC channel 10</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Channel 10 is the right switch on the Taranis QX7. On main, kill zeroes the motor outputs immediately (<code>mixer_module.cpp</code>). Flipping the switch back within 5 seconds restarts the motors; after 5 seconds the vehicle disarms. That 5 s is hardcoded (<code>COM_KILL_DISARM</code> no longer exists, see the removed-parameters table). <strong>Be careful!!!</strong></td>
+</tr>
+<tr>
+<td><code>RC_MAP_PITCH</code></td>
+<td>2</td>
+<td>Pitch on RC channel 2</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_ROLL</code></td>
+<td>1</td>
+<td>Roll on RC channel 1</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_THROTTLE</code></td>
+<td>3</td>
+<td>Throttle on RC channel 3</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+<tr>
+<td><code>RC_MAP_YAW</code></td>
+<td>4</td>
+<td>Yaw on RC channel 4</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (unassigned). Taranis QX7 template needed to use this radio with the quadcopter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rtl-return-mode">RTL: Return Mode</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RTL_DESCEND_ALT</code></td>
+<td>2 m</td>
+<td>2 m (≈ 6.6 ft)</td>
+<td style="text-align: center;">❌</td>
+<td>MC default 10 m (metadata 30 m, overridden by <code>rc.mc_defaults</code>). The net is 8 m tall, so this keeps the vehicle clear of it.</td>
+</tr>
+<tr>
+<td><code>RTL_RETURN_ALT</code></td>
+<td>2 m</td>
+<td>2 m (≈ 6.6 ft)</td>
+<td style="text-align: center;">❌</td>
+<td>MC default 30 m (metadata 60 m, overridden by <code>rc.mc_defaults</code>). The net is 8 m tall, so this keeps the vehicle clear of it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sens-sensors">SENS: Sensors</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SENS_BOARD_ROT</code></td>
+<td>2</td>
+<td>Autopilot board rotated Yaw 90°</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (no rotation). Required for how the CubePilot is placed in the case. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SENS_EN_PMW3901</code></td>
+<td>0</td>
+<td>Local PMW3901 optical flow driver disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). This enables a PMW3901 wired to the Cube's SPI bus. The optical flow sensor is on CAN instead (see <code>UAVCAN_SUB_FLOW</code>).</td>
+</tr>
+<tr>
+<td><code>SENS_EN_SF0X</code></td>
+<td>8</td>
+<td>LW20/c</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 (SF02). Selects the model of the serial LightWare lidar. It only appears when <code>SENS_SF0X_CFG</code> is not disabled, so it does not need to be set (and is not in the <code>.params</code> file).</td>
+</tr>
+<tr>
+<td><code>SENS_EN_SF1XX</code></td>
+<td>6</td>
+<td>SF/LW20/c</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). The LW20/c on I2C is the only distance sensor used for estimation. Requires reboot. Options 8 (GRF250) and 9 (GRF500) are new on main; our value 6 is unchanged.</td>
+</tr>
+<tr>
+<td><code>SENS_FLOW_ROT</code></td>
+<td>0</td>
+<td>No rotation</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (no rotation). Rotation of the optical flow sensor relative to the airframe. It seems to work fine at 0, but <strong>Max was not able to verify which direction the optical flow sensor faces</strong>.</td>
+</tr>
+<tr>
+<td><code>SENS_GNSS0_DELAY</code></td>
+<td>110 ms</td>
+<td>GNSS 0 delay 110 ms</td>
+<td style="text-align: center;">✅</td>
+<td>Default 110 ms (range 0 to 300). Replaces <code>EKF2_GPS_DELAY</code>, which the migration copies to both <code>SENS_GNSS0_DELAY</code> and <code>SENS_GNSS1_DELAY</code>; only slot 0 is set here since there is no second receiver. The type changed from float to int32 with the rename. GNSS measurement delay relative to the IMU measurements. No motivation to change.</td>
+</tr>
+<tr>
+<td><code>SENS_GNSS0_OFFX</code></td>
+<td>0.010 m</td>
+<td>GNSS antenna 0.010 m forward of CG</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Measured antenna offset. Replaces <code>EKF2_GPS_POS_X</code> (named <code>SENS_GPS0_OFFX</code> on release/1.18). <strong>Slot matching:</strong> the offset slot is matched to the receiver by device ID (<code>SENS_GNSS0_ID</code>). When all ID slots are 0 it falls back to the uORB instance index, which the main description calls "only reliable for serial GPS"; the Here4 is DroneCAN. If no slot matches, the offsets stay zero (<code>VehicleGPSPosition::findParamSlot</code>). <code>SENS_GNSS0_ID</code> is the receiver's device ID, a per-drone value, so it is not in the template. Bench-check that the offsets reach <code>vehicle_gnss.antenna_offset</code>.</td>
+</tr>
+<tr>
+<td><code>SENS_GNSS0_OFFY</code></td>
+<td>0.000 m</td>
+<td>GNSS antenna on centerline</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0.0. Replaces <code>EKF2_GPS_POS_Y</code>. Same slot-matching caveat as <code>SENS_GNSS0_OFFX</code>.</td>
+</tr>
+<tr>
+<td><code>SENS_GNSS0_OFFZ</code></td>
+<td>0.217 m</td>
+<td>GNSS antenna 0.217 m below CG (body Z points down)</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0.0. Measured antenna offset. Replaces <code>EKF2_GPS_POS_Z</code>. Same slot-matching caveat as <code>SENS_GNSS0_OFFX</code>.</td>
+</tr>
+<tr>
+<td><code>SENS_IMU_MODE</code></td>
+<td>0</td>
+<td>Sensors hub does not select the primary IMU (needed for multi-EKF)</td>
+<td style="text-align: center;">❌</td>
+<td>Default 1 (publish primary IMU selection). Required by <code>EKF2_MULTI_IMU</code> = 3: the v1.16 description of <code>EKF2_MULTI_IMU</code> says "Requires SENS_IMU_MODE 0". Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SENS_SF0X_CFG</code></td>
+<td>0</td>
+<td>Disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). Serial port configuration for the LightWare lidar (that is, UART). Since the LW20/c is on I2C (<code>SENS_EN_SF1XX</code>), this stays disabled to prevent PX4 from getting confused.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sep-septentrio-gps">SEP: Septentrio GPS</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SEP_PORT1_CFG</code></td>
+<td>0</td>
+<td>Septentrio driver disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 (disabled). The GPS is the Here4 on DroneCAN, so the Septentrio serial driver stays off.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ser-serial-ports">SER: Serial Ports</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SER_TEL1_BAUD</code></td>
+<td>57600</td>
+<td>TELEM 1 at 57600 baud</td>
+<td style="text-align: center;">✅</td>
+<td>Default 57600. The QGC telemetry radio on TELEM 1 (<code>MAV_0_CONFIG</code>); the radio must use the same baud rate. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SER_TEL2_BAUD</code></td>
+<td>921600</td>
+<td>TELEM 2 at 921600 baud</td>
+<td style="text-align: center;">✅</td>
+<td>Default 921600. The Jetson link on TELEM 2 (<code>MAV_1_CONFIG</code>). Requires reboot.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sf1xx-lightware-lidar-i2c">SF1XX: LightWare Lidar (I2C)</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SF1XX_MODE</code></td>
+<td>1</td>
+<td>Enabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (enabled). Operation mode of the LightWare lidar driver. The other option, 2 (disabled during VTOL fast forward flight), is for VTOL vehicles and is not relevant here.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sys-system">SYS: System</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SYS_AUTOSTART</code></td>
+<td>4001</td>
+<td>Generic Quadcopter (airframe <code>4001_quad_x</code>)</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (none). Uses the multicopter for PX4 default parameters. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SYS_HAS_BARO</code></td>
+<td>1</td>
+<td>Barometer expected</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (on). Pre-flight check for a barometer; if disabled, the preflight checks do not look for one. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SYS_HAS_GPS</code></td>
+<td>1</td>
+<td>GPS expected</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (on). Controls whether the vehicle has a GPS. If disabled, the sensors hub does not process <code>sensor_gps</code> at all and GPS is not available to the rest of the system, so this must stay on. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SYS_HAS_MAG</code></td>
+<td>1</td>
+<td>One magnetometer expected</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1 (on). Number of magnetometers the pre-flight check requires: 0 means none is expected, and 1 to N require N magnetometers to be present. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>SYS_HAS_NUM_DIST</code></td>
+<td>1</td>
+<td>One distance sensor required</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (check disabled). The preflight check fails if fewer than this number of distance sensors with valid data are present. Set to 1 so that a missing or silent LW20/c is caught before flight.</td>
+</tr>
+<tr>
+<td><code>SYS_HAS_NUM_OF</code></td>
+<td>1</td>
+<td>One optical flow sensor required</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (check disabled). The preflight check fails if fewer than this number of optical flow sensors with valid data are present (the maximum is 1). Set to 1 so that a missing or silent flow sensor is caught before flight.</td>
+</tr>
+<tr>
+<td><code>SYS_USB_AUTO</code></td>
+<td>2</td>
+<td>MAVLink starts on USB right away</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2 (MAVLink). Per the PX4 serial configuration documentation, it selects whether the USB port runs no particular protocol, auto-detects the protocol, or is set to MAVLink. With MAVLink, PX4 starts MAVLink on USB as soon as USB is available instead of waiting to receive data first. Keep it at default so the USB link works right away.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="thr-thrust-model">THR: Thrust Model</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>THR_MDL_FAC</code></td>
+<td>0.3</td>
+<td>Thrust model factor 0.3 (30% quadratic term)</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0. Usually determined by a bench thrust test. This value is a good guess that works in flight, so there is no motivation to change it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uavcan-dronecan">UAVCAN: DroneCAN</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UAVCAN_ENABLE</code></td>
+<td>2</td>
+<td>Sensors, automatic config</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0 (disabled). DroneCAN must be on for the Here4 and the flow/rangefinder node. Value 2 allocates node IDs dynamically. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_PUB_RTCM</code></td>
+<td>1</td>
+<td>Publish RTCM stream</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0. Required for PX4 to accept RTK corrections over DroneCAN. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_RNG_MAX</code></td>
+<td>100 m</td>
+<td>Rangefinder maximum range 100 m</td>
+<td style="text-align: center;">❌</td>
+<td>Default 999 m. The maximum valid range accepted from a rangefinder connected over DroneCAN. 100 m is the rated maximum range of the LW20/c. As far as I can tell from the description, it only applies to a DroneCAN rangefinder (<code>UAVCAN_SUB_RNG</code>, which is 0 here) and not to the LW20/c on I2C.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_RNG_MIN</code></td>
+<td>0 m</td>
+<td>Rangefinder minimum range 0 m</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0 m. The minimum valid range accepted from a rangefinder connected over DroneCAN. Technically the rated minimum for the LW20/c is 0.2 m, but this works so it is fine. The same caveat as for <code>UAVCAN_RNG_MAX</code> applies.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_SUB_FLOW</code></td>
+<td>1</td>
+<td>Optical flow subscription enabled</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0. The optical flow sensor is on the CAN bus. This subscribes to its flow data only; its distance sensor is controlled separately by <code>UAVCAN_SUB_RNG</code>. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_SUB_GPS</code></td>
+<td>1</td>
+<td>GPS subscription enabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1. The Here4 provides GPS over DroneCAN. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_SUB_IMU</code></td>
+<td>0</td>
+<td>IMU subscription disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. No external IMU on CAN; the IMUs are inside the Cube. Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_SUB_MAG</code></td>
+<td>1</td>
+<td>Magnetometer subscription enabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 1. The Here4 provides a compass over DroneCAN. Max is not sure this compass is actually the one being used (see <code>EKF2_MULTI_MAG</code>). Requires reboot.</td>
+</tr>
+<tr>
+<td><code>UAVCAN_SUB_RNG</code></td>
+<td>0</td>
+<td>Range finder subscription disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. The only distance sensor is the LW20/c on I2C. The optical flow sensor's own distance sensor must never be used for estimation. Requires reboot.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usb-usb-mavlink">USB: USB MAVLink</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>USB_MAV_MODE</code></td>
+<td>2</td>
+<td>Onboard message set on USB</td>
+<td style="text-align: center;">✅</td>
+<td>Default 2 (Onboard). The MAVLink profile used on the USB port when MAVLink is set or detected (<code>SYS_USB_AUTO</code>). The PX4 documentation says the USB port is by default a MAVLink port with the onboard profile meant for companion computers, the same message set as <code>MAV_1_MODE</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uxrce-a-mavros-alternative">uXRCE: A MAVROS Alternative</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Setting (Raw)</th>
+<th>Setting (Word)</th>
+<th style="text-align: center;">Is Default (MC)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UXRCE_DDS_CFG</code></td>
+<td>0</td>
+<td>Disabled</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Turns on the UXRCE-DDS Client (alternative to MAVROS that allows torque-level control but foregoes RTK on main; PR #29368 adds an RTCM input topic, see <code>MAV_0_CONFIG</code>).</td>
+</tr>
+<tr>
+<td><code>UXRCE_DDS_DOM_ID</code></td>
+<td>0</td>
+<td>ROS Domain ID</td>
+<td style="text-align: center;">✅</td>
+<td>Default 0. Must match ROS setup.</td>
+</tr>
+<tr>
+<td><code>UXRCE_DDS_PTCFG</code></td>
+<td>2</td>
+<td>Custom participant</td>
+<td style="text-align: center;">❌</td>
+<td>Default 0. Required if using discovery server. Needs a XML config and file on fs/microsd/etc/. <strong>This parameter only appears if <code>UXRCE_DDS_CFG</code> is not zero. Ignore if not using uXCRE.</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="removed-or-renamed-since-v1162">Removed or renamed since v1.16.2</h2>
+<p>Every name below was in the 1.16.2 template and does not exist on main. Verified by running the PX4 parameter metadata generator on both source trees.</p>
+<table>
+<thead>
+<tr>
+<th>1.16.2 parameter (value)</th>
+<th>On main</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EKF2_GPS_POS_X</code> / <code>Y</code> / <code>Z</code> (0.01 / 0 / 0.217)</td>
+<td><code>SENS_GNSS0_OFFX</code> / <code>Y</code> / <code>Z</code></td>
+<td>Renamed twice (<code>SENS_GPS0_*</code> on release/1.18). Migrated automatically on import.</td>
+</tr>
+<tr>
+<td><code>EKF2_GPS_DELAY</code> (110)</td>
+<td><code>SENS_GNSS0_DELAY</code>, <code>SENS_GNSS1_DELAY</code></td>
+<td>Renamed; copied to both slots; float became int32.</td>
+</tr>
+<tr>
+<td><code>EKF2_GPS_CHECK</code> (1023)</td>
+<td><code>GNSS_CHECK</code> (2047)</td>
+<td>Renamed, but the carried value would leave the new fix-type bit off; set explicitly.</td>
+</tr>
+<tr>
+<td><code>EKF2_REQ_EPH</code> / <code>EPV</code> / <code>HDRIFT</code> / <code>NSATS</code> / <code>PDOP</code> / <code>SACC</code> / <code>VDRIFT</code></td>
+<td><code>GNSS_REQ_*</code></td>
+<td>Renamed, same defaults.</td>
+</tr>
+<tr>
+<td><code>MPC_LAND_RC_HELP</code> (0)</td>
+<td><code>MPC_AUTO_NUDGING</code> bit 1</td>
+<td>A nonzero value migrates; 0 does not.</td>
+</tr>
+<tr>
+<td><code>COM_RC_OVERRIDE</code> (3), <code>COM_RC_STICK_OV</code> (30)</td>
+<td><code>MAN_OVERRIDE_SPD</code></td>
+<td>Only <code>COM_RC_OVERRIDE</code> = 0 migrates (to -1); 3 is dropped silently. Different unit (stick travel per second).</td>
+</tr>
+<tr>
+<td><code>FD_ACT_MOT_C2T</code>, <code>FD_ACT_MOT_THR</code>, <code>FD_ACT_MOT_TOUT</code></td>
+<td><code>MOTFAIL_C2T</code>, <code>MOTFAIL_OFF</code>, <code>MOTFAIL_TIME</code></td>
+<td>Replaced, no migration, different defaults and units.</td>
+</tr>
+<tr>
+<td><code>COM_KILL_DISARM</code> (0 s)</td>
+<td>hardcoded 5 s</td>
+<td>Removed by PR #26736 (commit <code>6b5147110b</code>, 2026-03-14, "remove needless parameter"). Kill still zeroes the motors immediately, but the vehicle now stays armed for 5 s, and flipping the switch back within that time restarts the motors. With 0 the disarm was immediate and the kill could not be undone.</td>
+</tr>
+<tr>
+<td><code>COM_ARM_SDCARD</code> (2)</td>
+<td>hardcoded warning</td>
+<td>A missing SD card never blocks arming now (<code>sdcardCheck.cpp</code> uses <code>NavModes::None</code>). The "no SD prevents arming" setting is lost.</td>
+</tr>
+<tr>
+<td><code>COM_POSCTL_NAVL</code> (1)</td>
+<td>none</td>
+<td>Removed in 1.17.0. Position mode falls back to Altitude, then Stabilized, never to Land.</td>
+</tr>
+<tr>
+<td><code>COM_DISARM_MAN</code> (1), <code>COM_TAKEOFF_ACT</code> (0), <code>COM_OBC_LOSS_T</code> (5), <code>COM_IMB_PROP_ACT</code> (0)</td>
+<td>hardcoded</td>
+<td>Our 1.16.2 values equal the new hardcoded behavior, so nothing is lost.</td>
+</tr>
+<tr>
+<td><code>BAT2_I_CHANNEL</code> (-1)</td>
+<td>none</td>
+<td>Removed together with <code>BAT1_I_CHANNEL</code>.</td>
+</tr>
+</tbody>
+</table></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

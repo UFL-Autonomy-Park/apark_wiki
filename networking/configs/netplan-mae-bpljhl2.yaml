@@ -1,0 +1,10 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s31f6:
+      dhcp4: true  # Grab IP (192.168.1.202) from Ubiquiti
+      dhcp4-overrides: 
+        use-routes: false  # Required so Ubiquiti doesn't break Wi-Fi internet
+        use-dns: false  # Required so Ubiquiti doesn't break Wi-Fi internet
+      dhcp6: false
